@@ -1,0 +1,2642 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>MiniApps</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<script language="javascript" type="text/javascript" src="js/screensize.js"></script>
+	<script language="javascript" type="text/javascript" src="js/utils.js"></script>
+	<link rel="stylesheet" href="css/base_s40.css" type="text/css" />
+	<meta name="Generator" content="Nokia WDE 3.2.0" />
+</head>
+<body onload="javascript:init();">
+	<!--Main-->
+	<div id="main">
+
+		<!--Header-->
+		<div id="titlebar" class="header_background">
+			<table class="header_table" cellpadding="0" cellspacing="0" summary="Default Header Table">
+				<tr>
+					<td height="40">
+						<div class="title_slider">
+							<table id="search_title" class="title_slider_section show_title_main">
+								<tr>
+									<td><div id="title" class="title_slider_section">MiniApps</div></td>
+									<td>
+										<img src="img/close_button.png" height="16" width="16" alt="Home"
+										onclick="
+											mwl.switchClass('#search_title', 'show_title_search', 'show_title_main');
+											mwl.setGroupTarget('#navigateToggle', '#home', 'show', 'hide');
+											mwl.switchClass('#slider', 'show_miniapp', 'show_main');
+											mwl.scrollTo('#main');"/>
+									</td>
+									<td>
+										<div class="search_text_entry">
+											<input id="search_input" type="text" name="search_params" />
+										</div>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</td>
+					<td width="40" height="40">
+						<div id="navigateToggle">
+							<div id="home" class="show"></div>
+							<div id="miniappGoHomeToggle" class="hide">
+								<img src="img/top_back.png" height="40" width="43" alt="Home"
+									onclick="
+										mwl.setGroupTarget('#navigateToggle', '#home', 'show', 'hide');
+										mwl.switchClass('#slider', 'show_miniapp', 'show_main');
+										mwl.scrollTo('#main');"/>
+							</div>
+							<div id="tabs_backButton" class="hide">
+								<img src="img/top_back.png" height="40" width="43" alt="Home" 
+									onclick="
+										mwl.setGroupTarget('#navigateToggle', '#miniappGoHomeToggle', 'show', 'hide');
+										mwl.setGroupTarget('#tabs', '#tab_views', 'show', 'hide');"/>
+							</div>
+							<div id="dynamic_looping_backButton" class="hide">
+								<img src="img/top_menu.png" height="40" width="43" alt="Home" 
+									onclick="
+										mwl.setGroupTarget('#navigateToggle', '#home', 'show', 'hide');
+										mwl.switchClass('#slider', 'show_miniapp', 'show_main');
+										mwl.scrollTo('#main');"/>
+							</div>
+							<div id="picker_backButton" class="hide">
+								<img src="img/top_back.png" height="40" width="43" alt="Home" 
+									onclick="
+										mwl.setGroupTarget('#navigateToggle', '#miniappGoHomeToggle', 'show', 'hide');
+										mwl.setGroupTarget('#picker_content', '#picker_button_content', 'show', 'hide');"/>
+							</div>
+							<div id="tree_backButton" class="hide">
+								<img src="img/top_back.png" height="40" width="43" alt="Home" />
+							</div>
+							<div id="continuous_use_backButton" class="hide">
+								<img src="img/top_back.png" height="40" width="43" alt="Home" 
+									onclick="
+										mwl.setGroupTarget('#navigateToggle', '#miniappGoHomeToggle', 'show', 'hide');
+										mwl.setGroupTarget('#progressIndicator_content', '#progress_indicator_base_view', 'show', 'hide');"/>
+							</div>
+							<div id="search_button" class="hide">
+								<img src="img/top_search.png" height="40" width="43" alt="Search" 
+									onclick="
+										mwl.switchClass('#search_title', 'show_title_main', 'show_title_search');
+										createSearchList();"/>
+							</div>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<!--End Header-->
+
+
+		<!--Stage-->
+		<div id="stage">
+			<table id="slider" class="show_main slider_table" cellspacing="0"
+				cellpadding="0" summary="Slider Table">
+				<tr>
+					<td valign="top">
+						<table class="slider_section" cellpadding="0" cellspacing="0"
+							summary="Tab Table">
+							<tr>
+								<td id="tab_1" class="tab tab_3_tabs tab_selected"
+									onclick="
+										mwl.setGroupTarget('#tab_control_content', '#tab_1_content', 'show', 'hide');
+										mwl.switchClass('#tab_1', 'tab_not_selected', 'tab_selected');
+										mwl.switchClass('#tab_2', 'tab_selected', 'tab_not_selected');
+										mwl.switchClass('#tab_3', 'tab_selected', 'tab_not_selected');">
+									Elements</td>
+								<td id="tab_2" class="tab tab_3_tabs tab_not_selected"
+									onclick="
+										mwl.setGroupTarget('#tab_control_content', '#tab_2_content', 'show', 'hide');
+										mwl.switchClass('#tab_1', 'tab_selected', 'tab_not_selected');
+										mwl.switchClass('#tab_2', 'tab_not_selected', 'tab_selected');
+										mwl.switchClass('#tab_3', 'tab_selected', 'tab_not_selected');">
+									Navigation</td>
+								<td id="tab_3" class="tab tab_3_tabs_right tab_not_selected"
+									onclick="
+										mwl.setGroupTarget('#tab_control_content', '#tab_3_content', 'show', 'hide');
+										mwl.switchClass('#tab_1', 'tab_selected', 'tab_not_selected');
+										mwl.switchClass('#tab_2', 'tab_selected', 'tab_not_selected');
+										mwl.switchClass('#tab_3', 'tab_not_selected', 'tab_selected');">
+									Patterns</td>
+							</tr>
+						</table>
+						<!-- End Tab Control -->
+						
+						<!-- Tab Control Content -->
+						<div id="tab_control_content">
+							<div id="tab_1_content" class="show slider_section">
+								<div class="picture_list_item"
+									 onclick="
+										mwl.setGroupTarget('#appsSection','#buttons', 'show', 'hide');
+										mwl.switchClass('#slider', 'show_main', 'show_miniapp');
+										mwl.setGroupTarget('#navigateToggle','#miniappGoHomeToggle', 'show', 'hide');">
+									<img src="img/list_button.png" height="23" width="22"
+										alt="smile" class="picture_list_item_image"></img>
+									<span class="valignMdl">Buttons</span>
+								</div>
+								<div class="picture_list_item"
+									 onclick="
+										mwl.setGroupTarget('#appsSection','#radioButtons', 'show', 'hide');
+										mwl.switchClass('#slider', 'show_main', 'show_miniapp');
+										mwl.setGroupTarget('#navigateToggle','#miniappGoHomeToggle', 'show', 'hide');">
+									<img src="img/list_radiobutton.png" height="23" width="22"
+										alt="smile" class="picture_list_item_image"></img>
+									<span class="valignMdl">Buttons - radio</span>
+								</div>
+								<div class="picture_list_item"
+									 onclick="
+										mwl.setGroupTarget('#appsSection','#checkBoxes', 'show', 'hide');
+										mwl.switchClass('#slider', 'show_main', 'show_miniapp');
+										mwl.setGroupTarget('#navigateToggle','#miniappGoHomeToggle', 'show', 'hide');">
+									<img src="img/list_checkbox.png" height="23" width="22"
+										alt="smile" class="picture_list_item_image"></img>
+									<span class="valignMdl">Check boxes</span>
+								</div>
+								<div class="picture_list_item"
+									 onclick="
+										mwl.setGroupTarget('#appsSection','#lists', 'show', 'hide');
+										mwl.switchClass('#slider', 'show_main', 'show_miniapp');
+										mwl.setGroupTarget('#navigateToggle','#miniappGoHomeToggle', 'show', 'hide');">
+									<img src="img/list_lists.png" height="23" width="22"
+										alt="smile" class="picture_list_item_image"></img>
+									<span class="valignMdl">Lists</span>
+								</div>
+								<div class="picture_list_item"
+									 onclick="
+										mwl.setGroupTarget('#appsSection','#tabs', 'show', 'hide');
+										mwl.switchClass('#slider', 'show_main', 'show_miniapp');
+										mwl.setGroupTarget('#navigateToggle','#miniappGoHomeToggle', 'show', 'hide');">
+									<img src="img/list_tabs.png" height="23" width="22" alt="smile"
+										class="picture_list_item_image"></img>
+									<span class="valignMdl">Tabs</span>
+								</div>
+								<div class="picture_list_item"
+									 onclick="
+										mwl.setGroupTarget('#appsSection','#textFields', 'show', 'hide');
+										mwl.switchClass('#slider', 'show_main', 'show_miniapp');
+										mwl.setGroupTarget('#navigateToggle','#miniappGoHomeToggle', 'show', 'hide');">
+									<img src="img/list_text.png" height="23" width="22" alt="smile"
+										class="picture_list_item_image"></img>
+									<span class="valignMdl">Text fields</span>
+								</div>
+								<div class="picture_list_item"
+									 onclick="
+										mwl.setGroupTarget('#appsSection','#information', 'show', 'hide');
+										mwl.switchClass('#slider', 'show_main', 'show_miniapp');
+										mwl.setGroupTarget('#navigateToggle','#miniappGoHomeToggle', 'show', 'hide');">
+									<img src="img/list_info.png" height="23" width="22"
+										alt="smile" class="picture_list_item_image"></img>
+									<span class="valignMdl">Information</span>
+								</div>
+							</div>
+
+							<div id="tab_2_content" class="hide slider_section">
+								<div class="picture_list_item"
+									 onclick="
+										mwl.setGroupTarget('#appsSection','#carouselInItem', 'show', 'hide');
+										mwl.switchClass('#slider', 'show_main', 'show_miniapp');
+										mwl.setGroupTarget('#navigateToggle','#miniappGoHomeToggle', 'show', 'hide');">
+									<img src="img/list_carousel_initem.png" height="23" width="22"
+										alt="smile" class="picture_list_item_image"></img>
+									<span class="valignMdl">Carousel, in-item</span>
+								</div>
+								<div class="picture_list_item"
+									 onclick="
+										mwl.setGroupTarget('#appsSection','#carouselItem', 'show', 'hide');
+										mwl.switchClass('#slider', 'show_main', 'show_miniapp');
+										mwl.setGroupTarget('#navigateToggle','#miniappGoHomeToggle', 'show', 'hide');">
+									<img src="img/list_carousel_item.png" height="23" width="22"
+										alt="smile" class="picture_list_item_image"></img>
+									<span class="valignMdl">Carousel, item</span>
+								</div>
+								<div class="picture_list_item"
+									 onclick="
+										mwl.setGroupTarget('#appsSection','#dynamicLooping', 'show', 'hide');
+										mwl.switchClass('#slider', 'show_main', 'show_miniapp');
+										mwl.setGroupTarget('#navigateToggle', '#dynamic_looping_backButton', 'show', 'hide');">
+									<img src="img/list_loop.png" height="23" width="22" alt="smile"
+										class="picture_list_item_image"></img>
+									<span class="valignMdl">Dynamic looping</span>
+								</div>
+								<div class="picture_list_item"
+									 onclick="
+										mwl.setGroupTarget('#appsSection','#expandableList', 'show', 'hide');
+										mwl.switchClass('#slider', 'show_main', 'show_miniapp');
+										mwl.setGroupTarget('#navigateToggle','#miniappGoHomeToggle', 'show', 'hide');">
+									<img src="img/list_list_expand.png" height="23" width="22"
+										alt="smile" class="picture_list_item_image"></img>
+									<span class="valignMdl">Expandable list</span>
+								</div>
+								<div class="picture_list_item"
+									 onclick="
+										mwl.setGroupTarget('#appsSection','#picker', 'show', 'hide');
+										mwl.switchClass('#slider', 'show_main', 'show_miniapp');
+										mwl.setGroupTarget('#navigateToggle','#miniappGoHomeToggle', 'show', 'hide');">
+									<img src="img/list_picker.png" height="23" width="22"
+										alt="smile" class="picture_list_item_image"></img>
+									<span class="valignMdl">Picker</span>
+								</div>
+								<div class="picture_list_item"
+									 onclick="
+										mwl.setGroupTarget('#appsSection','#tabbedPages', 'show', 'hide');
+										mwl.switchClass('#slider', 'show_main', 'show_miniapp');
+										mwl.setGroupTarget('#navigateToggle','#miniappGoHomeToggle', 'show', 'hide');">
+									<img src="img/list_tabs.png" height="23" width="22" alt="smile"
+										class="picture_list_item_image"></img>
+									<span class="valignMdl">Tabbed pages</span>
+								</div>
+								<div class="picture_list_item"
+									 onclick="
+										generateTreeView('treeStructure', 0, 0, 0);
+										mwl.setGroupTarget('#appsSection','#treeStructure', 'show', 'hide');
+										mwl.switchClass('#slider', 'show_main', 'show_miniapp');
+										mwl.setGroupTarget('#navigateToggle','#miniappGoHomeToggle', 'show', 'hide');">
+									<img src="img/list_tree.png" height="23" width="22" alt="smile"
+										class="picture_list_item_image"></img>
+									<span class="valignMdl">Tree structure</span>
+								</div>
+								<div class="picture_list_item"
+									 onclick="
+										mwl.setGroupTarget('#appsSection','#information', 'show', 'hide');
+										mwl.switchClass('#slider', 'show_main', 'show_miniapp');
+										mwl.setGroupTarget('#navigateToggle','#miniappGoHomeToggle', 'show', 'hide');">
+									<img src="img/list_info.png" height="23" width="22"
+										alt="smile" class="picture_list_item_image"></img>
+									<span class="valignMdl">Information</span>
+								</div>
+							</div>
+							
+							<div id="tab_3_content" class="hide slider_section">
+								<div class="picture_list_item"
+									 onclick="
+										mwl.setGroupTarget('#appsSection','#fileUpload', 'show', 'hide');
+										mwl.switchClass('#slider', 'show_main', 'show_miniapp');
+										mwl.setGroupTarget('#navigateToggle','#miniappGoHomeToggle', 'show', 'hide');">
+									<img src="img/list_upload.png" height="23" width="22"
+										alt="smile" class="picture_list_item_image"></img>
+									<span class="valignMdl">File upload</span>
+								</div>
+								<div class="picture_list_item"
+									 onclick="
+										mwl.setGroupTarget('#appsSection','#fileDownload', 'show', 'hide');
+										mwl.switchClass('#slider', 'show_main', 'show_miniapp');
+										mwl.setGroupTarget('#navigateToggle','#miniappGoHomeToggle', 'show', 'hide');">
+									<img src="img/list_download.png" height="23" width="22"
+										alt="smile" class="picture_list_item_image"></img>
+									<span class="valignMdl">File download</span>
+								</div>
+								<div class="picture_list_item"
+									 onclick="
+										generateTreeView('pageTitleLink_content', 0, 0, 0);
+										mwl.setGroupTarget('#appsSection','#pageTitleLink', 'show', 'hide');
+										mwl.switchClass('#slider', 'show_main', 'show_miniapp');
+										mwl.setGroupTarget('#navigateToggle','#miniappGoHomeToggle', 'show', 'hide');">
+									<img src="img/list_link.png" height="23" width="22" alt="smile"
+										class="picture_list_item_image"></img>
+									<span class="valignMdl">Page title link</span>
+								</div>
+								<div class="picture_list_item"
+									 onclick="
+										mwl.setGroupTarget('#appsSection','#passwords', 'show', 'hide');
+										mwl.setGroupTarget('#passwords_content', '#password_query_view', 'show', 'hide');
+										mwl.switchClass('#slider', 'show_main', 'show_miniapp');
+										mwl.setGroupTarget('#navigateToggle','#miniappGoHomeToggle', 'show', 'hide');">
+									<img src="img/list_password.png" height="23" width="22"
+										alt="smile" class="picture_list_item_image"></img>
+									<span class="valignMdl">Passwords</span>
+								</div>
+								<div class="picture_list_item"
+									 onclick="
+										mwl.setGroupTarget('#appsSection','#progressIndicators', 'show', 'hide');
+										mwl.switchClass('#slider', 'show_main', 'show_miniapp');
+										mwl.setGroupTarget('#navigateToggle','#miniappGoHomeToggle', 'show', 'hide');">
+									<img src="img/list_progress.png" height="23" width="22"
+										alt="smile" class="picture_list_item_image"></img>
+									<span class="valignMdl">Progress indicators</span>
+								</div>
+								<div class="picture_list_item"
+									 onclick="
+										createSearchList();
+										mwl.setGroupTarget('#appsSection','#search', 'show', 'hide');
+										mwl.switchClass('#slider', 'show_main', 'show_miniapp');
+										mwl.setGroupTarget('#navigateToggle', '#search_button', 'show', 'hide');">
+									<img src="img/list_search.png" height="23" width="22"
+										alt="smile" class="picture_list_item_image"></img>
+									<span class="valignMdl">Search</span>
+								</div>
+								<div class="picture_list_item"
+									 onclick="
+										mwl.setGroupTarget('#appsSection','#sharingContent', 'show', 'hide');
+										mwl.switchClass('#slider', 'show_main', 'show_miniapp');
+										mwl.setGroupTarget('#navigateToggle','#miniappGoHomeToggle', 'show', 'hide');">
+									<img src="img/list_share.png" height="23" width="22"
+										alt="smile" class="picture_list_item_image"></img>
+									<span class="valignMdl">Sharing content</span>
+								</div>
+								<div class="picture_list_item"
+									 onclick="
+										mwl.setGroupTarget('#appsSection','#information', 'show', 'hide');
+										mwl.switchClass('#slider', 'show_main', 'show_miniapp');
+										mwl.setGroupTarget('#navigateToggle','#miniappGoHomeToggle', 'show', 'hide');">
+									<img src="img/list_info.png" height="23" width="22"
+										alt="smile" class="picture_list_item_image"></img>
+									<span class="valignMdl">Information</span>
+								</div>
+							</div>
+						</div>
+					</td>
+					<td valign="top">
+						<div id="appsSection" class="slider_section">
+
+							<!--Buttons mini app-->
+							<div id="buttons" class="hide miniapp_section">
+							
+								<div class="category_name">Single button</div>
+								<input type="button" name="button1" class="button button_1_width"
+								 value="SINGLE BUTTON" />
+
+								<div class="category_name">Two buttons</div>
+								<table class="fill" cellpadding="0" cellspacing="0">
+									<tr>
+										<td class="alignL"><input type="button" name="button1"
+											class="button button_2_in_row_width" value="BUTTON1"></input>
+										</td>
+										<td class="alignR"><input type="button" name="button2"
+											class="button button_2_in_row_width" value="BUTTON2"></input>
+										</td>
+									</tr>
+								</table>
+
+								<div class="category_name">Three buttons</div>
+								<table class="fill" cellpadding="0" cellspacing="0">
+									<tr>
+										<td class="alignL"><input type="button" name="button1"
+											class="button button_3_in_row_width" value="BTN1"></input>
+										</td>
+										<td class="alignC"><input type="button" name="button2"
+											class="button button_3_in_row_width" value="BTN2"></input>
+										</td>
+										<td class="alignR"><input type="button" name="button3"
+											class="button button_3_in_row_width" value="BTN3"></input>
+										</td>
+									</tr>
+								</table>
+
+								<div class="category_name">Primary and secondary buttons</div>
+								<table class="fill" cellpadding="0" cellspacing="0">
+									<tr>
+										<td class="alignL button_3_in_row_width">
+											<input type="button" name="button1"
+											class="button button_3_in_row_width" value="BTN1"></input>
+										</td>
+										<td class="alignL button_3_in_row_width">
+											<input type="button" name="button2"
+											class="button button_3_in_row_width" value="BTN2"></input>
+										</td>
+										<td class="alignR">
+											<input type="button" name="button3"
+											class="button button_3_in_row_width" value="BTN3"></input>
+										</td>
+									</tr>
+								</table>
+
+							</div>
+							<!--End Buttons mini app-->
+
+
+							<!--RadioButtons mini app-->
+							<div id="radioButtons" class="slider_section hide">
+								<table cellpadding="0" cellspacing="0" class="fill"
+									summary="Tab Table">
+									<tr id="radioButtonsTabBar">
+										<td id="radioButtonsTab_1" class="tab tab_3_tabs tab_selected"
+											onclick="
+												mwl.setGroupTarget('#radioButtonsTabControlContent', '#radioButtonsTab_1_content', 'show', 'hide');
+												mwl.setGroupTarget('#radioButtonsTabBar', '#radioButtonsTab_1', 'tab_selected', 'tab_not_selected');">
+										NORMAL</td>
+										<td id="radioButtonsTab_2"
+											class="tab tab_3_tabs tab_not_selected"
+											onclick="
+												mwl.setGroupTarget('#radioButtonsTabControlContent', '#radioButtonsTab_2_content', 'show', 'hide');
+												mwl.setGroupTarget('#radioButtonsTabBar', '#radioButtonsTab_2', 'tab_selected', 'tab_not_selected');">
+										INACTIVE</td>
+										<td id="radioButtonsTab_3"
+											class="tab tab_3_tabs_right tab_not_selected"
+											onclick="
+												mwl.setGroupTarget('#radioButtonsTabControlContent', '#radioButtonsTab_3_content', 'show', 'hide');
+												mwl.setGroupTarget('#radioButtonsTabBar', '#radioButtonsTab_3', 'tab_selected', 'tab_not_selected');">
+										GROUPED</td>
+									</tr>
+								</table>
+								<!-- End Tab Control -->
+
+								<!-- Tab Control Content -->
+								<div id="radioButtonsTabControlContent">
+									<div id="radioButtonsTab_1_content" class="show">
+										<div class="checkable_list_item"> 										
+											<table class="fill" cellpadding="0" cellspacing="0">
+												<tr>
+													<td class="checkable_item_cell_left">Item 1</td>
+													<td class="checkable_item_cell_right">
+														<input type="radio" name="tab_group_1" checked />
+													</td>
+												</tr>
+											</table>
+										</div>
+										<div class="checkable_list_item">
+											<table class="fill" cellpadding="0" cellspacing="0">
+												<tr>
+													<td class="checkable_item_cell_left">Item 2</td>
+													<td class="checkable_item_cell_right">
+														<input type="radio" name="tab_group_1" />
+													</td>
+												</tr>
+											</table>
+										</div>
+										<div class="checkable_list_item">
+											<table class="fill" cellpadding="0" cellspacing="0">
+												<tr>
+													<td class="checkable_item_cell_left">Item 3</td>
+													<td class="checkable_item_cell_right">
+														<input type="radio" name="tab_group_1" />
+													</td>
+												</tr>
+											</table>
+										</div>
+										<div class="checkable_list_item">
+											<table class="fill" cellpadding="0" cellspacing="0">
+												<tr>
+													<td class="checkable_item_cell_left">Item 4</td>
+													<td class="checkable_item_cell_right">
+														<input type="radio" name="tab_group_1" />
+													</td>
+												</tr>
+											</table>
+										</div>
+										<div class="checkable_list_item">
+											<table class="fill" cellpadding="0" cellspacing="0">
+												<tr>
+													<td class="checkable_item_cell_left">Item 5</td>
+													<td class="checkable_item_cell_right">
+														<input type="radio" name="tab_group_1" />
+													</td>
+												</tr>
+											</table>
+										</div>
+									</div>
+
+									<div id="radioButtonsTab_2_content" class="hide">
+										<div class="checkable_list_item">
+											<table class="fill" cellpadding="0" cellspacing="0">
+												<tr>
+													<td class="checkable_item_cell_left">Item 1</td>
+													<td class="checkable_item_cell_right">
+														<input type="radio" name="tab_group_2" disabled="disabled" checked />
+													</td>
+												</tr>
+											</table>
+										</div>
+										<div class="checkable_list_item">
+											<table class="fill" cellpadding="0" cellspacing="0">
+												<tr>
+													<td class="checkable_item_cell_left">Item 2</td>
+													<td class="checkable_item_cell_right">
+														<input type="radio" name="tab_group_2" disabled="disabled" />
+													</td>
+												</tr>
+											</table>
+										</div>
+										<div class="checkable_list_item">
+											<table class="fill" cellpadding="0" cellspacing="0">
+												<tr>
+													<td class="checkable_item_cell_left">Item 3</td>
+													<td class="checkable_item_cell_right">
+														<input type="radio" name="tab_group_2" disabled="disabled" />
+													</td>
+												</tr>
+											</table>
+										</div>
+										<div class="checkable_list_item">
+											<table class="fill" cellpadding="0" cellspacing="0">
+												<tr>
+													<td class="checkable_item_cell_left">Item 4</td>
+													<td class="checkable_item_cell_right">
+														<input type="radio" name="tab_group_2" disabled="disabled" />
+													</td>
+												</tr>
+											</table>
+										</div>
+										<div class="checkable_list_item">
+											<table class="fill" cellpadding="0" cellspacing="0">
+												<tr>
+													<td class="checkable_item_cell_left">Item 5</td>
+													<td class="checkable_item_cell_right">
+														<input type="radio" name="tab_group_2" disabled="disabled" />
+													</td>
+												</tr>
+											</table>
+										</div>
+									</div>
+									<div id="radioButtonsTab_3_content" class="hide">
+										<div class="featured_list_item">Group 1</div>
+										<div class="checkable_list_item">
+											<table class="fill" cellpadding="0" cellspacing="0">
+												<tr>
+													<td class="checkable_item_cell_left">Item 1-1</td>
+													<td class="checkable_item_cell_right">
+														<input type="radio" name="tab_group_3_1" checked />
+													</td>
+												</tr>
+											</table>
+										</div>
+										<div class="checkable_list_item">
+											<table class="fill" cellpadding="0" cellspacing="0">
+												<tr>
+													<td class="checkable_item_cell_left">Item 1-2</td>
+													<td class="checkable_item_cell_right">
+														<input type="radio" name="tab_group_3_1" />
+													</td>
+												</tr>
+											</table>
+										</div>
+										<div class="checkable_list_item">
+											<table class="fill" cellpadding="0" cellspacing="0">
+												<tr>
+													<td class="checkable_item_cell_left">Item 1-3</td>
+													<td class="checkable_item_cell_right">
+														<input type="radio" name="tab_group_3_1" />
+													</td>
+												</tr>
+											</table>
+										</div>
+										<div class="checkable_list_item">
+											<table class="fill" cellpadding="0" cellspacing="0">
+												<tr>
+													<td class="checkable_item_cell_left">Item 1-4</td>
+													<td class="checkable_item_cell_right">
+														<input type="radio" name="tab_group_3_1" />
+													</td>
+												</tr>
+											</table>
+										</div>
+										<div class="featured_list_item">Group 2</div>
+										<div class="checkable_list_item">
+											<table class="fill" cellpadding="0" cellspacing="0">
+												<tr>
+													<td class="checkable_item_cell_left">Item 2-1</td>
+													<td class="checkable_item_cell_right">
+														<input type="radio" name="tab_group_3_2" checked />
+													</td>
+												</tr>
+											</table>
+										</div>
+										<div class="checkable_list_item">
+											<table class="fill" cellpadding="0" cellspacing="0">
+												<tr>
+													<td class="checkable_item_cell_left">Item 2-2</td>
+													<td class="checkable_item_cell_right">
+														<input type="radio" name="tab_group_3_2" />
+													</td>
+												</tr>
+											</table>
+										</div>
+										<div class="checkable_list_item">
+											<table class="fill" cellpadding="0" cellspacing="0">
+												<tr>
+													<td class="checkable_item_cell_left">Item 2-3</td>
+													<td class="checkable_item_cell_right">
+														<input type="radio" name="tab_group_3_2" />
+													</td>
+												</tr>
+											</table>
+										</div>
+										<div class="checkable_list_item">
+											<table class="fill" cellpadding="0" cellspacing="0">
+												<tr>
+													<td class="checkable_item_cell_left">Item 2-4</td>
+													<td class="checkable_item_cell_right">
+														<input type="radio" name="tab_group_3_2" />
+													</td>
+												</tr>
+											</table>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!--End RadioButtons mini app-->
+
+
+							<!--CheckBoxes mini app-->
+							<div id="checkBoxes" class="slider_section hide">
+
+								<table cellpadding="0" cellspacing="0" class="fill"
+									summary="Tab Table">
+									<tr id="checkBoxesTabBar">
+										<td id="checkBoxesTab_1" class="tab tab_3_tabs tab_selected"
+											onclick="mwl.setGroupTarget('#checkBoxesTabControlContent', '#checkBoxesTab_1_content', 'show', 'hide'); mwl.setGroupTarget('#checkBoxesTabBar', '#checkBoxesTab_1', 'tab_selected', 'tab_not_selected');">NORMAL</td>
+										<td id="checkBoxesTab_2"
+											class="tab tab_3_tabs tab_not_selected"
+											onclick="mwl.setGroupTarget('#checkBoxesTabControlContent', '#checkBoxesTab_2_content', 'show', 'hide'); mwl.setGroupTarget('#checkBoxesTabBar', '#checkBoxesTab_2', 'tab_selected', 'tab_not_selected');">INACTIVE</td>
+										<td id="checkBoxesTab_3"
+											class="tab tab_3_tabs_right tab_not_selected"
+											onclick="mwl.setGroupTarget('#checkBoxesTabControlContent', '#checkBoxesTab_3_content', 'show', 'hide'); mwl.setGroupTarget('#checkBoxesTabBar', '#checkBoxesTab_3', 'tab_selected', 'tab_not_selected');">GROUPED</td>
+									</tr>
+								</table>
+
+								<!-- Tab Control Content -->
+								<div id="checkBoxesTabControlContent">
+									<div id="checkBoxesTab_1_content" class="show">
+										<div class="checkable_list_item">
+											<table class="fill" cellpadding="0" cellspacing="0">
+												<tr>
+													<td class="checkable_item_cell_left">Item 1</td>
+													<td class="checkable_item_cell_right">
+														<input type="checkbox" />
+													</td>
+												</tr>
+											</table>
+										</div>
+										<div class="checkable_list_item">
+											<table class="fill" cellpadding="0" cellspacing="0">
+												<tr>
+													<td class="checkable_item_cell_left">Item 2</td>
+													<td class="checkable_item_cell_right">
+														<input type="checkbox" />
+													</td>
+												</tr>
+											</table>
+										</div>
+										<div class="checkable_list_item">
+											<table class="fill" cellpadding="0" cellspacing="0">
+												<tr>
+													<td class="checkable_item_cell_left">Item 3</td>
+													<td class="checkable_item_cell_right">
+														<input type="checkbox" checked/>
+													</td>
+												</tr>
+											</table>
+										</div>
+										<div class="checkable_list_item">
+											<table class="fill" cellpadding="0" cellspacing="0">
+												<tr>
+													<td class="checkable_item_cell_left">Item 4</td>
+													<td class="checkable_item_cell_right">
+														<input type="checkbox" />
+													</td>
+												</tr>
+											</table>
+										</div>
+										<div class="checkable_list_item">
+											<table class="fill" cellpadding="0" cellspacing="0">
+												<tr>
+													<td class="checkable_item_cell_left">Item 5</td>
+													<td class="checkable_item_cell_right">
+														<input type="checkbox" />
+													</td>
+												</tr>
+											</table>
+										</div>
+									</div>
+
+									<div id="checkBoxesTab_2_content" class="hide">
+										<div class="checkable_list_item">
+											<table class="fill" cellpadding="0" cellspacing="0">
+												<tr>
+													<td class="checkable_item_cell_left">Item 1</td>
+													<td class="checkable_item_cell_right">
+														<input type="checkbox" disabled="disabled" />
+													</td>
+												</tr>
+											</table>
+										</div>
+										<div class="checkable_list_item">
+											<table class="fill" cellpadding="0" cellspacing="0">
+												<tr>
+													<td class="checkable_item_cell_left">Item 2</td>
+													<td class="checkable_item_cell_right">
+														<input type="checkbox" disabled="disabled" />
+													</td>
+												</tr>
+											</table>
+										</div>
+										<div class="checkable_list_item">
+											<table class="fill" cellpadding="0" cellspacing="0">
+												<tr>
+													<td class="checkable_item_cell_left">Item 3</td>
+													<td class="checkable_item_cell_right">
+														<input type="checkbox" disabled="disabled" />
+													</td>
+												</tr>
+											</table>
+										</div>
+										<div class="checkable_list_item">
+											<table class="fill" cellpadding="0" cellspacing="0">
+												<tr>
+													<td class="checkable_item_cell_left">Item 4</td>
+													<td class="checkable_item_cell_right">
+														<input type="checkbox" disabled="disabled" />
+													</td>
+												</tr>
+											</table>
+										</div>
+										<div class="checkable_list_item">
+											<table class="fill" cellpadding="0" cellspacing="0">
+												<tr>
+													<td class="checkable_item_cell_left">Item 5</td>
+													<td class="checkable_item_cell_right">
+														<input type="checkbox" disabled="disabled" />
+													</td>
+												</tr>
+											</table>
+										</div>
+									</div>
+									<div id="checkBoxesTab_3_content" class="hide">
+										<div class="featured_list_item">Group 1</div>
+										<div class="checkable_list_item">
+											<table class="fill" cellpadding="0" cellspacing="0">
+												<tr>
+													<td class="checkable_item_cell_left">Item 1-1</td>
+													<td class="checkable_item_cell_right">
+														<input type="checkbox" />
+													</td>
+												</tr>
+											</table>
+										</div>
+										<div class="checkable_list_item">
+											<table class="fill" cellpadding="0" cellspacing="0">
+												<tr>
+													<td class="checkable_item_cell_left">Item 1-2</td>
+													<td class="checkable_item_cell_right">
+														<input type="checkbox" />
+													</td>
+												</tr>
+											</table>
+										</div>
+										<div class="checkable_list_item">
+											<table class="fill" cellpadding="0" cellspacing="0">
+												<tr>
+													<td class="checkable_item_cell_left">Item 1-3</td>
+													<td class="checkable_item_cell_right">
+														<input type="checkbox" />
+													</td>
+												</tr>
+											</table>
+										</div>
+										<div class="checkable_list_item">
+											<table class="fill" cellpadding="0" cellspacing="0">
+												<tr>
+													<td class="checkable_item_cell_left">Item 1-4</td>
+													<td class="checkable_item_cell_right">
+														<input type="checkbox" />
+													</td>
+												</tr>
+											</table>
+										</div>
+										<div class="featured_list_item">Group 2</div>
+										<div class="checkable_list_item">
+											<table class="fill" cellpadding="0" cellspacing="0">
+												<tr>
+													<td class="checkable_item_cell_left">Item 2-1</td>
+													<td class="checkable_item_cell_right">
+														<input type="checkbox" />
+													</td>
+												</tr>
+											</table>
+										</div>
+										<div class="checkable_list_item">
+											<table class="fill" cellpadding="0" cellspacing="0">
+												<tr>
+													<td class="checkable_item_cell_left">Item 2-2</td>
+													<td class="checkable_item_cell_right">
+														<input type="checkbox" />
+													</td>
+												</tr>
+											</table>
+										</div>
+										<div class="checkable_list_item">
+											<table class="fill" cellpadding="0" cellspacing="0">
+												<tr>
+													<td class="checkable_item_cell_left">Item 2-3</td>
+													<td class="checkable_item_cell_right">
+														<input type="checkbox" />
+													</td>
+												</tr>
+											</table>
+										</div>
+										<div class="checkable_list_item">
+											<table class="fill" cellpadding="0" cellspacing="0">
+												<tr>
+													<td class="checkable_item_cell_left">Item 2-4</td>
+													<td class="checkable_item_cell_right">
+														<input type="checkbox" />
+													</td>
+												</tr>
+											</table>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!--End CheckBoxes mini app-->
+
+
+							<!--Lists mini app-->
+							<div id="lists" class="slider_section hide">
+								<table cellpadding="0" cellspacing="0" class="fill"
+									summary="Tab Table">
+									<tr id="listsTabBar">
+										<td id="listsTab_1" class="tab tab_selected"
+											onclick="
+												mwl.setGroupTarget('#listsTabControlContent', '#listsTab_1_content', 'show', 'hide');
+												mwl.setGroupTarget('#listsTabBar', '#listsTab_1', 'tab_selected', 'tab_not_selected');
+											">Normal</td>
+										<td id="listsTab_2" class="tab tab_not_selected"
+											onclick="
+												mwl.setGroupTarget('#listsTabControlContent', '#listsTab_2_content', 'show', 'hide');
+												mwl.setGroupTarget('#listsTabBar', '#listsTab_2', 'tab_selected', 'tab_not_selected');
+											">Label</td>
+										<td id="listsTab_3" class="tab tab_not_selected"
+											onclick="
+												mwl.setGroupTarget('#listsTabControlContent', '#listsTab_3_content', 'show', 'hide');
+												mwl.setGroupTarget('#listsTabBar', '#listsTab_3', 'tab_selected', 'tab_not_selected');
+											">Table</td>
+										<td id="listsTab_4" class="tab tab_not_selected"
+											onclick="
+												mwl.setGroupTarget('#listsTabControlContent', '#listsTab_4_content', 'show', 'hide');
+												mwl.setGroupTarget('#listsTabBar', '#listsTab_4', 'tab_selected', 'tab_not_selected');
+											">Category</td>
+									</tr>
+								</table>
+
+								<!-- Tab Control Content -->
+								<div id="listsTabControlContent">
+
+									<!-- Normal tab content -->
+									<div id="listsTab_1_content" class="show">
+										<div class="text_list_item" onclick="">Item 1</div>
+										<div class="text_list_item" onclick="">Item 2</div>
+										<div class="text_list_item" onclick="">Item 3</div>
+										<div class="text_list_item" onclick="">Item 4</div>
+										
+										<div class="picture_list_item" onclick="">
+											<img src="img/smile.png" height="20" width="20" alt="smile"
+												 class="picture_list_item_image"></img>
+											<span class="valignMdl">Item 5</span>
+										</div>
+										<div class="picture_list_item" onclick="">
+											<img src="img/smile.png" height="20" width="20" alt="smile"
+												 class="picture_list_item_image"></img>
+											<span class="valignMdl">Item 6</span>
+										</div>
+										<div class="picture_list_item" onclick="">
+											<img src="img/smile.png" height="20" width="20" alt="smile"
+												 class="picture_list_item_image"></img>
+											<span class="valignMdl">Item 7</span>
+										</div>
+										<div class="picture_list_item" onclick="">
+											<img src="img/smile.png" height="20" width="20" alt="smile"
+												 class="picture_list_item_image"></img>
+											<span class="valignMdl">Item 8</span>
+										</div>
+										
+										<!-- Fancy list items -->
+										<table class="picture_list_item" cellspacing="0" cellpadding="0" onclick="">
+											<tr>
+												<td><img src="img/smile.png" height="20" width="20" alt="smile"></img></td>
+												<td class="fancy_list_item">
+													<table class="fill" cellspacing="4" cellpadding="0">
+														<tr><td>Title 9</td><td class="alignR">12:34</td></tr>
+														<tr><td>Content 9</td><td class="alignR"><img src="img/red_dot.png" /></td></tr>
+													</table>
+												</td>
+											</tr>
+										</table>
+										<table class="picture_list_item" cellspacing="0" cellpadding="0" onclick="">
+											<tr>
+												<td><img src="img/smile.png" height="20" width="20" alt="smile"></img></td>
+												<td class="fancy_list_item">
+													<table class="fill" cellspacing="4" cellpadding="0">
+														<tr><td>Title 10</td><td class="alignR">12:35</td></tr>
+														<tr><td>Content 10</td><td class="alignR"><img src="img/red_dot.png" /></td></tr>
+													</table>
+												</td>
+											</tr>
+										</table>
+										<table class="picture_list_item" cellspacing="0" cellpadding="0" onclick="">
+											<tr>
+												<td><img src="img/smile.png" height="20" width="20" alt="smile"></img></td>
+												<td class="fancy_list_item">
+													<table class="fill" cellspacing="4" cellpadding="0">
+														<tr><td>Title 11</td><td class="alignR">12:36</td></tr>
+														<tr><td>Content 11</td><td class="alignR"><img src="img/green_dot.png" /></td></tr>
+													</table>
+												</td>
+											</tr>
+										</table>
+										<table class="picture_list_item" cellspacing="0" cellpadding="0" onclick="">
+											<tr>
+												<td><img src="img/smile.png" height="20" width="20" alt="smile"></img></td>
+												<td class="fancy_list_item">
+													<table class="fill" cellspacing="4" cellpadding="0">
+														<tr><td>Title 12</td><td class="alignR">12:37</td></tr>
+														<tr><td>Content 12</td><td class="alignR"><img src="img/yellow_dot.png" /></td></tr>
+													</table>
+												</td>
+											</tr>
+										</table>
+									</div>
+									<!-- End Normal tab content -->
+
+									<!-- Label tab content -->
+									<div id="listsTab_2_content" class="hide">
+										<div class="list_section_header">no icon</div>
+										<div class="text_list_item" onclick="">Item 1</div>
+										<div class="text_list_item" onclick="">Item 2</div>
+										<div class="text_list_item" onclick="">Item 3</div>
+										<div class="text_list_item" onclick="">Item 4</div>
+										
+										<div class="list_section_header">with icon</div>
+										<div class="picture_list_item" onclick="">
+											<img src="img/smile.png" height="20" width="20" alt="smile"
+												 class="picture_list_item_image"></img>
+											<span class="valignMdl">Item 5</span>
+										</div>
+										<div class="picture_list_item" onclick="">
+											<img src="img/smile.png" height="20" width="20" alt="smile"
+												 class="picture_list_item_image"></img>
+											<span class="valignMdl">Item 6</span>
+										</div>
+										<div class="picture_list_item" onclick="">
+											<img src="img/smile.png" height="20" width="20" alt="smile"
+												 class="picture_list_item_image"></img>
+											<span class="valignMdl">Item 7</span>
+										</div>
+										<div class="picture_list_item" onclick="">
+											<img src="img/smile.png" height="20" width="20" alt="smile"
+												 class="picture_list_item_image"></img>
+											<span class="valignMdl">Item 8</span>
+										</div>
+										
+										<!-- Fancy list items -->
+										<div class="list_section_header">fancy</div>
+										<table class="picture_list_item" cellspacing="0" cellpadding="0" onclick="">
+											<tr>
+												<td><img src="img/smile.png" height="20" width="20" alt="smile"></img></td>
+												<td class="fancy_list_item">
+													<table class="fill" cellspacing="4" cellpadding="0">
+														<tr><td>Title 9</td><td class="alignR">12:34</td></tr>
+														<tr><td>Content 9</td><td class="alignR"><img src="img/red_dot.png" /></td></tr>
+													</table>
+												</td>
+											</tr>
+										</table>
+										<table class="picture_list_item" cellspacing="0" cellpadding="0" onclick="">
+											<tr>
+												<td><img src="img/smile.png" height="20" width="20" alt="smile"></img></td>
+												<td class="fancy_list_item">
+													<table class="fill" cellspacing="4" cellpadding="0">
+														<tr><td>Title 10</td><td class="alignR">12:35</td></tr>
+														<tr><td>Content 10</td><td class="alignR"><img src="img/red_dot.png" /></td></tr>
+													</table>
+												</td>
+											</tr>
+										</table>
+										<table class="picture_list_item" cellspacing="0" cellpadding="0" onclick="">
+											<tr>
+												<td><img src="img/smile.png" height="20" width="20" alt="smile"></img></td>
+												<td class="fancy_list_item">
+													<table class="fill" cellspacing="4" cellpadding="0">
+														<tr><td>Title 11</td><td class="alignR">12:36</td></tr>
+														<tr><td>Content 11</td><td class="alignR"><img src="img/green_dot.png" /></td></tr>
+													</table>
+												</td>
+											</tr>
+										</table>
+										<table class="picture_list_item" cellspacing="0" cellpadding="0" onclick="">
+											<tr>
+												<td><img src="img/smile.png" height="20" width="20" alt="smile"></img></td>
+												<td class="fancy_list_item">
+													<table class="fill" cellspacing="4" cellpadding="0">
+														<tr><td>Title 12</td><td class="alignR">12:37</td></tr>
+														<tr><td>Content 12</td><td class="alignR"><img src="img/yellow_dot.png" /></td></tr>
+													</table>
+												</td>
+											</tr>
+										</table>
+									</div>
+									<!-- End Label tab content -->
+
+									<!-- Table tab content -->
+									<div id="listsTab_3_content" class="hide">
+										<div class="item_container">
+											<div class="text_list_item" onclick="">Item 1-1</div>
+										</div>
+										<div class="item_container">
+											<div class="text_list_item" onclick="">Item 2-1</div>
+											<div class="text_list_item" onclick="">Item 2-2</div>
+											<div class="text_list_item" onclick="">Item 2-3</div>
+										</div>
+										<div class="item_container">
+											<div class="picture_list_item" onclick="">
+												<img src="img/smile.png" height="20" width="20" alt="smile"
+													 class="picture_list_item_image"></img>
+												<span class="valignMdl">Item 3-1</span>
+											</div>
+											<div class="picture_list_item" onclick="">
+												<img src="img/smile.png" height="20" width="20" alt="smile"
+													 class="picture_list_item_image"></img>
+												<span class="valignMdl">Item 3-2</span>
+											</div>
+											<div class="picture_list_item" onclick="">
+												<img src="img/smile.png" height="20" width="20" alt="smile"
+													 class="picture_list_item_image"></img>
+												<span class="valignMdl">Item 3-3</span>
+											</div>
+										</div>
+										
+										<div class="item_container">
+											<!-- Fancy list items -->
+											<table class="picture_list_item" cellspacing="0" cellpadding="0" onclick="">
+												<tr>
+													<td><img src="img/smile.png" height="20" width="20" alt="smile"></img></td>
+													<td class="fancy_list_item" >
+														<table class="fill" cellspacing="4" cellpadding="0">
+															<tr><td>Title 9</td><td class="alignR">12:34</td></tr>
+															<tr><td>Content 9</td><td class="alignR"><img src="img/red_dot.png" /></td></tr>
+														</table>
+													</td>
+												</tr>
+											</table>
+											<table class="picture_list_item" cellspacing="0" cellpadding="0" onclick="">
+												<tr>
+													<td><img src="img/smile.png" height="20" width="20" alt="smile"></img></td>
+													<td class="fancy_list_item">
+														<table class="fill" cellspacing="4" cellpadding="0">
+															<tr><td>Title 10</td><td class="alignR">12:35</td></tr>
+															<tr><td>Content 10</td><td class="alignR"><img src="img/red_dot.png" /></td></tr>
+														</table>
+													</td>
+												</tr>
+											</table>
+											<table class="picture_list_item" cellspacing="0" cellpadding="0" onclick="">
+												<tr>
+													<td><img src="img/smile.png" height="20" width="20" alt="smile"></img></td>
+													<td class="fancy_list_item">
+														<table class="fill" cellspacing="4" cellpadding="0">
+															<tr><td>Title 11</td><td class="alignR">12:36</td></tr>
+															<tr><td>Content 11</td><td class="alignR"><img src="img/green_dot.png" /></td></tr>
+														</table>
+													</td>
+												</tr>
+											</table>
+											<table class="picture_list_item" cellspacing="0" cellpadding="0" onclick="">
+												<tr>
+													<td><img src="img/smile.png" height="20" width="20" alt="smile"></img></td>
+													<td class="fancy_list_item">
+														<table class="fill" cellspacing="4" cellpadding="0">
+															<tr><td>Title 12</td><td class="alignR">12:37</td></tr>
+															<tr><td>Content 12</td><td class="alignR"><img src="img/yellow_dot.png" /></td></tr>
+														</table>
+													</td>
+												</tr>
+											</table>
+										</div>
+									</div>
+									<!-- End table tab content -->
+
+									<!-- Category tab content -->
+									<div id="listsTab_4_content" class="hide">
+										<div id="category1" class="category">
+											<div id="category1_header" class="category_header"
+												onclick="
+													mwl.toggleClass('#category1_items', 'show');
+													mwl.toggleClass('#category1_items', 'hide');
+													mwl.toggleClass('#category1_closed_arrow', 'hide');
+													mwl.toggleClass('#category1_closed_arrow', 'show');
+													mwl.toggleClass('#category1_open_arrow', 'hide');
+													mwl.toggleClass('#category1_open_arrow', 'show');
+												">
+												<table class="fill" cellpadding="0" cellspacing="0"
+													summary="Category Table">
+													<tr>
+														<td class="category_left">Category 1</td>
+														<td class="category_right">
+															<span id="category1_arrows">
+																<img class="show" id="category1_closed_arrow"
+																	src="img/button_right.png" alt="show" />
+																<img class="hide" id="category1_open_arrow" 
+																	src="img/button_down.png" alt="hide" />
+															</span>
+														</td>
+													</tr>
+												</table>
+											</div>
+
+											<div id="category1_items" class="hide item_container">
+												<div class="text_list_item" onclick="">Item 1-1</div>
+												<div class="text_list_item" onclick="">Item 1-2</div>
+												<div class="text_list_item" onclick="">Item 1-3</div>
+												<div class="text_list_item" onclick="">Item 1-4</div>
+											</div>
+										</div>
+
+										<div id="category2" class="category">
+											<div id="category2_header" class="category_header"
+												onclick="
+													mwl.toggleClass('#category2_items', 'show');
+													mwl.toggleClass('#category2_items', 'hide');
+													mwl.toggleClass('#category2_closed_arrow', 'hide');
+													mwl.toggleClass('#category2_closed_arrow', 'show');
+													mwl.toggleClass('#category2_open_arrow', 'hide');
+													mwl.toggleClass('#category2_open_arrow', 'show');">
+												<table class="fill" cellpadding="0" cellspacing="0"
+													summary="Category Table">
+													<tr>
+														<td class="category_left"><div>Category 2</div></td>
+														<td class="category_right"><span
+															id="category2_arrows"> <img class="show"
+																id="category2_closed_arrow" src="img/button_right.png"
+																alt="show" /> <img class="hide"
+																id="category2_open_arrow" src="img/button_down.png"
+																alt="hide" /> </span>
+														</td>
+													</tr>
+												</table>
+											</div>
+
+											<div id="category2_items" class="hide item_container">
+												<div class="text_list_item" onclick="">Item 2-1</div>
+												<div class="text_list_item" onclick="">Item 2-2</div>
+												<div class="text_list_item" onclick="">Item 2-3</div>
+												<div class="text_list_item" onclick="">Item 2-4</div>
+											</div>
+										</div>
+
+										<div id="category3" class="category">
+											<div id="category3header" class="category_header"
+												onclick="mwl.toggleClass('#category3_items', 'show');mwl.toggleClass('#category3_items', 'hide');mwl.toggleClass('#category3_closed_arrow', 'hide');mwl.toggleClass('#category3_closed_arrow', 'show');mwl.toggleClass('#category3_open_arrow', 'hide');mwl.toggleClass('#category3_open_arrow', 'show');">
+												<table class="fill" cellpadding="0" cellspacing="0"
+													summary="Category Table">
+													<tr>
+														<td class="category_left"><div>Category 3 +
+																icon</div></td>
+														<td class="category_right"><span
+															id="category3_arrows"> <img class="show"
+																id="category3_closed_arrow" src="img/button_right.png"
+																alt="show" /> <img class="hide"
+																id="category3_open_arrow" src="img/button_down.png"
+																alt="hide" /> </span>
+														</td>
+													</tr>
+												</table>
+											</div>
+
+											<div id="category3_items" class="hide item_container">
+												<div class="picture_list_item" onclick="">
+													<img src="img/smile.png" height="20" width="20" alt="smile"
+														class="picture_list_item_image"></img><span
+														class="valignMdl">Item 3-1</span>
+												</div>
+												<div class="picture_list_item" onclick="">
+													<img src="img/smile.png" height="20" width="20" alt="smile"
+														class="picture_list_item_image"></img><span
+														class="valignMdl">Item 3-2</span>
+												</div>
+												<div class="picture_list_item" onclick="">
+													<img src="img/smile.png" height="20" width="20" alt="smile"
+														class="picture_list_item_image"></img><span
+														class="valignMdl">Item 3-3</span>
+												</div>
+												<div class="picture_list_item" onclick="">
+													<img src="img/smile.png" height="20" width="20" alt="smile"
+														class="picture_list_item_image"></img><span
+														class="valignMdl">Item 3-4</span>
+												</div>
+											</div>
+										</div>
+
+										<div id="category4" class="category">
+											<div id="category4_header" class="category_header"
+												onclick="mwl.toggleClass('#category4_items', 'show');mwl.toggleClass('#category4_items', 'hide');mwl.toggleClass('#category4_closed_arrow', 'hide');mwl.toggleClass('#category4_closed_arrow', 'show');mwl.toggleClass('#category4_open_arrow', 'hide');mwl.toggleClass('#category4_open_arrow', 'show');">
+												<table class="fill" cellpadding="0" cellspacing="0"
+													summary="Category Table">
+													<tr>
+														<td class="category_left"><div>Category 4 +
+																icon</div>
+														</td>
+														<td class="category_right"><span
+															id="category4_arrows"><img class="show"
+																id="category4_closed_arrow" src="img/button_right.png"
+																alt="show" /> <img class="hide"
+																id="category4_open_arrow" src="img/button_down.png"
+																alt="hide" /> </span>
+														</td>
+													</tr>
+												</table>
+											</div>
+
+											<div id="category4_items" class="hide item_container">
+												<div class="picture_list_item" onclick="">
+													<img src="img/smile.png" height="20" width="20" alt="smile"
+														class="picture_list_item_image"></img><span
+														class="valignMdl">Item 4-1</span>
+												</div>
+												<div class="picture_list_item" onclick="">
+													<img src="img/smile.png" height="20" width="20" alt="smile"
+														class="picture_list_item_image"></img><span
+														class="valignMdl">Item 4-2</span>
+												</div>
+												<div class="picture_list_item" onclick="">
+													<img src="img/smile.png" height="20" width="20" alt="smile"
+														class="picture_list_item_image"></img><span
+														class="valignMdl">Item 4-3</span>
+												</div>
+												<div class="picture_list_item" onclick="">
+													<img src="img/smile.png" height="20" width="20" alt="smile"
+														class="picture_list_item_image"></img><span
+														class="valignMdl">Item 4-4</span>
+												</div>
+											</div>
+										</div>
+										
+										<div id="category5" class="category">
+											<div id="category5header" class="category_header"
+												onclick="
+													mwl.toggleClass('#category5_items', 'show');
+													mwl.toggleClass('#category5_items', 'hide');
+													mwl.toggleClass('#category5_closed_arrow', 'hide');
+													mwl.toggleClass('#category5_closed_arrow', 'show');
+													mwl.toggleClass('#category5_open_arrow', 'hide');
+													mwl.toggleClass('#category5_open_arrow', 'show');
+												">
+												<table class="fill" cellpadding="0" cellspacing="0" summary="Category Table">
+													<tr>
+														<td class="category_left"><div>Category 5 fancy</div></td>
+														<td class="category_right">
+															<span id="category5_arrows">
+																<img class="show" id="category5_closed_arrow" src="img/button_right.png" alt="show" />
+																<img class="hide" id="category5_open_arrow" src="img/button_down.png" alt="hide" />
+															</span>
+														</td>
+													</tr>
+												</table>
+											</div>
+
+											<div id="category5_items" class="hide item_container">
+												<!-- Fancy list items -->
+												<table class="picture_list_item" cellspacing="0" cellpadding="0" onclick="">
+													<tr>
+														<td><img src="img/smile.png" height="20" width="20" alt="smile"></img></td>
+														<td class="fancy_list_item" >
+															<table class="fill" cellspacing="4" cellpadding="0">
+																<tr><td>Title 5-1</td><td class="alignR">12:34</td></tr>
+																<tr><td>Content 5-1</td><td class="alignR"><img src="img/red_dot.png" /></td></tr>
+															</table>
+														</td>
+													</tr>
+												</table>
+												<table class="picture_list_item" cellspacing="0" cellpadding="0" onclick="">
+													<tr>
+														<td><img src="img/smile.png" height="20" width="20" alt="smile"></img></td>
+														<td class="fancy_list_item">
+															<table class="fill" cellspacing="4" cellpadding="0">
+																<tr><td>Title 5-2</td><td class="alignR">12:35</td></tr>
+																<tr><td>Content 5-2</td><td class="alignR"><img src="img/red_dot.png" /></td></tr>
+															</table>
+														</td>
+													</tr>
+												</table>
+												<table class="picture_list_item" cellspacing="0" cellpadding="0" onclick="">
+													<tr>
+														<td><img src="img/smile.png" height="20" width="20" alt="smile"></img></td>
+														<td class="fancy_list_item">
+															<table class="fill" cellspacing="4" cellpadding="0">
+																<tr><td>Title 5-3</td><td class="alignR">12:36</td></tr>
+																<tr><td>Content 5-3</td><td class="alignR"><img src="img/green_dot.png" /></td></tr>
+															</table>
+														</td>
+													</tr>
+												</table>
+												<table class="picture_list_item" cellspacing="0" cellpadding="0" onclick="">
+													<tr>
+														<td><img src="img/smile.png" height="20" width="20" alt="smile"></img></td>
+														<td class="fancy_list_item">
+															<table class="fill" cellspacing="4" cellpadding="0">
+																<tr><td>Title 5-4</td><td class="alignR">12:37</td></tr>
+																<tr><td>Content 5-4</td><td class="alignR"><img src="img/yellow_dot.png" /></td></tr>
+															</table>
+														</td>
+													</tr>
+												</table>
+											</div>
+										</div>
+										
+										<div id="category6" class="category">
+											<div id="category6header" class="category_header"
+												onclick="
+													mwl.toggleClass('#category6_items', 'show');
+													mwl.toggleClass('#category6_items', 'hide');
+													mwl.toggleClass('#category6_closed_arrow', 'hide');
+													mwl.toggleClass('#category6_closed_arrow', 'show');
+													mwl.toggleClass('#category6_open_arrow', 'hide');
+													mwl.toggleClass('#category6_open_arrow', 'show');
+												">
+												<table class="fill" cellpadding="0" cellspacing="0" summary="Category Table">
+													<tr>
+														<td class="category_left"><div>Category 6 fancy</div></td>
+														<td class="category_right">
+															<span id="category6_arrows">
+																<img class="show" id="category6_closed_arrow" src="img/button_right.png" alt="show" />
+																<img class="hide" id="category6_open_arrow" src="img/button_down.png" alt="hide" />
+															</span>
+														</td>
+													</tr>
+												</table>
+											</div>
+
+											<div id="category6_items" class="hide item_container">
+												<!-- Fancy list items -->
+												<table class="picture_list_item" cellspacing="0" cellpadding="0" onclick="">
+													<tr>
+														<td><img src="img/smile.png" height="20" width="20" alt="smile"></img></td>
+														<td class="fancy_list_item" >
+															<table class="fill" cellspacing="4" cellpadding="0">
+																<tr><td>Title 6-1</td><td class="alignR">12:34</td></tr>
+																<tr><td>Content 6-1</td><td class="alignR"><img src="img/red_dot.png" /></td></tr>
+															</table>
+														</td>
+													</tr>
+												</table>
+												<table class="picture_list_item" cellspacing="0" cellpadding="0" onclick="">
+													<tr>
+														<td><img src="img/smile.png" height="20" width="20" alt="smile"></img></td>
+														<td class="fancy_list_item">
+															<table class="fill" cellspacing="4" cellpadding="0">
+																<tr><td>Title 6-2</td><td class="alignR">12:35</td></tr>
+																<tr><td>Content 6-2</td><td class="alignR"><img src="img/red_dot.png" /></td></tr>
+															</table>
+														</td>
+													</tr>
+												</table>
+												<table class="picture_list_item" cellspacing="0" cellpadding="0" onclick="">
+													<tr>
+														<td><img src="img/smile.png" height="20" width="20" alt="smile"></img></td>
+														<td class="fancy_list_item">
+															<table class="fill" cellspacing="4" cellpadding="0">
+																<tr><td>Title 6-3</td><td class="alignR">12:36</td></tr>
+																<tr><td>Content 6-3</td><td class="alignR"><img src="img/green_dot.png" /></td></tr>
+															</table>
+														</td>
+													</tr>
+												</table>
+												<table class="picture_list_item" cellspacing="0" cellpadding="0" onclick="">
+													<tr>
+														<td><img src="img/smile.png" height="20" width="20" alt="smile"></img></td>
+														<td class="fancy_list_item">
+															<table class="fill" cellspacing="4" cellpadding="0">
+																<tr><td>Title 6-4</td><td class="alignR">12:37</td></tr>
+																<tr><td>Content 6-4</td><td class="alignR"><img src="img/yellow_dot.png" /></td></tr>
+															</table>
+														</td>
+													</tr>
+												</table>
+											</div>
+										</div>
+									</div>
+									<!-- End Category tab content -->
+
+								</div>
+							</div>
+							<!--End Lists mini app-->
+
+
+							<!--Tabs mini app-->
+							<div id="tabs" class="slider_section hide">
+								<div id="tab_views" class="show">
+									<div id="tabs_2tabs_view" class="show">
+
+										<table id="text_tabs2_tab_bar_table" cellpadding="0"
+											cellspacing="0" class="tab_table show" summary="Tab Table">
+											<!-- Text tab bar -->
+											<tr id="text_tabs2_tab_bar">
+												<td id="text_tabs_tab_2_1"
+													class="tab tab_2_tabs tab_selected"
+													onclick="mwl.setGroupTarget('#tabs_2tabs_control_content', '#tabs_tab_2_1_content', 'show', 'hide'); mwl.setGroupTarget('#text_tabs2_tab_bar', '#text_tabs_tab_2_1', 'tab_selected', 'tab_not_selected');"><span>TAB
+														1</span>
+												</td>
+												<td id="text_tabs_tab_2_2"
+													class="tab tab_2_tabs_right tab_not_selected"
+													onclick="mwl.setGroupTarget('#tabs_2tabs_control_content', '#tabs_tab_2_2_content', 'show', 'hide'); mwl.setGroupTarget('#text_tabs2_tab_bar', '#text_tabs_tab_2_2', 'tab_selected', 'tab_not_selected');">TAB
+													2</td>
+											</tr>
+											<!-- End text tab bar -->
+										</table>
+
+										<table id="icon_tabs2_tab_bar_table" cellpadding="0"
+											cellspacing="0" class="fill hide"
+											summary="Tab Table">
+											<tr id="icon_tabs2_tab_bar">
+												<td id="icon_tabs_tab_2_1"
+													class="tab tab_2_tabs tab_selected"
+													onclick="
+														mwl.setGroupTarget('#tabs_2tabs_control_content', '#tabs_tab_2_1_content', 'show', 'hide');
+														mwl.setGroupTarget('#icon_tabs2_tab_bar', '#icon_tabs_tab_2_1', 'tab_selected', 'tab_not_selected');
+													">
+													<img src="img/smile.png" alt="smile" />
+												</td>
+												<td id="icon_tabs_tab_2_2"
+													class="tab tab_2_tabs_right tab_not_selected"
+													onclick="
+														mwl.setGroupTarget('#tabs_2tabs_control_content', '#tabs_tab_2_2_content', 'show', 'hide');
+														mwl.setGroupTarget('#icon_tabs2_tab_bar', '#icon_tabs_tab_2_2', 'tab_selected', 'tab_not_selected');
+													">
+													<img src="img/smile.png" alt="smile" />
+												</td>
+											</tr>
+										</table>
+
+										<!-- End Tab Control -->
+
+										<!-- Tab Control Content -->
+										<div id="tabs_2tabs_control_content">
+											<div id="tabs_tab_2_1_content" class="show">
+												<div class="list_section_header">tab 1 content</div>
+											</div>
+											<div id="tabs_tab_2_2_content" class="hide">
+												<div class="list_section_header">tab 2 content</div>
+											</div>
+											<div class="information_text_block">Pick tabbar variant</div>
+										</div>
+
+										<input id="text_tabs2_button"
+											class="button tab_view_selection_button show" type="button"
+											name="button1" value="2 tabs - text"
+											onclick="
+												mwl.setGroupTarget('#tabs', '#tabs_selection_view', 'show', 'hide');
+												mwl.setGroupTarget('#navigateToggle','#tabs_backButton', 'show', 'hide');
+											" />
+										<input id="icon_tabs2_button"
+											class="button tab_view_selection_button hide" type="button"
+											name="button1" value="2 tabs - icons"
+											onclick="
+												mwl.setGroupTarget('#tabs', '#tabs_selection_view', 'show', 'hide');
+												mwl.setGroupTarget('#navigateToggle','#tabs_backButton', 'show', 'hide');
+											" />
+									</div>
+
+									<div id="tabs_3tabs_view" class="hide">
+
+										<table id="text_tabs3_tab_bar_table" cellpadding="0"
+											cellspacing="0" class="fill show" summary="Tab Table">
+											<!-- Text tab bar -->
+											<tr id="text_tabs3_tab_bar">
+												<td id="text_tabs_tab_3_1"
+													class="tab tab_3_tabs tab_selected"
+													onclick="
+														mwl.setGroupTarget('#tabs_3tabs_control_content', '#tabs_tab_3_1_content', 'show', 'hide');
+														mwl.setGroupTarget('#text_tabs3_tab_bar', '#text_tabs_tab_3_1', 'tab_selected', 'tab_not_selected');
+													">TAB 1</td>
+												<td id="text_tabs_tab_3_2"
+													class="tab tab_3_tabs tab_not_selected"
+													onclick="
+														mwl.setGroupTarget('#tabs_3tabs_control_content', '#tabs_tab_3_2_content', 'show', 'hide');
+														mwl.setGroupTarget('#text_tabs3_tab_bar', '#text_tabs_tab_3_2', 'tab_selected', 'tab_not_selected');
+													">TAB 2</td>
+												<td id="text_tabs_tab_3_3"
+													class="tab tab_3_tabs_right tab_not_selected"
+													onclick="
+														mwl.setGroupTarget('#tabs_3tabs_control_content', '#tabs_tab_3_3_content', 'show', 'hide');
+														mwl.setGroupTarget('#text_tabs3_tab_bar', '#text_tabs_tab_3_3', 'tab_selected', 'tab_not_selected');
+													">TAB 3</td>
+											</tr>
+											<!-- End text tab bar -->
+										</table>
+
+										<table id="icon_tabs3_tab_bar_table" cellpadding="0"
+											cellspacing="0" class="fill hide"
+											summary="Tab Table">
+											<!-- Icon tab bar -->
+											<tr id="icon_tabs3_tab_bar">
+												<td id="icon_tabs_tab_3_1"
+													class="tab tab_3_tabs tab_selected"
+													onclick="
+														mwl.setGroupTarget('#tabs_3tabs_control_content', '#tabs_tab_3_1_content', 'show', 'hide');
+														mwl.setGroupTarget('#icon_tabs3_tab_bar', '#icon_tabs_tab_3_1', 'tab_selected', 'tab_not_selected');
+													">
+													<img src="img/smile.png" alt="smile" />
+												</td>
+												<td id="icon_tabs_tab_3_2"
+													class="tab tab_3_tabs tab_not_selected"
+													onclick="
+														mwl.setGroupTarget('#tabs_3tabs_control_content', '#tabs_tab_3_2_content', 'show', 'hide');
+														mwl.setGroupTarget('#icon_tabs3_tab_bar', '#icon_tabs_tab_3_2', 'tab_selected', 'tab_not_selected');
+														">
+													<img src="img/smile.png" alt="smile" />
+												</td>
+												<td id="icon_tabs_tab_3_3"
+													class="tab tab_3_tabs_right tab_not_selected"
+													onclick="
+														mwl.setGroupTarget('#tabs_3tabs_control_content', '#tabs_tab_3_3_content', 'show', 'hide');
+														mwl.setGroupTarget('#icon_tabs3_tab_bar', '#icon_tabs_tab_3_3', 'tab_selected', 'tab_not_selected');
+													">
+													<img src="img/smile.png" alt="smile" />
+												</td>
+											</tr>
+											<!-- End icon tab bar -->
+										</table>
+										<!-- End Tab Control -->
+
+										<!-- Tab Control Content -->
+										<div id="tabs_3tabs_control_content">
+											<div id="tabs_tab_3_1_content" class="show">
+												<div class="list_section_header">tab 1 content</div>
+											</div>
+											<div id="tabs_tab_3_2_content" class="hide">
+												<div class="list_section_header">tab 2 content</div>
+											</div>
+											<div id="tabs_tab_3_3_content" class="hide">
+												<div class="list_section_header">tab 3 content</div>
+											</div>
+											<div class="information_text_block">Pick tabbar variant</div>
+										</div>
+
+										<input id="text_tabs3_button"
+											class="button tab_view_selection_button show" type="button"
+											name="button1" value="3 tabs - text"
+											onclick="
+												mwl.setGroupTarget('#tabs', '#tabs_selection_view', 'show', 'hide');
+												mwl.setGroupTarget('#navigateToggle','#tabs_backButton', 'show', 'hide');
+											" />
+										<input id="icon_tabs3_button"
+											class="button tab_view_selection_button hide" type="button"
+											name="button1" value="3 tabs - icons"
+											onclick="
+												mwl.setGroupTarget('#tabs', '#tabs_selection_view', 'show', 'hide');
+												mwl.setGroupTarget('#navigateToggle','#tabs_backButton', 'show', 'hide');
+											" />
+									</div>
+
+									<div id="tabs_4tabs_view" class="hide">
+
+										<table id="text_tabs4_tab_bar_table" cellpadding="0"
+											cellspacing="0" class="fill show"
+											summary="Tab Table">
+											<!-- Text tab bar -->
+											<tr id="text_tabs4_tab_bar">
+												<td id="text_tabs_tab_4_1"
+													class="tab tab_4_tabs tab_selected"
+													onclick="
+														mwl.setGroupTarget('#tabs_4tabs_control_content', '#tabs_tab_4_1_content', 'show', 'hide');
+														mwl.setGroupTarget('#text_tabs4_tab_bar', '#text_tabs_tab_4_1', 'tab_selected', 'tab_not_selected');
+													">
+													<span>TAB 1</span>
+												</td>
+												<td id="text_tabs_tab_4_2"
+													class="tab tab_4_tabs tab_not_selected"
+													onclick="
+														mwl.setGroupTarget('#tabs_4tabs_control_content', '#tabs_tab_4_2_content', 'show', 'hide');
+														mwl.setGroupTarget('#text_tabs4_tab_bar', '#text_tabs_tab_4_2', 'tab_selected', 'tab_not_selected');
+													">TAB 2</td>
+												<td id="text_tabs_tab_4_3"
+													class="tab tab_4_tabs tab_not_selected"
+													onclick="
+														mwl.setGroupTarget('#tabs_4tabs_control_content', '#tabs_tab_4_3_content', 'show', 'hide');
+														mwl.setGroupTarget('#text_tabs4_tab_bar', '#text_tabs_tab_4_3', 'tab_selected', 'tab_not_selected');
+													">TAB 3</td>
+												<td id="text_tabs_tab_4_4"
+													class="tab tab_4_tabs_right tab_not_selected"
+													onclick="
+														mwl.setGroupTarget('#tabs_4tabs_control_content', '#tabs_tab_4_4_content', 'show', 'hide');
+														mwl.setGroupTarget('#text_tabs4_tab_bar', '#text_tabs_tab_4_4', 'tab_selected', 'tab_not_selected');
+													">TAB 4</td>
+											</tr>
+											<!-- End text tab bar -->
+										</table>
+
+										<table id="icon_tabs4_tab_bar_table" cellpadding="0"
+											cellspacing="0" class="fill hide"
+											summary="Tab Table">
+											<!-- Icon tab bar -->
+											<tr id="icon_tabs4_tab_bar">
+												<td id="icon_tabs_tab_4_1"
+													class="tab tab_4_tabs tab_selected"
+													onclick="
+														mwl.setGroupTarget('#tabs_4tabs_control_content', '#tabs_tab_4_1_content', 'show', 'hide');
+														mwl.setGroupTarget('#icon_tabs4_tab_bar', '#icon_tabs_tab_4_1', 'tab_selected', 'tab_not_selected');
+													">
+													<img src="img/smile.png" alt="smile" />
+												</td>
+												<td id="icon_tabs_tab_4_2"
+													class="tab tab_4_tabs tab_not_selected"
+													onclick="
+														mwl.setGroupTarget('#tabs_4tabs_control_content', '#tabs_tab_4_2_content', 'show', 'hide');
+														mwl.setGroupTarget('#icon_tabs4_tab_bar', '#icon_tabs_tab_4_2', 'tab_selected', 'tab_not_selected');
+													">
+													<img src="img/smile.png" alt="smile" />
+												</td>
+												<td id="icon_tabs_tab_4_3"
+													class="tab tab_4_tabs tab_not_selected"
+													onclick="
+														mwl.setGroupTarget('#tabs_4tabs_control_content', '#tabs_tab_4_3_content', 'show', 'hide');
+														mwl.setGroupTarget('#icon_tabs4_tab_bar', '#icon_tabs_tab_4_3', 'tab_selected', 'tab_not_selected');
+													">
+													<img src="img/smile.png" alt="smile" />
+												</td>
+												<td id="icon_tabs_tab_4_4"
+													class="tab tab_4_tabs_right tab_not_selected"
+													onclick="
+														mwl.setGroupTarget('#tabs_4tabs_control_content', '#tabs_tab_4_4_content', 'show', 'hide');
+														mwl.setGroupTarget('#icon_tabs4_tab_bar', '#icon_tabs_tab_4_4', 'tab_selected', 'tab_not_selected');
+													">
+													<img src="img/smile.png" alt="smile" />
+												</td>
+											</tr>
+											<!-- End icon tab bar -->
+										</table>
+										<!-- End Tab Control -->
+
+										<!-- Tab Control Content -->
+										<div id="tabs_4tabs_control_content">
+											<div id="tabs_tab_4_1_content" class="show">
+												<div class="list_section_header">tab 1 content</div>
+											</div>
+											<div id="tabs_tab_4_2_content" class="hide">
+												<div class="list_section_header">tab 2 content</div>
+											</div>
+											<div id="tabs_tab_4_3_content" class="hide">
+												<div class="list_section_header">tab 3 content</div>
+											</div>
+											<div id="tabs_tab_4_4_content" class="hide">
+												<div class="list_section_header">tab 4 content</div>
+											</div>
+											<div class="information_text_block">Pick tabbar variant</div>
+										</div>
+
+										<input id="text_tabs4_button"
+											class="button tab_view_selection_button show" type="button"
+											name="button1" value="4 tabs - text"
+											onclick="
+												mwl.setGroupTarget('#tabs', '#tabs_selection_view', 'show', 'hide');
+												mwl.setGroupTarget('#navigateToggle','#tabs_backButton', 'show', 'hide');
+											" />
+										<input id="icon_tabs4_button"
+											class="button tab_view_selection_button hide" type="button"
+											name="button1" value="4 tabs - icons"
+											onclick="
+												mwl.setGroupTarget('#tabs', '#tabs_selection_view', 'show', 'hide');
+												mwl.setGroupTarget('#navigateToggle','#tabs_backButton', 'show', 'hide');
+											" />
+									</div>
+								</div>
+
+								<div id="tabs_selection_view" class="hide">
+									<div class="list_section_header">select example</div>
+									<div class="text_list_item"
+										onclick="
+											mwl.switchClass('#text_tabs2_tab_bar_table', 'show', 'hide');
+											mwl.switchClass('#icon_tabs2_tab_bar_table', 'hide', 'show');
+											mwl.switchClass('#text_tabs2_button', 'show', 'hide');
+											mwl.switchClass('#icon_tabs2_button', 'hide', 'show');
+											mwl.setGroupTarget('#tabs', '#tab_views', 'show', 'hide'); 
+											mwl.setGroupTarget('#tab_views', '#tabs_2tabs_view', 'show', 'hide');
+											mwl.setGroupTarget('#navigateToggle','#miniappGoHomeToggle', 'show', 'hide');">
+										2 tabs - icons
+									</div>
+									<div class="text_list_item"
+										onclick="
+											mwl.switchClass('#text_tabs3_tab_bar_table', 'show', 'hide');
+											mwl.switchClass('#icon_tabs3_tab_bar_table', 'hide', 'show');
+											mwl.switchClass('#text_tabs3_button', 'show', 'hide');
+											mwl.switchClass('#icon_tabs3_button', 'hide', 'show');
+											mwl.setGroupTarget('#tabs', '#tab_views', 'show', 'hide'); 
+											mwl.setGroupTarget('#tab_views', '#tabs_3tabs_view', 'show', 'hide');
+											mwl.setGroupTarget('#navigateToggle','#miniappGoHomeToggle', 'show', 'hide');">
+										3 tabs - icons
+									</div>
+									<div class="text_list_item"
+										onclick="
+											mwl.switchClass('#text_tabs4_tab_bar_table', 'show', 'hide');
+											mwl.switchClass('#icon_tabs4_tab_bar_table', 'hide', 'show');
+											mwl.switchClass('#text_tabs4_button', 'show', 'hide');
+											mwl.switchClass('#icon_tabs4_button', 'hide', 'show');
+											mwl.setGroupTarget('#tabs', '#tab_views', 'show', 'hide'); 
+											mwl.setGroupTarget('#tab_views', '#tabs_4tabs_view', 'show', 'hide');
+											mwl.setGroupTarget('#navigateToggle','#miniappGoHomeToggle', 'show', 'hide');">
+										4 tabs - icons
+									</div>
+									<div class="text_list_item"
+										onclick="
+											mwl.switchClass('#icon_tabs2_tab_bar_table', 'show', 'hide');
+											mwl.switchClass('#text_tabs2_tab_bar_table', 'hide', 'show');
+											mwl.switchClass('#icon_tabs2_button', 'show', 'hide');
+											mwl.switchClass('#text_tabs2_button', 'hide', 'show');
+											mwl.setGroupTarget('#tabs', '#tab_views', 'show', 'hide'); 
+											mwl.setGroupTarget('#tab_views', '#tabs_2tabs_view', 'show', 'hide');
+											mwl.setGroupTarget('#navigateToggle','#miniappGoHomeToggle', 'show', 'hide');">
+										2 tabs - text
+									</div>
+									<div class="text_list_item"
+										onclick="
+											mwl.switchClass('#icon_tabs3_tab_bar_table', 'show', 'hide');
+											mwl.switchClass('#text_tabs3_tab_bar_table', 'hide', 'show');
+											mwl.switchClass('#icon_tabs3_button', 'show', 'hide');
+											mwl.switchClass('#text_tabs3_button', 'hide', 'show');
+											mwl.setGroupTarget('#tabs', '#tab_views', 'show', 'hide'); 
+											mwl.setGroupTarget('#tab_views', '#tabs_3tabs_view', 'show', 'hide');
+											mwl.setGroupTarget('#navigateToggle','#miniappGoHomeToggle', 'show', 'hide');">
+										3 tabs - text
+									</div>
+									<div class="text_list_item"
+										onclick="
+											mwl.switchClass('#icon_tabs4_tab_bar_table', 'show', 'hide');
+											mwl.switchClass('#text_tabs4_tab_bar_table', 'hide', 'show');
+											mwl.switchClass('#icon_tabs4_button', 'show', 'hide');
+											mwl.switchClass('#text_tabs4_button', 'hide', 'show');
+											mwl.setGroupTarget('#tabs', '#tab_views', 'show', 'hide'); 
+											mwl.setGroupTarget('#tab_views', '#tabs_4tabs_view', 'show', 'hide');
+											mwl.setGroupTarget('#navigateToggle','#miniappGoHomeToggle', 'show', 'hide');">
+										4 tabs - text
+									</div>
+								</div>
+
+							</div>
+							<!--End Tabs mini app-->
+
+
+							<!--TextFields mini app-->
+							<div id="textFields" class="slider_section hide">
+								<div class="text_field_item">
+									<div>Label</div>
+									<div class="text_entry_with_label">
+										<table class="fill" cellpadding="0" cellspacing="0"
+											summary="Button Table">
+											<tr>
+												<td class="text_input_cell">
+													<input type="text" name="entry2" />
+												</td>
+												<td><span>km</span>
+												</td>
+											</tr>
+										</table>
+									</div>
+								</div>
+								<div class="text_field_item">
+									<div>Icon button</div>
+									<div class="text_entry_with_icon">
+										<table class="fill" cellpadding="0" cellspacing="0"
+											summary="Button Table">
+											<tr>
+												<td class="text_input_cell">
+													<input type="text" name="entry2" />
+												</td>
+												<td onclick="">
+													<img src="img/header_search.png" height="40" width="43" alt="Home" />
+												</td>
+											</tr>
+										</table>
+									</div>
+								</div>
+								<div class="text_field_item">
+									<div>Text button</div>
+									<div class="text_entry_with_button">
+										<table class="fill" cellpadding="0" cellspacing="0"
+											summary="Button Table">
+											<tr>
+												<td class="text_input_with_button_cell">
+													<input type="text" name="entry2" />
+												</td>
+												<td class="alignR">
+													<input class="button text_entry_button" 
+													type="button" name="button1" value="UPDATE" />
+												</td>
+											</tr>
+										</table>
+									</div>
+								</div>
+							</div>
+							<!--End TextFields mini app-->
+
+
+							<!--CarouselInItem mini app-->
+							<div id="carouselInItem" class="slider_section hide">
+								<div>
+									<div class="list_section_header">Carousel, in-item</div>
+									<table class="fill carousel_in_item_height"
+										cellpadding="0" cellspacing="0">
+										<tr>
+											<td class="alignL">
+												<input type="button" class="previous_button_high"
+													onclick="
+														mwl.iterateClass('#carousel_in_item_images', 'carousel_in_item_img', 'prev', 5, false, null);
+													">
+												</input>
+											</td>
+											<td class="alignC" width="180">
+												<div class="carousel_in_item_container">
+													<div class="strip_carousel_in_item carousel_in_item_img0"
+														id="carousel_in_item_images">
+														<table cellspacing="0" cellpadding="0" border="0"
+															summary="Images Table" class="carousel_in_item_height">
+															<tr>
+																<td id="t2"><img class="carousel_in_item_image"
+																	src="img/img1.jpg" alt="image1" />
+																</td>
+																<td id="t1"><img class="carousel_in_item_image"
+																	src="img/img2.jpg" alt="image2" />
+																</td>
+																<td id="t3"><img class="carousel_in_item_image"
+																	src="img/img3.jpg" alt="image3" />
+																</td>
+																<td id="t4"><img class="carousel_in_item_image"
+																	src="img/img4.jpg" alt="image4" />
+																</td>
+																<td id="t5"><img class="carousel_in_item_image"
+																	src="img/img5.jpg" alt="image5" />
+																</td>
+															</tr>
+														</table>
+													</div>
+												</div>
+											</td>
+											<td class="alignR">
+												<input type="button" class="next_button_high"
+													onclick="
+														mwl.iterateClass('#carousel_in_item_images', 'carousel_in_item_img', 'next', 5, false, null);
+													">
+												</input>
+											</td>
+										</tr>
+									</table>
+								</div>
+								<div class="text_block">Lorem ipsum dolor sit amet,
+									consectetur adipisicing elit, sed do eiusmod tempor incididunt
+									ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+									nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+									commodo consequat.</div>
+							</div>
+							<!--End CarouselInItem mini app-->
+
+
+							<!--Carousel mini app-->
+							<div id="carouselItem" class="slider_section hide">
+								<div id="slideshow_buttons_bar">
+									<div id="non_sliding_buttons_bar" class="carousel_buttons_bar show">
+										<input type="button" class="previous_button"
+											onclick="mwl.iterateClass('#carousel_images', 'carousel_img', 'prev', 5, true, null);" />
+										<input type="button" class="play_button"
+											onclick="
+												mwl.setGroupTarget('#slideshow_buttons_bar', '#sliding_buttons_bar', 'show', 'hide');
+												mwl.iterateClass('#carousel_images', 'carousel_img', 'next', 5, false, null);
+										    	mwl.timer('timer1', 2000, 0, 
+										    		'mwl.iterateClass(\'#carousel_images\', \'carousel_img\', \'next\', 5, true, null )');
+											" />
+										<input type="button" class="next_button"
+											onclick="mwl.iterateClass('#carousel_images', 'carousel_img', 'next', 5, true, null);" />
+									</div>
+									<div id="sliding_buttons_bar" class="carousel_buttons_bar hide">
+										<input type="button" class="previous_button"
+											onclick="
+												mwl.stopTimer('timer1');
+												mwl.setGroupTarget('#slideshow_buttons_bar', '#non_sliding_buttons_bar', 'show', 'hide'); 
+												mwl.iterateClass('#carousel_images', 'carousel_img', 'prev', 5, false, null);
+											" />
+										<input type="button" class="pause_button"
+											onclick="
+												mwl.stopTimer('timer1');
+												mwl.setGroupTarget('#slideshow_buttons_bar', '#non_sliding_buttons_bar', 'show', 'hide')
+											" />
+										<input type="button" class="next_button"
+											onclick="
+												mwl.stopTimer('timer1'); 
+												mwl.setGroupTarget('#slideshow_buttons_bar', '#non_sliding_buttons_bar', 'show', 'hide'); 
+												mwl.iterateClass('#carousel_images', 'carousel_img', 'next', 5, false, null);
+											" />
+									</div>
+								</div>
+								<div class="carousel_container">
+									<div class="strip_carousel carousel_img0" id="carousel_images">
+										<table cellspacing="0" cellpadding="0" border="0"
+											summary="Images Table" class="carousel_in_item_height">
+											<tr>
+												<td><img class="carousel_image" src="img/img1.jpg" alt="image1" /></td>
+												<td><img class="carousel_image" src="img/img2.jpg" alt="image2" /></td>
+												<td><img class="carousel_image" src="img/img3.jpg" alt="image3" /></td>
+												<td><img class="carousel_image" src="img/img4.jpg" alt="image4" /></td>
+												<td><img class="carousel_image" src="img/img5.jpg" alt="image5" /></td>
+											</tr>
+										</table>
+									</div>
+								</div>
+							</div>
+							<!--End Carousel mini app-->
+
+
+							<!--DynamicLooping mini app-->
+							<div id="dynamicLooping" class="slider_section hide">
+								<div class="list_section_header">Dynamic looping</div>
+
+								<!-- DynamicLooping Control Content -->
+								<div id="dynamicLooping_content">
+									<div id="dynLoop_content_1" class="show">
+										<div class="text_block">Press one button.</div>
+										<table class="fill" cellpadding="0" cellspacing="0">
+											<tr>
+												<td class="alignR">
+													<input type="button" name="rock_button" class="button button_3_in_row_width" value="Rock"
+														onclick="
+															rockPaperScissors(0);" />
+												</td>
+												<td class="alignC">
+													<input type="button" name="paper_button" class="button button_3_in_row_width" value="Paper"
+														onclick="
+															rockPaperScissors(1);" />
+												</td>
+												<td class="alignL">
+													<input type="button" name="scissors_button" class="button button_3_in_row_width" value="Scissors"
+														onclick="
+															rockPaperScissors(2);" />
+												</td>
+											</tr>
+										</table>
+									</div>
+
+									<div id="dynLoop_content_2" class="hide">
+										<div class="checkable_list_item">
+											<table class="fill" cellpadding="0" cellspacing="0">
+												<tr>
+													<td class="list_item_left_align">You chose</td>
+													<td class="list_item_right_align">
+														<img id="player_img" height="33" width="30" alt="My choice" />
+													</td>
+												</tr>
+											</table>
+										</div>
+										<div class="checkable_list_item">
+											<table class="fill" cellpadding="0" cellspacing="0">
+												<tr>
+													<td class="list_item_left_align">Computer chose</td>
+													<td class="list_item_right_align">
+														<img id="opponent_img" height="33" width="30" alt="Computers choice" />
+													</td>
+												</tr>
+											</table>
+										</div>
+										<div class="text_block">
+											<table class="fill" cellpadding="0" cellspacing="0">
+												<tr>
+													<td id="game_over_txt" class="list_item_left_align"></td>
+												</tr>
+											</table>
+										</div>
+										<div class="fill">
+											<input type="button" name="nextGameBtn" class="next_game_button" value="Next game"
+											 onclick="
+												 mwl.setGroupTarget('#dynamicLooping_content', '#dynLoop_content_1', 'show', 'hide');
+											" />
+										</div>
+									</div>
+								</div>
+							</div>
+							<!--End DynamicLooping mini app-->
+
+
+							<!--ExpandableList mini app-->
+							<div id="expandableList" class="slider_section hide">
+								<div id="expandable_category1" class="category">
+									<div id="expandable_category1_header" class="category_header"
+										onclick="
+										mwl.toggleClass('#expandable_category1_items', 'show');
+										mwl.toggleClass('#expandable_category1_items', 'hide');
+										mwl.toggleClass('#expandable_category1_closed_arrow', 'hide');
+										mwl.toggleClass('#expandable_category1_closed_arrow', 'show');
+										mwl.toggleClass('#expandable_category1_open_arrow', 'hide');
+										mwl.toggleClass('#expandable_category1_open_arrow', 'show');">
+
+										<table class="fill" cellpadding="0" cellspacing="0"
+											summary="Category Table">
+											<tr>
+												<td class="category_left"><div>Category 1</div></td>
+												<td class="category_right"><span><img
+														class="show" id="expandable_category1_closed_arrow"
+														src="img/button_right.png" alt="show" /> <img
+														class="hide" id="expandable_category1_open_arrow"
+														src="img/button_down.png" alt="hide" /> </span>
+												</td>
+											</tr>
+										</table>
+									</div>
+
+									<div id="expandable_category1_items"
+										class="hide item_container">
+										<div class="text_list_item" onclick="">Item 1-1</div>
+										<div class="text_list_item" onclick="">Item 1-2</div>
+										<div class="text_list_item" onclick="">Item 1-3</div>
+										<div class="text_list_item" onclick="">Item 1-4</div>
+									</div>
+								</div>
+
+								<div id="expandable_category2" class="category">
+									<div id="expandable_category2_header" class="category_header"
+										onclick="
+										mwl.toggleClass('#expandable_category2_items', 'show');
+										mwl.toggleClass('#expandable_category2_items', 'hide');
+										mwl.toggleClass('#expandable_category2_closed_arrow', 'hide');
+										mwl.toggleClass('#expandable_category2_closed_arrow', 'show');
+										mwl.toggleClass('#expandable_category2_open_arrow', 'hide');
+										mwl.toggleClass('#expandable_category2_open_arrow', 'show');">
+
+										<table class="fill" cellpadding="0" cellspacing="0"
+											summary="Category Table">
+											<tr>
+												<td class="category_left"><div>Category 2</div></td>
+												<td class="category_right"><span><img
+														class="show" id="expandable_category2_closed_arrow"
+														src="img/button_right.png" alt="show" /> <img
+														class="hide" id="expandable_category2_open_arrow"
+														src="img/button_down.png" alt="hide" /> </span>
+												</td>
+											</tr>
+										</table>
+									</div>
+
+									<div id="expandable_category2_items"
+										class="hide item_container">
+										<div class="text_list_item" onclick="">Item 2-1</div>
+										<div class="text_list_item" onclick="">Item 2-2</div>
+										<div class="text_list_item" onclick="">Item 2-3</div>
+										<div class="text_list_item" onclick="">Item 2-4</div>
+									</div>
+								</div>
+
+								<div id="expandable_category3" class="category">
+									<div id="expandable_category3header" class="category_header"
+										onclick="
+										mwl.toggleClass('#expandable_category3_items', 'show');
+										mwl.toggleClass('#expandable_category3_items', 'hide');
+										mwl.toggleClass('#expandable_category3_closed_arrow', 'hide');
+										mwl.toggleClass('#expandable_category3_closed_arrow', 'show');
+										mwl.toggleClass('#expandable_category3_open_arrow', 'hide');
+										mwl.toggleClass('#expandable_category3_open_arrow', 'show');">
+										<table class="fill" cellpadding="0" cellspacing="0"
+											summary="Category Table">
+											<tr>
+												<td class="category_left"><div>Category 3</div></td>
+												<td class="category_right"><span><img
+														class="show" id="expandable_category3_closed_arrow"
+														src="img/button_right.png" alt="show" /> <img
+														class="hide" id="expandable_category3_open_arrow"
+														src="img/button_down.png" alt="hide" /> </span>
+												</td>
+											</tr>
+										</table>
+									</div>
+
+									<div id="expandable_category3_items"
+										class="hide item_container">
+										<div class="text_list_item" onclick="">Item 3-1</div>
+										<div class="text_list_item" onclick="">Item 3-2</div>
+										<div class="text_list_item" onclick="">Item 3-3</div>
+										<div class="text_list_item" onclick="">Item 3-4</div>
+									</div>
+								</div>
+
+								<div id="expandable_category4" class="category">
+									<div id="expandable_category4_header" class="category_header"
+										onclick="
+										mwl.toggleClass('#expandable_category4_items', 'show');
+										mwl.toggleClass('#expandable_category4_items', 'hide');
+										mwl.toggleClass('#expandable_category4_closed_arrow', 'hide');
+										mwl.toggleClass('#expandable_category4_closed_arrow', 'show');
+										mwl.toggleClass('#expandable_category4_open_arrow', 'hide');
+										mwl.toggleClass('#expandable_category4_open_arrow', 'show');">
+
+										<table class="fill" cellpadding="0" cellspacing="0"
+											summary="Category Table">
+											<tr>
+												<td class="category_left"><div>Category 4</div></td>
+												<td class="category_right"><span><img
+														class="show" id="expandable_category4_closed_arrow"
+														src="img/button_right.png" alt="show" /> <img
+														class="hide" id="expandable_category4_open_arrow"
+														src="img/button_down.png" alt="hide" /> </span>
+												</td>
+											</tr>
+										</table>
+									</div>
+
+									<div id="expandable_category4_items"
+										class="hide item_container">
+										<div class="text_list_item" onclick="">Item 4-1</div>
+										<div class="text_list_item" onclick="">Item 4-2</div>
+										<div class="text_list_item" onclick="">Item 4-3</div>
+										<div class="text_list_item" onclick="">Item 4-4</div>
+									</div>
+								</div>
+
+								<div id="expandable_category5" class="category">
+									<div id="expandable_category5_header" class="category_header"
+										onclick="
+										mwl.toggleClass('#expandable_category5_items', 'show');
+										mwl.toggleClass('#expandable_category5_items', 'hide');
+										mwl.toggleClass('#expandable_category5_closed_arrow', 'hide');
+										mwl.toggleClass('#expandable_category5_closed_arrow', 'show');
+										mwl.toggleClass('#expandable_category5_open_arrow', 'hide');
+										mwl.toggleClass('#expandable_category5_open_arrow', 'show');">
+
+										<table class="fill" cellpadding="0" cellspacing="0"
+											summary="Category Table">
+											<tr>
+												<td class="category_left"><div>Category 5</div></td>
+												<td class="category_right"><span><img
+														class="show" id="expandable_category5_closed_arrow"
+														src="img/button_right.png" alt="show" /> <img
+														class="hide" id="expandable_category5_open_arrow"
+														src="img/button_down.png" alt="hide" /> </span>
+												</td>
+											</tr>
+										</table>
+									</div>
+
+									<div id="expandable_category5_items"
+										class="hide item_container">
+										<div class="text_list_item" onclick="">Item 5-1</div>
+										<div class="text_list_item" onclick="">Item 5-2</div>
+										<div class="text_list_item" onclick="">Item 5-3</div>
+										<div class="text_list_item" onclick="">Item 5-4</div>
+									</div>
+								</div>
+
+								<div id="expandable_category6" class="category">
+									<div id="expandable_category6_header" class="category_header"
+										onclick="
+										mwl.toggleClass('#expandable_category6_items', 'show');
+										mwl.toggleClass('#expandable_category6_items', 'hide');
+										mwl.toggleClass('#expandable_category6_closed_arrow', 'hide');
+										mwl.toggleClass('#expandable_category6_closed_arrow', 'show');
+										mwl.toggleClass('#expandable_category6_open_arrow', 'hide');
+										mwl.toggleClass('#expandable_category6_open_arrow', 'show');">
+
+										<table class="fill" cellpadding="0" cellspacing="0"
+											summary="Category Table">
+											<tr>
+												<td class="category_left"><div>Category 6</div></td>
+												<td class="category_right"><span><img
+														class="show" id="expandable_category6_closed_arrow"
+														src="img/button_right.png" alt="show" /> <img
+														class="hide" id="expandable_category6_open_arrow"
+														src="img/button_down.png" alt="hide" /> </span>
+												</td>
+											</tr>
+										</table>
+									</div>
+
+									<div id="expandable_category6_items"
+										class="hide item_container">
+										<div class="text_list_item" onclick="">Item 6-1</div>
+										<div class="text_list_item" onclick="">Item 6-2</div>
+										<div class="text_list_item" onclick="">Item 6-3</div>
+										<div class="text_list_item" onclick="">Item 6-4</div>
+									</div>
+								</div>
+							</div>
+							<!--End ExpandableList mini app-->
+
+
+							<!--TabbedPages mini app-->
+							<div id="tabbedPages" class="slider_section hide">
+								<table cellpadding="0" cellspacing="0" class="fill"
+									summary="Tab Table">
+									<tr id="tabbedPagesTabBar">
+										<td id="tabbedPagesTab_1" class="tab tab_3_tabs tabbed_pages_tab_selected"
+											onclick="
+												mwl.setGroupTarget('#tabbedPagesTabControlContent', '#tabbedPagesTab_1_content', 'show', 'hide');
+												mwl.setGroupTarget('#tabbedPagesTabBar', '#tabbedPagesTab_1', 'tabbed_pages_tab_selected', 'tab_not_selected');
+											">
+											<img src="img/tab_list.png" alt="smile" />
+										</td>
+										<td id="tabbedPagesTab_2" class="tab tab_3_tabs tab_not_selected"
+											onclick="
+												mwl.setGroupTarget('#tabbedPagesTabControlContent', '#tabbedPagesTab_2_content', 'show', 'hide');
+												mwl.setGroupTarget('#tabbedPagesTabBar', '#tabbedPagesTab_2', 'tabbed_pages_tab_selected', 'tab_not_selected');
+											">
+											<img src="img/tab_group.png" alt="smile" />
+										</td>
+										<td id="tabbedPagesTab_3" class="tab tab_3_tabs_right tab_not_selected"
+											onclick="
+												mwl.setGroupTarget('#tabbedPagesTabControlContent', '#tabbedPagesTab_3_content', 'show', 'hide');
+												mwl.setGroupTarget('#tabbedPagesTabBar', '#tabbedPagesTab_3', 'tabbed_pages_tab_selected', 'tab_not_selected');
+											">
+											<img src="img/tab_contact.png" alt="smile" />
+										</td>
+									</tr>
+								</table>
+
+								<!-- Tab Control Content -->
+								<div id="tabbedPagesTabControlContent">
+
+									<!-- First tab content -->
+									<div id="tabbedPagesTab_1_content" class="show">
+										<div class="tabbed_pages_picture_list_item" onclick="">
+											<img src="img/tab_list.png" height="20" width="20"
+												alt="smile" class="picture_list_item_image" />
+											<span class="valignMdl">Item 1</span>
+										</div>
+										<div class="tabbed_pages_picture_list_item" onclick="">
+											<img src="img/tab_list.png" height="20" width="20"
+												alt="smile" class="picture_list_item_image" />
+											<span class="valignMdl">Item 2</span>
+										</div>
+										<div class="tabbed_pages_picture_list_item" onclick="">
+											<img src="img/tab_list.png" height="20" width="20"
+												alt="smile" class="picture_list_item_image" />
+											<span class="valignMdl">Item 3</span>
+										</div>
+										<div class="tabbed_pages_picture_list_item" onclick="">
+											<img src="img/tab_list.png" height="20" width="20"
+												alt="smile" class="picture_list_item_image" />
+											<span class="valignMdl">Item 4</span>
+										</div>
+									</div>
+									<!-- End First tab content -->
+
+									<!-- Second tab content -->
+									<div id="tabbedPagesTab_2_content" class="hide">
+										<div class="tabbed_pages_picture_list_item" onclick="">
+											<img src="img/tab_group.png" height="20" width="20"
+												alt="smile" class="picture_list_item_image" />
+											<span class="valignMdl">Item 1</span>
+										</div>
+										<div class="tabbed_pages_picture_list_item" onclick="">
+											<img src="img/tab_group.png" height="20" width="20"
+												alt="smile" class="picture_list_item_image" />
+											<span class="valignMdl">Item 2</span>
+										</div>
+										<div class="tabbed_pages_picture_list_item" onclick="">
+											<img src="img/tab_group.png" height="20" width="20"
+												alt="smile" class="picture_list_item_image" />
+											<span class="valignMdl">Item 3</span>
+										</div>
+										<div class="tabbed_pages_picture_list_item" onclick="">
+											<img src="img/tab_group.png" height="20" width="20"
+												alt="smile" class="picture_list_item_image" />
+											<span class="valignMdl">Item 4</span>
+										</div>
+									</div>
+									<!-- End Second tab content -->
+
+									<!-- Third tab content -->
+									<div id="tabbedPagesTab_3_content" class="hide">
+										<div class="tabbed_pages_picture_list_item" onclick="">
+											<img src="img/tab_contact.png" height="20" width="20"
+												alt="smile" class="picture_list_item_image" />
+											<span class="valignMdl">Item 1</span>
+										</div>
+										<div class="tabbed_pages_picture_list_item" onclick="">
+											<img src="img/tab_contact.png" height="20" width="20"
+												alt="smile" class="picture_list_item_image" />
+											<span class="valignMdl">Item 2</span>
+										</div>
+										<div class="tabbed_pages_picture_list_item" onclick="">
+											<img src="img/tab_contact.png" height="20" width="20"
+												alt="smile" class="picture_list_item_image" />
+											<span class="valignMdl">Item 3</span>
+										</div>
+										<div class="tabbed_pages_picture_list_item" onclick="">
+											<img src="img/tab_contact.png" height="20" width="20"
+												alt="smile" class="picture_list_item_image" />
+											<span class="valignMdl">Item 4</span>
+										</div>
+									</div>
+									<!-- End Third tab content -->
+								</div>
+							</div>
+							<!--End TabbedPages mini app-->
+
+
+							<!--Picker mini app-->
+							<div id="picker" class="slider_section hide">
+								<div id="picker_content">
+									<div id="picker_button_content" class="show">
+										<div class="fill">
+											<input type="button" id="picker_button"
+											 class="button centered_button" value="Value is 1"
+											 onclick="
+											 	mwl.setGroupTarget('#picker_content', '#picker_list_content', 'show', 'hide');
+												mwl.setGroupTarget('#navigateToggle', '#picker_backButton', 'show', 'hide');
+											" />
+										</div>
+									</div>
+
+									<div id="picker_list_content" class="hide">
+										<div class="list_section_header">Picker</div>
+										
+										<div class="text_list_item"
+										 onclick="setPickerValue(1);">Value is 1</div>
+										<div class="text_list_item"
+										 onclick="setPickerValue(2);">Value is 2</div>
+										<div class="text_list_item"
+										 onclick="setPickerValue(3);">Value is 3</div>
+										<div class="text_list_item"
+										 onclick="setPickerValue(4);">Value is 4</div>
+										<div class="text_list_item"
+										 onclick="setPickerValue(5);">Value is 5</div>
+										<div class="text_list_item"
+										 onclick="setPickerValue(6);">Value is 6</div>
+									</div>
+								</div>
+							</div>
+							<!--End Picker mini app-->
+
+
+							<!--TreeStructure mini app-->
+							<div id="treeStructure" class="slider_section hide">
+								<!-- NOTE: The tree view content is being loaded
+								from within the utils.js's generateTreeView() method! -->
+							</div>
+							<!--End TreeStructure mini app-->
+
+
+							<!--FileUpload mini app-->
+							<div id="fileUpload" class="slider_section hide">
+
+								<!-- FileUpload Control Content -->
+								<div id="fileUpload_content">
+									
+									<!-- Base view -->
+									<div id="fileUpload_base_view" class="show">
+										<div class="list_section_header">File upload - base view</div>
+										<div class="fill">
+											<input type="button" name="start_upload_btn"
+												class="button centered_button" value="Start upload flow"
+												onclick="
+													mwl.setGroupTarget('#fileUpload_content', '#fileUpload_select_view', 'show', 'hide');
+												" />
+										</div>
+									</div>
+
+									<!-- Select & Upload view -->
+									<div id="fileUpload_select_view" class="hide">
+										<div class="list_section_header">File upload - file select</div>
+										<div class="fill">
+											<form action="http://samples.ndapplab.com/UploadDownload/upload/upload.php" method="post" enctype="multipart/form-data">
+												<input type="file" name="userfile" class="input_select" id="file" />
+												<input type="submit" value="UPLOAD" class="button upload_download_button" />
+											</form>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!--End FileUpload mini app-->
+
+
+							<!--FileDownload mini app-->
+							<div id="fileDownload" class="slider_section hide">
+
+								<!-- FileDown Control Content -->
+								<div id="fileDownload_content">
+									<!-- Base view -->
+									<div id="fileDownload_base_view" class="show">
+										<div class="list_section_header">File download - base view</div>
+										<div class="fill">
+											<input type="button" name="start_download_btn" class="button centered_button" value="Start download flow"
+											onclick="
+												mwl.setGroupTarget('#fileDownload_content', '#fileDownload_select_view', 'show', 'hide');
+											" />
+										</div>
+									</div>
+
+									<!-- Select & Download view -->
+									<div id="fileDownload_select_view" class="hide">
+										<div class="list_section_header">File download - file select</div>
+										<div class="fill image_grid">
+											<span onclick="
+												mwl.setGroupTarget('#fileDownload_content', '#fileDownload_details_view', 'show', 'hide');
+												setImageDetails('img1.jpg');
+											">
+												<img class="download_images" src="img/img1.jpg" alt="Mountain lake" />
+											</span>
+											<span onclick="
+												mwl.setGroupTarget('#fileDownload_content', '#fileDownload_details_view', 'show', 'hide');
+												setImageDetails('img2.jpg');
+											">
+												<img class="download_images" src="img/img2.jpg" alt="Desert" />
+											</span>
+											<span onclick="
+												mwl.setGroupTarget('#fileDownload_content', '#fileDownload_details_view', 'show', 'hide');
+												setImageDetails('img3.jpg');
+											">
+												<img class="download_images" src="img/img3.jpg" alt="Sunset church" />
+											</span>
+											<span onclick="
+												mwl.setGroupTarget('#fileDownload_content', '#fileDownload_details_view', 'show', 'hide');
+												setImageDetails('img4.jpg');
+											">
+												<img class="download_images" src="img/img4.jpg" alt="Crocodile lake" />
+											</span>
+										</div>
+									</div>
+									
+									<!-- Image details view -->
+									<div id="fileDownload_details_view" class="hide">
+										<div class="list_section_header">File download - Image details</div>
+										<div class="big_image_wrapper">
+											<img id="download_image" alt="Image to download" />
+										</div>
+										<div id="download_image_name" class="text_block">Placeholder.jpg</div>
+										<input id="download_button" type="submit" value="DOWNLOAD" class="button upload_download_button" />
+									</div>
+								</div>
+							</div>
+							<!--End FileUpload mini app-->
+
+
+							<!--PageTitleLink mini app-->
+							<div id="pageTitleLink" class="slider_section hide">
+								<div class="title_link_header" 
+									 onclick="
+									 	generateTreeView('pageTitleLink_content',0,0,0);
+									 ">Press title link to main page</div>
+								<div id="pageTitleLink_content" class=""></div>
+							</div>
+							<!--End PageTitleLink mini app-->
+
+
+							<!--Password mini app-->
+							<div id="passwords" class="slider_section hide">
+								
+								<!-- Passwords Control Content -->
+								<div id="passwords_content">
+									
+									<!-- Password query view -->
+									<div id="password_query_view" class="show">
+										<div class="list_section_header">Try different password 2nd time</div>
+										
+										<div class="text_field_item">
+											<div>Username</div>
+											<div class="text_entry_with_label">
+												<table class="fill" cellpadding="0" cellspacing="0" summary="Button Table">
+													<tr>
+														<td class="text_input_cell">
+														<input type="text" id="usernameEntry" /></td>
+													</tr>
+												</table>
+											</div>
+										</div>
+										
+										<div class="text_field_item">
+											<div>Password</div>
+											<div class="text_entry_with_label">
+												<table class="fill" cellpadding="0" cellspacing="0" summary="Button Table">
+													<tr>
+														<td class="text_input_cell">
+														<input type="password" id="passwordEntry" /></td>
+													</tr>
+												</table>
+											</div>
+										</div>
+										
+										<div class="fill">
+											<input type="button" id="sign_in_button"
+												class="button centered_button" value="Sign In"
+												onclick="saveCredentials();" />									 
+											<input type="button" id="sign_in_button"
+											 	class="button centered_button" value="Clear Password"
+											 	onclick="resetCredentials();" />
+											<input type="button" id="help_button"
+												class="button centered_button" value="Help"
+												onclick="
+													mwl.setGroupTarget('#passwords_content', '#password_help_view', 'show', 'hide');
+												" />
+										</div>
+									</div>
+									
+									<!-- Password login in view -->
+									<div id="password_login_view" class="hide">
+										<div class="list_section_header">Try different password 2nd time</div>
+										<div class="text_block">You are logged in.</div>
+										<div class="text_block">Clear the password from main view.</div>
+									</div>
+									
+									<div id="password_help_view" class="hide">
+										<div class="list_section_header">Help</div>
+										<div class="information_text_block">
+											Lorem ipsum dolor sit amet,
+											consectetur adipisicing elit, sed do eiusmod tempor incididunt
+											ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+											nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+											commodo consequat.
+										</div>
+									</div>
+								</div>
+							</div>
+							<!--End Password mini app-->
+
+
+							<!--ProgressIndicators mini app-->
+							<div id="progressIndicators" class="slider_section hide">
+
+								<!-- ProgressIndicator Control Content -->
+								<div id="progressIndicator_content">
+									<!-- Base list view -->
+									<div id="progress_indicator_base_view" class="show">
+										<div class="list_section_header">Progress indicator</div>
+										
+										<div class="text_list_item"
+											 onclick="mwl.loadURL('http://www.nokia.com');">Web page loading</div>
+										
+										<div class="text_list_item"
+											onclick="
+												mwl.setGroupTarget('#progressIndicator_content', '#continuous_use_view', 'show', 'hide');
+												mwl.setGroupTarget('#navigateToggle', '#continuous_use_backButton', 'show', 'hide');
+											">Continuous use</div>
+										
+										<div class="text_list_item" 
+											onclick="
+												mwl.loadURL('http://projects.developer.nokia.com/webappsuivisualisation/raw-attachment/wiki/WikiStart/img6.jpg');
+											">Determinate progress</div>
+										
+										<div class="text_list_item"
+											onclick="
+												mwl.loadURL('http://projects.developer.nokia.com/webappsuivisualisation/raw-attachment/wiki/WikiStart/img6.jpg');
+											">Indeterminate progress</div>
+									</div>
+									
+									<!-- Image grid -->
+									<div id="continuous_use_view" class="hide">
+										<div class="list_section_header">Continuous use</div>
+										<div class="fill image_grid">
+											<span onclick="">
+												<img class="download_images" src="http://projects.developer.nokia.com/webappsuivisualisation/raw-attachment/wiki/WikiStart/img1.jpg" alt="Mountain lake" />
+											</span>
+											<span onclick="">
+												<img class="download_images" src="http://projects.developer.nokia.com/webappsuivisualisation/raw-attachment/wiki/WikiStart/img2.jpg" alt="Desert" />
+											</span>
+											<span onclick="">
+												<img class="download_images" src="http://projects.developer.nokia.com/webappsuivisualisation/raw-attachment/wiki/WikiStart/img3.jpg" alt="Sunset church" />
+											</span>
+											<span onclick="">
+												<img class="download_images" src="http://projects.developer.nokia.com/webappsuivisualisation/raw-attachment/wiki/WikiStart/img4.jpg" alt="Crocodile lake" />
+											</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!--End ProgressIndicators mini app-->
+
+
+							<!--Search mini app-->
+							<div id="search" class="slider_section hide">
+							<!-- NOTE: The Search content is being loaded
+								from within the utils.js's createSearchList() method! -->
+							</div>
+							<!--End Search mini app-->
+
+
+							<!--SharingContent mini app-->
+							<div id="sharingContent" class="slider_section hide">
+								<div class="list_section_header">Sharing</div>
+								<div class="text_block share_text_block">
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+								</div>
+								<table class="share_table" cellspacing="5" cellpadding="0">
+									<tr>
+										<td id="share_title">Share</td>
+										<td class="alignR">
+											<a href="sms:?body=LoremIpsumDolorSitAmet">
+												<img src="img/share_sms.png" />
+											</a>
+										</td>
+										<td class="alignR">
+											<a href="http://www.facebook.com/sharer.php?u=LoremIpsumDolorSitAmet">				
+												<img src="img/share_facebook.png" />
+											</a>
+										</td>
+									</tr>
+								</table>
+							</div>
+							<!--End SharingContent mini app-->
+							
+							<!--Information "mini app"-->
+							<div id="information" class="slider_section hide">
+								<div class="list_section_header">Information</div>
+								<div class="information_text_block">
+									Lorem ipsum dolor sit amet,
+									consectetur adipisicing elit, sed do eiusmod tempor incididunt
+									ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+									nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+									commodo consequat.
+								</div>
+							</div>
+							<!--End Information mini app-->
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<!--End Stage-->
+	</div>
+	<!--End Main-->
+</body>
+</html>
+
