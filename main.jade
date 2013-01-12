@@ -9,7 +9,8 @@ ops = function(s) { return "blah '" + s + "'"}
 
 // useful "minilanguage" to condense mwl code 
 // (todo implement the minilanguage ;-)
-switchpage = ops("#navigateToggle: SELECT #home, show, hide; #slider +show_miniapp -show_main; #appsSection: SELECT #buttons, hide, hide")
+
+- var switchpage = ops("#navigateToggle: SELECT #home, show, hide; #slider +show_miniapp -show_main; #appsSection: SELECT #buttons, hide, hide")
 
 highlight = "mwl.addClass ('#node', 'blinking')"
 
