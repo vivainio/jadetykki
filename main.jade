@@ -1,0 +1,27 @@
+f1 = function(n) { return 'mwl.addClass("' + n + '", "a")' }
+f2 = function(n) { return 'mwl.addClass("!{n}", "b")' }
+
+# use this approach (f3)!
+
+f3 = function(n) { return "mwl.addClass('" + n + "', 'a')" }
+
+ops = function(s) { return "blah '" + s + "'"}
+
+switchpage = ops("a:+show a:-hide")
+
+highlight = "mwl.addClass ('#node', 'blinking')"
+
+body
+  p Hello world
+  p Again
+  p Test interpolation 1 !{f1("#myid")}
+  p Interpolation 2 (not working) !{f2("#otherid")}
+  p Attr, no interp
+    .button(onclick=highlight)
+
+  p Attr, with interp f1
+    .button(onclick = f1("node"))
+  p Attr, single quotes f3
+    .button(onclick = f3("node"))
+
+  .button(onclick=switchpage)
