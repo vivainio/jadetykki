@@ -1,0 +1,1766 @@
+!!! transitional
+html(xmlns='http://www.w3.org/1999/xhtml')
+  head
+    title MiniApps
+    meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+    script(language='javascript', type='text/javascript', src='js/screensize.js')
+    script(language='javascript', type='text/javascript', src='js/utils.js')
+    link(rel='stylesheet', href='css/base_s40.css', type='text/css')
+    meta(name='Generator', content='Nokia WDE 3.2.0')
+  body(onload='javascript:init();')
+    // Main
+    #main
+      // Header
+      #titlebar.header_background
+        table.header_table(cellpadding='0', cellspacing='0', summary='Default Header Table')
+          tr
+            td(height='40')
+              .title_slider
+                table#search_title.title_slider_section.show_title_main
+                  tr
+                    td
+                      #title.title_slider_section MiniApps
+                    td
+                      img(src='img/close_button.png', height='16', width='16', alt='Home', onclick='
+                      mwl.switchClass("#search_title", "show_title_search", "show_title_main");
+                      mwl.setGroupTarget("#navigateToggle", "#home", "show", "hide");
+                      mwl.switchClass("#slider", "show_miniapp", "show_main");
+                      mwl.scrollTo("#main");')
+                    td
+                      .search_text_entry
+                        input#search_input(type='text', name='search_params')
+            td(width='40', height='40')
+              #navigateToggle
+                #home.show
+                #miniappGoHomeToggle.hide
+                  img(src='img/top_back.png', height='40', width='43', alt='Home', onclick='
+                    mwl.setGroupTarget("#navigateToggle", "#home", "show", "hide");
+                    mwl.switchClass("#slider", "show_miniapp", "show_main");
+                    mwl.scrollTo("#main");')
+                #tabs_backButton.hide
+                  img(src='img/top_back.png', height='40', width='43', alt='Home', onclick='
+                    mwl.setGroupTarget("#navigateToggle", "#miniappGoHomeToggle", "show", "hide");
+                    mwl.setGroupTarget("#tabs", "#tab_views", "show", "hide");')
+                #dynamic_looping_backButton.hide
+                  img(src='img/top_menu.png', height='40', width='43', alt='Home', onclick='
+                    mwl.setGroupTarget("#navigateToggle", "#home", "show", "hide");
+                    mwl.switchClass("#slider", "show_miniapp", "show_main");
+                    mwl.scrollTo("#main");')
+                #picker_backButton.hide
+                  img(src='img/top_back.png', height='40', width='43', alt='Home', onclick='
+                    mwl.setGroupTarget("#navigateToggle", "#miniappGoHomeToggle", "show", "hide");
+                    mwl.setGroupTarget("#picker_content", "#picker_button_content", "show", "hide");')
+                #tree_backButton.hide
+                  img(src='img/top_back.png', height='40', width='43', alt='Home')
+                #continuous_use_backButton.hide
+                  img(src='img/top_back.png', height='40', width='43', alt='Home', onclick='
+                    mwl.setGroupTarget("#navigateToggle", "#miniappGoHomeToggle", "show", "hide");
+                    mwl.setGroupTarget("#progressIndicator_content", "#progress_indicator_base_view", "show", "hide");')
+                #search_button.hide
+                  img(src='img/top_search.png', height='40', width='43', alt='Search', onclick='
+                    mwl.switchClass("#search_title", "show_title_main", "show_title_search");
+                    createSearchList();')
+      // End Header
+      // Stage
+      #stage
+        table#slider.show_main.slider_table(cellspacing='0', cellpadding='0', summary='Slider Table')
+          tr
+            td(valign='top')
+              table.slider_section(cellpadding='0', cellspacing='0', summary='Tab Table')
+                tr
+                  td#tab_1.tab.tab_3_tabs.tab_selected(onclick='
+                    mwl.setGroupTarget("#tab_control_content", "#tab_1_content", "show", "hide");
+                    mwl.switchClass("#tab_1", "tab_not_selected", "tab_selected");
+                    mwl.switchClass("#tab_2", "tab_selected", "tab_not_selected");
+                    mwl.switchClass("#tab_3", "tab_selected", "tab_not_selected");')
+                    | Elements
+                  td#tab_2.tab.tab_3_tabs.tab_not_selected(onclick='
+                    mwl.setGroupTarget("#tab_control_content", "#tab_2_content", "show", "hide");
+                    mwl.switchClass("#tab_1", "tab_selected", "tab_not_selected");
+                    mwl.switchClass("#tab_2", "tab_not_selected", "tab_selected");
+                    mwl.switchClass("#tab_3", "tab_selected", "tab_not_selected");')
+                    | Navigation
+                  td#tab_3.tab.tab_3_tabs_right.tab_not_selected(onclick='
+                    mwl.setGroupTarget("#tab_control_content", "#tab_3_content", "show", "hide");
+                    mwl.switchClass("#tab_1", "tab_selected", "tab_not_selected");
+                    mwl.switchClass("#tab_2", "tab_selected", "tab_not_selected");
+                    mwl.switchClass("#tab_3", "tab_not_selected", "tab_selected");')
+                    | Patterns
+              // End Tab Control
+              // Tab Control Content
+              #tab_control_content
+                #tab_1_content.show.slider_section
+                  .picture_list_item(onclick='
+                    mwl.setGroupTarget("#appsSection","#buttons", "show", "hide");
+                    mwl.switchClass("#slider", "show_main", "show_miniapp");
+                    mwl.setGroupTarget("#navigateToggle","#miniappGoHomeToggle", "show", "hide");')
+                    img.picture_list_item_image(src='img/list_button.png', height='23', width='22', alt='smile')
+                    span.valignMdl Buttons
+                  .picture_list_item(onclick='
+                    mwl.setGroupTarget("#appsSection","#radioButtons", "show", "hide");
+                    mwl.switchClass("#slider", "show_main", "show_miniapp");
+                    mwl.setGroupTarget("#navigateToggle","#miniappGoHomeToggle", "show", "hide");')
+                    img.picture_list_item_image(src='img/list_radiobutton.png', height='23', width='22', alt='smile')
+                    span.valignMdl Buttons - radio
+                  .picture_list_item(onclick='
+                    mwl.setGroupTarget("#appsSection","#checkBoxes", "show", "hide");
+                    mwl.switchClass("#slider", "show_main", "show_miniapp");
+                    mwl.setGroupTarget("#navigateToggle","#miniappGoHomeToggle", "show", "hide");')
+                    img.picture_list_item_image(src='img/list_checkbox.png', height='23', width='22', alt='smile')
+                    span.valignMdl Check boxes
+                  .picture_list_item(onclick='
+                    mwl.setGroupTarget("#appsSection","#lists", "show", "hide");
+                    mwl.switchClass("#slider", "show_main", "show_miniapp");
+                    mwl.setGroupTarget("#navigateToggle","#miniappGoHomeToggle", "show", "hide");')
+                    img.picture_list_item_image(src='img/list_lists.png', height='23', width='22', alt='smile')
+                    span.valignMdl Lists
+                  .picture_list_item(onclick='
+                    mwl.setGroupTarget("#appsSection","#tabs", "show", "hide");
+                    mwl.switchClass("#slider", "show_main", "show_miniapp");
+                    mwl.setGroupTarget("#navigateToggle","#miniappGoHomeToggle", "show", "hide");')
+                    img.picture_list_item_image(src='img/list_tabs.png', height='23', width='22', alt='smile')
+                    span.valignMdl Tabs
+                  .picture_list_item(onclick='
+                    mwl.setGroupTarget("#appsSection","#textFields", "show", "hide");
+                    mwl.switchClass("#slider", "show_main", "show_miniapp");
+                    mwl.setGroupTarget("#navigateToggle","#miniappGoHomeToggle", "show", "hide");')
+                    img.picture_list_item_image(src='img/list_text.png', height='23', width='22', alt='smile')
+                    span.valignMdl Text fields
+                  .picture_list_item(onclick='
+                    mwl.setGroupTarget("#appsSection","#information", "show", "hide");
+                    mwl.switchClass("#slider", "show_main", "show_miniapp");
+                    mwl.setGroupTarget("#navigateToggle","#miniappGoHomeToggle", "show", "hide");')
+                    img.picture_list_item_image(src='img/list_info.png', height='23', width='22', alt='smile')
+                    span.valignMdl Information
+                #tab_2_content.hide.slider_section
+                  .picture_list_item(onclick='
+                    mwl.setGroupTarget("#appsSection","#carouselInItem", "show", "hide");
+                    mwl.switchClass("#slider", "show_main", "show_miniapp");
+                    mwl.setGroupTarget("#navigateToggle","#miniappGoHomeToggle", "show", "hide");')
+                    img.picture_list_item_image(src='img/list_carousel_initem.png', height='23', width='22', alt='smile')
+                    span.valignMdl Carousel, in-item
+                  .picture_list_item(onclick='
+                    mwl.setGroupTarget("#appsSection","#carouselItem", "show", "hide");
+                    mwl.switchClass("#slider", "show_main", "show_miniapp");
+                    mwl.setGroupTarget("#navigateToggle","#miniappGoHomeToggle", "show", "hide");')
+                    img.picture_list_item_image(src='img/list_carousel_item.png', height='23', width='22', alt='smile')
+                    span.valignMdl Carousel, item
+                  .picture_list_item(onclick='
+                    mwl.setGroupTarget("#appsSection","#dynamicLooping", "show", "hide");
+                    mwl.switchClass("#slider", "show_main", "show_miniapp");
+                    mwl.setGroupTarget("#navigateToggle", "#dynamic_looping_backButton", "show", "hide");')
+                    img.picture_list_item_image(src='img/list_loop.png', height='23', width='22', alt='smile')
+                    span.valignMdl Dynamic looping
+                  .picture_list_item(onclick='
+                    mwl.setGroupTarget("#appsSection","#expandableList", "show", "hide");
+                    mwl.switchClass("#slider", "show_main", "show_miniapp");
+                    mwl.setGroupTarget("#navigateToggle","#miniappGoHomeToggle", "show", "hide");')
+                    img.picture_list_item_image(src='img/list_list_expand.png', height='23', width='22', alt='smile')
+                    span.valignMdl Expandable list
+                  .picture_list_item(onclick='
+                    mwl.setGroupTarget("#appsSection","#picker", "show", "hide");
+                    mwl.switchClass("#slider", "show_main", "show_miniapp");
+                    mwl.setGroupTarget("#navigateToggle","#miniappGoHomeToggle", "show", "hide");')
+                    img.picture_list_item_image(src='img/list_picker.png', height='23', width='22', alt='smile')
+                    span.valignMdl Picker
+                  .picture_list_item(onclick='
+                    mwl.setGroupTarget("#appsSection","#tabbedPages", "show", "hide");
+                    mwl.switchClass("#slider", "show_main", "show_miniapp");
+                    mwl.setGroupTarget("#navigateToggle","#miniappGoHomeToggle", "show", "hide");')
+                    img.picture_list_item_image(src='img/list_tabs.png', height='23', width='22', alt='smile')
+                    span.valignMdl Tabbed pages
+                  .picture_list_item(onclick='
+                    generateTreeView("treeStructure", 0, 0, 0);
+                    mwl.setGroupTarget("#appsSection","#treeStructure", "show", "hide");
+                    mwl.switchClass("#slider", "show_main", "show_miniapp");
+                    mwl.setGroupTarget("#navigateToggle","#miniappGoHomeToggle", "show", "hide");')
+                    img.picture_list_item_image(src='img/list_tree.png', height='23', width='22', alt='smile')
+                    span.valignMdl Tree structure
+                  .picture_list_item(onclick='
+                    mwl.setGroupTarget("#appsSection","#information", "show", "hide");
+                    mwl.switchClass("#slider", "show_main", "show_miniapp");
+                    mwl.setGroupTarget("#navigateToggle","#miniappGoHomeToggle", "show", "hide");')
+                    img.picture_list_item_image(src='img/list_info.png', height='23', width='22', alt='smile')
+                    span.valignMdl Information
+                #tab_3_content.hide.slider_section
+                  .picture_list_item(onclick='
+                    mwl.setGroupTarget("#appsSection","#fileUpload", "show", "hide");
+                    mwl.switchClass("#slider", "show_main", "show_miniapp");
+                    mwl.setGroupTarget("#navigateToggle","#miniappGoHomeToggle", "show", "hide");')
+                    img.picture_list_item_image(src='img/list_upload.png', height='23', width='22', alt='smile')
+                    span.valignMdl File upload
+                  .picture_list_item(onclick='
+                    mwl.setGroupTarget("#appsSection","#fileDownload", "show", "hide");
+                    mwl.switchClass("#slider", "show_main", "show_miniapp");
+                    mwl.setGroupTarget("#navigateToggle","#miniappGoHomeToggle", "show", "hide");')
+                    img.picture_list_item_image(src='img/list_download.png', height='23', width='22', alt='smile')
+                    span.valignMdl File download
+                  .picture_list_item(onclick='
+                    generateTreeView("pageTitleLink_content", 0, 0, 0);
+                    mwl.setGroupTarget("#appsSection","#pageTitleLink", "show", "hide");
+                    mwl.switchClass("#slider", "show_main", "show_miniapp");
+                    mwl.setGroupTarget("#navigateToggle","#miniappGoHomeToggle", "show", "hide");')
+                    img.picture_list_item_image(src='img/list_link.png', height='23', width='22', alt='smile')
+                    span.valignMdl Page title link
+                  .picture_list_item(onclick='
+                    mwl.setGroupTarget("#appsSection","#passwords", "show", "hide");
+                    mwl.setGroupTarget("#passwords_content", "#password_query_view", "show", "hide");
+                    mwl.switchClass("#slider", "show_main", "show_miniapp");
+                    mwl.setGroupTarget("#navigateToggle","#miniappGoHomeToggle", "show", "hide");')
+                    img.picture_list_item_image(src='img/list_password.png', height='23', width='22', alt='smile')
+                    span.valignMdl Passwords
+                  .picture_list_item(onclick='
+                    mwl.setGroupTarget("#appsSection","#progressIndicators", "show", "hide");
+                    mwl.switchClass("#slider", "show_main", "show_miniapp");
+                    mwl.setGroupTarget("#navigateToggle","#miniappGoHomeToggle", "show", "hide");')
+                    img.picture_list_item_image(src='img/list_progress.png', height='23', width='22', alt='smile')
+                    span.valignMdl Progress indicators
+                  .picture_list_item(onclick='
+                    createSearchList();
+                    mwl.setGroupTarget("#appsSection","#search", "show", "hide");
+                    mwl.switchClass("#slider", "show_main", "show_miniapp");
+                    mwl.setGroupTarget("#navigateToggle", "#search_button", "show", "hide");')
+                    img.picture_list_item_image(src='img/list_search.png', height='23', width='22', alt='smile')
+                    span.valignMdl Search
+                  .picture_list_item(onclick='
+                    mwl.setGroupTarget("#appsSection","#sharingContent", "show", "hide");
+                    mwl.switchClass("#slider", "show_main", "show_miniapp");
+                    mwl.setGroupTarget("#navigateToggle","#miniappGoHomeToggle", "show", "hide");')
+                    img.picture_list_item_image(src='img/list_share.png', height='23', width='22', alt='smile')
+                    span.valignMdl Sharing content
+                  .picture_list_item(onclick='
+                    mwl.setGroupTarget("#appsSection","#information", "show", "hide");
+                    mwl.switchClass("#slider", "show_main", "show_miniapp");
+                    mwl.setGroupTarget("#navigateToggle","#miniappGoHomeToggle", "show", "hide");')
+                    img.picture_list_item_image(src='img/list_info.png', height='23', width='22', alt='smile')
+                    span.valignMdl Information
+            td(valign='top')
+              #appsSection.slider_section
+                // Buttons mini app
+                #buttons.hide.miniapp_section
+                  .category_name Single button
+                  input.button.button_1_width(type='button', name='button1', value='SINGLE BUTTON')
+                  .category_name Two buttons
+                  table.fill(cellpadding='0', cellspacing='0')
+                    tr
+                      td.alignL
+                        input.button.button_2_in_row_width(type='button', name='button1', value='BUTTON1')
+                      td.alignR
+                        input.button.button_2_in_row_width(type='button', name='button2', value='BUTTON2')
+                  .category_name Three buttons
+                  table.fill(cellpadding='0', cellspacing='0')
+                    tr
+                      td.alignL
+                        input.button.button_3_in_row_width(type='button', name='button1', value='BTN1')
+                      td.alignC
+                        input.button.button_3_in_row_width(type='button', name='button2', value='BTN2')
+                      td.alignR
+                        input.button.button_3_in_row_width(type='button', name='button3', value='BTN3')
+                  .category_name Primary and secondary buttons
+                  table.fill(cellpadding='0', cellspacing='0')
+                    tr
+                      td.alignL.button_3_in_row_width
+                        input.button.button_3_in_row_width(type='button', name='button1', value='BTN1')
+                      td.alignL.button_3_in_row_width
+                        input.button.button_3_in_row_width(type='button', name='button2', value='BTN2')
+                      td.alignR
+                        input.button.button_3_in_row_width(type='button', name='button3', value='BTN3')
+                // End Buttons mini app
+                // RadioButtons mini app
+                #radioButtons.slider_section.hide
+                  table.fill(cellpadding='0', cellspacing='0', summary='Tab Table')
+                    tr#radioButtonsTabBar
+                      td#radioButtonsTab_1.tab.tab_3_tabs.tab_selected(onclick='
+                        mwl.setGroupTarget("#radioButtonsTabControlContent", "#radioButtonsTab_1_content", "show", "hide");
+                        mwl.setGroupTarget("#radioButtonsTabBar", "#radioButtonsTab_1", "tab_selected", "tab_not_selected");')
+                        | NORMAL
+                      td#radioButtonsTab_2.tab.tab_3_tabs.tab_not_selected(onclick='
+                        mwl.setGroupTarget("#radioButtonsTabControlContent", "#radioButtonsTab_2_content", "show", "hide");
+                        mwl.setGroupTarget("#radioButtonsTabBar", "#radioButtonsTab_2", "tab_selected", "tab_not_selected");')
+                        | INACTIVE
+                      td#radioButtonsTab_3.tab.tab_3_tabs_right.tab_not_selected(onclick='
+                        mwl.setGroupTarget("#radioButtonsTabControlContent", "#radioButtonsTab_3_content", "show", "hide");
+                        mwl.setGroupTarget("#radioButtonsTabBar", "#radioButtonsTab_3", "tab_selected", "tab_not_selected");')
+                        | GROUPED
+                  // End Tab Control
+                  // Tab Control Content
+                  #radioButtonsTabControlContent
+                    #radioButtonsTab_1_content.show
+                      .checkable_list_item
+                        table.fill(cellpadding='0', cellspacing='0')
+                          tr
+                            td.checkable_item_cell_left Item 1
+                            td.checkable_item_cell_right
+                              input(type='radio', name='tab_group_1', checked='checked')
+                      .checkable_list_item
+                        table.fill(cellpadding='0', cellspacing='0')
+                          tr
+                            td.checkable_item_cell_left Item 2
+                            td.checkable_item_cell_right
+                              input(type='radio', name='tab_group_1')
+                      .checkable_list_item
+                        table.fill(cellpadding='0', cellspacing='0')
+                          tr
+                            td.checkable_item_cell_left Item 3
+                            td.checkable_item_cell_right
+                              input(type='radio', name='tab_group_1')
+                      .checkable_list_item
+                        table.fill(cellpadding='0', cellspacing='0')
+                          tr
+                            td.checkable_item_cell_left Item 4
+                            td.checkable_item_cell_right
+                              input(type='radio', name='tab_group_1')
+                      .checkable_list_item
+                        table.fill(cellpadding='0', cellspacing='0')
+                          tr
+                            td.checkable_item_cell_left Item 5
+                            td.checkable_item_cell_right
+                              input(type='radio', name='tab_group_1')
+                    #radioButtonsTab_2_content.hide
+                      .checkable_list_item
+                        table.fill(cellpadding='0', cellspacing='0')
+                          tr
+                            td.checkable_item_cell_left Item 1
+                            td.checkable_item_cell_right
+                              input(type='radio', name='tab_group_2', disabled='disabled', checked='checked')
+                      .checkable_list_item
+                        table.fill(cellpadding='0', cellspacing='0')
+                          tr
+                            td.checkable_item_cell_left Item 2
+                            td.checkable_item_cell_right
+                              input(type='radio', name='tab_group_2', disabled='disabled')
+                      .checkable_list_item
+                        table.fill(cellpadding='0', cellspacing='0')
+                          tr
+                            td.checkable_item_cell_left Item 3
+                            td.checkable_item_cell_right
+                              input(type='radio', name='tab_group_2', disabled='disabled')
+                      .checkable_list_item
+                        table.fill(cellpadding='0', cellspacing='0')
+                          tr
+                            td.checkable_item_cell_left Item 4
+                            td.checkable_item_cell_right
+                              input(type='radio', name='tab_group_2', disabled='disabled')
+                      .checkable_list_item
+                        table.fill(cellpadding='0', cellspacing='0')
+                          tr
+                            td.checkable_item_cell_left Item 5
+                            td.checkable_item_cell_right
+                              input(type='radio', name='tab_group_2', disabled='disabled')
+                    #radioButtonsTab_3_content.hide
+                      .featured_list_item Group 1
+                      .checkable_list_item
+                        table.fill(cellpadding='0', cellspacing='0')
+                          tr
+                            td.checkable_item_cell_left Item 1-1
+                            td.checkable_item_cell_right
+                              input(type='radio', name='tab_group_3_1', checked='checked')
+                      .checkable_list_item
+                        table.fill(cellpadding='0', cellspacing='0')
+                          tr
+                            td.checkable_item_cell_left Item 1-2
+                            td.checkable_item_cell_right
+                              input(type='radio', name='tab_group_3_1')
+                      .checkable_list_item
+                        table.fill(cellpadding='0', cellspacing='0')
+                          tr
+                            td.checkable_item_cell_left Item 1-3
+                            td.checkable_item_cell_right
+                              input(type='radio', name='tab_group_3_1')
+                      .checkable_list_item
+                        table.fill(cellpadding='0', cellspacing='0')
+                          tr
+                            td.checkable_item_cell_left Item 1-4
+                            td.checkable_item_cell_right
+                              input(type='radio', name='tab_group_3_1')
+                      .featured_list_item Group 2
+                      .checkable_list_item
+                        table.fill(cellpadding='0', cellspacing='0')
+                          tr
+                            td.checkable_item_cell_left Item 2-1
+                            td.checkable_item_cell_right
+                              input(type='radio', name='tab_group_3_2', checked='checked')
+                      .checkable_list_item
+                        table.fill(cellpadding='0', cellspacing='0')
+                          tr
+                            td.checkable_item_cell_left Item 2-2
+                            td.checkable_item_cell_right
+                              input(type='radio', name='tab_group_3_2')
+                      .checkable_list_item
+                        table.fill(cellpadding='0', cellspacing='0')
+                          tr
+                            td.checkable_item_cell_left Item 2-3
+                            td.checkable_item_cell_right
+                              input(type='radio', name='tab_group_3_2')
+                      .checkable_list_item
+                        table.fill(cellpadding='0', cellspacing='0')
+                          tr
+                            td.checkable_item_cell_left Item 2-4
+                            td.checkable_item_cell_right
+                              input(type='radio', name='tab_group_3_2')
+                // End RadioButtons mini app
+                // CheckBoxes mini app
+                #checkBoxes.slider_section.hide
+                  table.fill(cellpadding='0', cellspacing='0', summary='Tab Table')
+                    tr#checkBoxesTabBar
+                      td#checkBoxesTab_1.tab.tab_3_tabs.tab_selected(onclick='mwl.setGroupTarget("#checkBoxesTabControlContent", "#checkBoxesTab_1_content", "show", "hide"); mwl.setGroupTarget("#checkBoxesTabBar", "#checkBoxesTab_1", "tab_selected", "tab_not_selected");') NORMAL
+                      td#checkBoxesTab_2.tab.tab_3_tabs.tab_not_selected(onclick='mwl.setGroupTarget("#checkBoxesTabControlContent", "#checkBoxesTab_2_content", "show", "hide"); mwl.setGroupTarget("#checkBoxesTabBar", "#checkBoxesTab_2", "tab_selected", "tab_not_selected");') INACTIVE
+                      td#checkBoxesTab_3.tab.tab_3_tabs_right.tab_not_selected(onclick='mwl.setGroupTarget("#checkBoxesTabControlContent", "#checkBoxesTab_3_content", "show", "hide"); mwl.setGroupTarget("#checkBoxesTabBar", "#checkBoxesTab_3", "tab_selected", "tab_not_selected");') GROUPED
+                  // Tab Control Content
+                  #checkBoxesTabControlContent
+                    #checkBoxesTab_1_content.show
+                      .checkable_list_item
+                        table.fill(cellpadding='0', cellspacing='0')
+                          tr
+                            td.checkable_item_cell_left Item 1
+                            td.checkable_item_cell_right
+                              input(type='checkbox')
+                      .checkable_list_item
+                        table.fill(cellpadding='0', cellspacing='0')
+                          tr
+                            td.checkable_item_cell_left Item 2
+                            td.checkable_item_cell_right
+                              input(type='checkbox')
+                      .checkable_list_item
+                        table.fill(cellpadding='0', cellspacing='0')
+                          tr
+                            td.checkable_item_cell_left Item 3
+                            td.checkable_item_cell_right
+                              input(type='checkbox', checked='checked')
+                      .checkable_list_item
+                        table.fill(cellpadding='0', cellspacing='0')
+                          tr
+                            td.checkable_item_cell_left Item 4
+                            td.checkable_item_cell_right
+                              input(type='checkbox')
+                      .checkable_list_item
+                        table.fill(cellpadding='0', cellspacing='0')
+                          tr
+                            td.checkable_item_cell_left Item 5
+                            td.checkable_item_cell_right
+                              input(type='checkbox')
+                    #checkBoxesTab_2_content.hide
+                      .checkable_list_item
+                        table.fill(cellpadding='0', cellspacing='0')
+                          tr
+                            td.checkable_item_cell_left Item 1
+                            td.checkable_item_cell_right
+                              input(type='checkbox', disabled='disabled')
+                      .checkable_list_item
+                        table.fill(cellpadding='0', cellspacing='0')
+                          tr
+                            td.checkable_item_cell_left Item 2
+                            td.checkable_item_cell_right
+                              input(type='checkbox', disabled='disabled')
+                      .checkable_list_item
+                        table.fill(cellpadding='0', cellspacing='0')
+                          tr
+                            td.checkable_item_cell_left Item 3
+                            td.checkable_item_cell_right
+                              input(type='checkbox', disabled='disabled')
+                      .checkable_list_item
+                        table.fill(cellpadding='0', cellspacing='0')
+                          tr
+                            td.checkable_item_cell_left Item 4
+                            td.checkable_item_cell_right
+                              input(type='checkbox', disabled='disabled')
+                      .checkable_list_item
+                        table.fill(cellpadding='0', cellspacing='0')
+                          tr
+                            td.checkable_item_cell_left Item 5
+                            td.checkable_item_cell_right
+                              input(type='checkbox', disabled='disabled')
+                    #checkBoxesTab_3_content.hide
+                      .featured_list_item Group 1
+                      .checkable_list_item
+                        table.fill(cellpadding='0', cellspacing='0')
+                          tr
+                            td.checkable_item_cell_left Item 1-1
+                            td.checkable_item_cell_right
+                              input(type='checkbox')
+                      .checkable_list_item
+                        table.fill(cellpadding='0', cellspacing='0')
+                          tr
+                            td.checkable_item_cell_left Item 1-2
+                            td.checkable_item_cell_right
+                              input(type='checkbox')
+                      .checkable_list_item
+                        table.fill(cellpadding='0', cellspacing='0')
+                          tr
+                            td.checkable_item_cell_left Item 1-3
+                            td.checkable_item_cell_right
+                              input(type='checkbox')
+                      .checkable_list_item
+                        table.fill(cellpadding='0', cellspacing='0')
+                          tr
+                            td.checkable_item_cell_left Item 1-4
+                            td.checkable_item_cell_right
+                              input(type='checkbox')
+                      .featured_list_item Group 2
+                      .checkable_list_item
+                        table.fill(cellpadding='0', cellspacing='0')
+                          tr
+                            td.checkable_item_cell_left Item 2-1
+                            td.checkable_item_cell_right
+                              input(type='checkbox')
+                      .checkable_list_item
+                        table.fill(cellpadding='0', cellspacing='0')
+                          tr
+                            td.checkable_item_cell_left Item 2-2
+                            td.checkable_item_cell_right
+                              input(type='checkbox')
+                      .checkable_list_item
+                        table.fill(cellpadding='0', cellspacing='0')
+                          tr
+                            td.checkable_item_cell_left Item 2-3
+                            td.checkable_item_cell_right
+                              input(type='checkbox')
+                      .checkable_list_item
+                        table.fill(cellpadding='0', cellspacing='0')
+                          tr
+                            td.checkable_item_cell_left Item 2-4
+                            td.checkable_item_cell_right
+                              input(type='checkbox')
+                // End CheckBoxes mini app
+                // Lists mini app
+                #lists.slider_section.hide
+                  table.fill(cellpadding='0', cellspacing='0', summary='Tab Table')
+                    tr#listsTabBar
+                      td#listsTab_1.tab.tab_selected(onclick='
+                        mwl.setGroupTarget("#listsTabControlContent", "#listsTab_1_content", "show", "hide");
+                        mwl.setGroupTarget("#listsTabBar", "#listsTab_1", "tab_selected", "tab_not_selected");
+                      ') Normal
+                      td#listsTab_2.tab.tab_not_selected(onclick='
+                        mwl.setGroupTarget("#listsTabControlContent", "#listsTab_2_content", "show", "hide");
+                        mwl.setGroupTarget("#listsTabBar", "#listsTab_2", "tab_selected", "tab_not_selected");
+                      ') Label
+                      td#listsTab_3.tab.tab_not_selected(onclick='
+                        mwl.setGroupTarget("#listsTabControlContent", "#listsTab_3_content", "show", "hide");
+                        mwl.setGroupTarget("#listsTabBar", "#listsTab_3", "tab_selected", "tab_not_selected");
+                      ') Table
+                      td#listsTab_4.tab.tab_not_selected(onclick='
+                        mwl.setGroupTarget("#listsTabControlContent", "#listsTab_4_content", "show", "hide");
+                        mwl.setGroupTarget("#listsTabBar", "#listsTab_4", "tab_selected", "tab_not_selected");
+                      ') Category
+                  // Tab Control Content
+                  #listsTabControlContent
+                    // Normal tab content
+                    #listsTab_1_content.show
+                      .text_list_item(onclick='') Item 1
+                      .text_list_item(onclick='') Item 2
+                      .text_list_item(onclick='') Item 3
+                      .text_list_item(onclick='') Item 4
+                      .picture_list_item(onclick='')
+                        img.picture_list_item_image(src='img/smile.png', height='20', width='20', alt='smile')
+                        span.valignMdl Item 5
+                      .picture_list_item(onclick='')
+                        img.picture_list_item_image(src='img/smile.png', height='20', width='20', alt='smile')
+                        span.valignMdl Item 6
+                      .picture_list_item(onclick='')
+                        img.picture_list_item_image(src='img/smile.png', height='20', width='20', alt='smile')
+                        span.valignMdl Item 7
+                      .picture_list_item(onclick='')
+                        img.picture_list_item_image(src='img/smile.png', height='20', width='20', alt='smile')
+                        span.valignMdl Item 8
+                      // Fancy list items
+                      table.picture_list_item(cellspacing='0', cellpadding='0', onclick='')
+                        tr
+                          td
+                            img(src='img/smile.png', height='20', width='20', alt='smile')
+                          td.fancy_list_item
+                            table.fill(cellspacing='4', cellpadding='0')
+                              tr
+                                td Title 9
+                                td.alignR 12:34
+                              tr
+                                td Content 9
+                                td.alignR
+                                  img(src='img/red_dot.png')
+                      table.picture_list_item(cellspacing='0', cellpadding='0', onclick='')
+                        tr
+                          td
+                            img(src='img/smile.png', height='20', width='20', alt='smile')
+                          td.fancy_list_item
+                            table.fill(cellspacing='4', cellpadding='0')
+                              tr
+                                td Title 10
+                                td.alignR 12:35
+                              tr
+                                td Content 10
+                                td.alignR
+                                  img(src='img/red_dot.png')
+                      table.picture_list_item(cellspacing='0', cellpadding='0', onclick='')
+                        tr
+                          td
+                            img(src='img/smile.png', height='20', width='20', alt='smile')
+                          td.fancy_list_item
+                            table.fill(cellspacing='4', cellpadding='0')
+                              tr
+                                td Title 11
+                                td.alignR 12:36
+                              tr
+                                td Content 11
+                                td.alignR
+                                  img(src='img/green_dot.png')
+                      table.picture_list_item(cellspacing='0', cellpadding='0', onclick='')
+                        tr
+                          td
+                            img(src='img/smile.png', height='20', width='20', alt='smile')
+                          td.fancy_list_item
+                            table.fill(cellspacing='4', cellpadding='0')
+                              tr
+                                td Title 12
+                                td.alignR 12:37
+                              tr
+                                td Content 12
+                                td.alignR
+                                  img(src='img/yellow_dot.png')
+                    // End Normal tab content
+                    // Label tab content
+                    #listsTab_2_content.hide
+                      .list_section_header no icon
+                      .text_list_item(onclick='') Item 1
+                      .text_list_item(onclick='') Item 2
+                      .text_list_item(onclick='') Item 3
+                      .text_list_item(onclick='') Item 4
+                      .list_section_header with icon
+                      .picture_list_item(onclick='')
+                        img.picture_list_item_image(src='img/smile.png', height='20', width='20', alt='smile')
+                        span.valignMdl Item 5
+                      .picture_list_item(onclick='')
+                        img.picture_list_item_image(src='img/smile.png', height='20', width='20', alt='smile')
+                        span.valignMdl Item 6
+                      .picture_list_item(onclick='')
+                        img.picture_list_item_image(src='img/smile.png', height='20', width='20', alt='smile')
+                        span.valignMdl Item 7
+                      .picture_list_item(onclick='')
+                        img.picture_list_item_image(src='img/smile.png', height='20', width='20', alt='smile')
+                        span.valignMdl Item 8
+                      // Fancy list items
+                      .list_section_header fancy
+                      table.picture_list_item(cellspacing='0', cellpadding='0', onclick='')
+                        tr
+                          td
+                            img(src='img/smile.png', height='20', width='20', alt='smile')
+                          td.fancy_list_item
+                            table.fill(cellspacing='4', cellpadding='0')
+                              tr
+                                td Title 9
+                                td.alignR 12:34
+                              tr
+                                td Content 9
+                                td.alignR
+                                  img(src='img/red_dot.png')
+                      table.picture_list_item(cellspacing='0', cellpadding='0', onclick='')
+                        tr
+                          td
+                            img(src='img/smile.png', height='20', width='20', alt='smile')
+                          td.fancy_list_item
+                            table.fill(cellspacing='4', cellpadding='0')
+                              tr
+                                td Title 10
+                                td.alignR 12:35
+                              tr
+                                td Content 10
+                                td.alignR
+                                  img(src='img/red_dot.png')
+                      table.picture_list_item(cellspacing='0', cellpadding='0', onclick='')
+                        tr
+                          td
+                            img(src='img/smile.png', height='20', width='20', alt='smile')
+                          td.fancy_list_item
+                            table.fill(cellspacing='4', cellpadding='0')
+                              tr
+                                td Title 11
+                                td.alignR 12:36
+                              tr
+                                td Content 11
+                                td.alignR
+                                  img(src='img/green_dot.png')
+                      table.picture_list_item(cellspacing='0', cellpadding='0', onclick='')
+                        tr
+                          td
+                            img(src='img/smile.png', height='20', width='20', alt='smile')
+                          td.fancy_list_item
+                            table.fill(cellspacing='4', cellpadding='0')
+                              tr
+                                td Title 12
+                                td.alignR 12:37
+                              tr
+                                td Content 12
+                                td.alignR
+                                  img(src='img/yellow_dot.png')
+                    // End Label tab content
+                    // Table tab content
+                    #listsTab_3_content.hide
+                      .item_container
+                        .text_list_item(onclick='') Item 1-1
+                      .item_container
+                        .text_list_item(onclick='') Item 2-1
+                        .text_list_item(onclick='') Item 2-2
+                        .text_list_item(onclick='') Item 2-3
+                      .item_container
+                        .picture_list_item(onclick='')
+                          img.picture_list_item_image(src='img/smile.png', height='20', width='20', alt='smile')
+                          span.valignMdl Item 3-1
+                        .picture_list_item(onclick='')
+                          img.picture_list_item_image(src='img/smile.png', height='20', width='20', alt='smile')
+                          span.valignMdl Item 3-2
+                        .picture_list_item(onclick='')
+                          img.picture_list_item_image(src='img/smile.png', height='20', width='20', alt='smile')
+                          span.valignMdl Item 3-3
+                      .item_container
+                        // Fancy list items
+                        table.picture_list_item(cellspacing='0', cellpadding='0', onclick='')
+                          tr
+                            td
+                              img(src='img/smile.png', height='20', width='20', alt='smile')
+                            td.fancy_list_item
+                              table.fill(cellspacing='4', cellpadding='0')
+                                tr
+                                  td Title 9
+                                  td.alignR 12:34
+                                tr
+                                  td Content 9
+                                  td.alignR
+                                    img(src='img/red_dot.png')
+                        table.picture_list_item(cellspacing='0', cellpadding='0', onclick='')
+                          tr
+                            td
+                              img(src='img/smile.png', height='20', width='20', alt='smile')
+                            td.fancy_list_item
+                              table.fill(cellspacing='4', cellpadding='0')
+                                tr
+                                  td Title 10
+                                  td.alignR 12:35
+                                tr
+                                  td Content 10
+                                  td.alignR
+                                    img(src='img/red_dot.png')
+                        table.picture_list_item(cellspacing='0', cellpadding='0', onclick='')
+                          tr
+                            td
+                              img(src='img/smile.png', height='20', width='20', alt='smile')
+                            td.fancy_list_item
+                              table.fill(cellspacing='4', cellpadding='0')
+                                tr
+                                  td Title 11
+                                  td.alignR 12:36
+                                tr
+                                  td Content 11
+                                  td.alignR
+                                    img(src='img/green_dot.png')
+                        table.picture_list_item(cellspacing='0', cellpadding='0', onclick='')
+                          tr
+                            td
+                              img(src='img/smile.png', height='20', width='20', alt='smile')
+                            td.fancy_list_item
+                              table.fill(cellspacing='4', cellpadding='0')
+                                tr
+                                  td Title 12
+                                  td.alignR 12:37
+                                tr
+                                  td Content 12
+                                  td.alignR
+                                    img(src='img/yellow_dot.png')
+                    // End table tab content
+                    // Category tab content
+                    #listsTab_4_content.hide
+                      #category1.category
+                        #category1_header.category_header(onclick='
+                          mwl.toggleClass("#category1_items", "show");
+                          mwl.toggleClass("#category1_items", "hide");
+                          mwl.toggleClass("#category1_closed_arrow", "hide");
+                          mwl.toggleClass("#category1_closed_arrow", "show");
+                          mwl.toggleClass("#category1_open_arrow", "hide");
+                          mwl.toggleClass("#category1_open_arrow", "show");
+                        ')
+                          table.fill(cellpadding='0', cellspacing='0', summary='Category Table')
+                            tr
+                              td.category_left Category 1
+                              td.category_right
+                                span#category1_arrows
+                                  img#category1_closed_arrow.show(src='img/button_right.png', alt='show')
+                                  img#category1_open_arrow.hide(src='img/button_down.png', alt='hide')
+                        #category1_items.hide.item_container
+                          .text_list_item(onclick='') Item 1-1
+                          .text_list_item(onclick='') Item 1-2
+                          .text_list_item(onclick='') Item 1-3
+                          .text_list_item(onclick='') Item 1-4
+                      #category2.category
+                        #category2_header.category_header(onclick='
+                          mwl.toggleClass("#category2_items", "show");
+                          mwl.toggleClass("#category2_items", "hide");
+                          mwl.toggleClass("#category2_closed_arrow", "hide");
+                          mwl.toggleClass("#category2_closed_arrow", "show");
+                          mwl.toggleClass("#category2_open_arrow", "hide");
+                          mwl.toggleClass("#category2_open_arrow", "show");')
+                          table.fill(cellpadding='0', cellspacing='0', summary='Category Table')
+                            tr
+                              td.category_left
+                                div Category 2
+                              td.category_right
+                                span#category2_arrows
+                                  img#category2_closed_arrow.show(src='img/button_right.png', alt='show')
+                                  img#category2_open_arrow.hide(src='img/button_down.png', alt='hide')
+                        #category2_items.hide.item_container
+                          .text_list_item(onclick='') Item 2-1
+                          .text_list_item(onclick='') Item 2-2
+                          .text_list_item(onclick='') Item 2-3
+                          .text_list_item(onclick='') Item 2-4
+                      #category3.category
+                        #category3header.category_header(onclick='mwl.toggleClass("#category3_items", "show");mwl.toggleClass("#category3_items", "hide");mwl.toggleClass("#category3_closed_arrow", "hide");mwl.toggleClass("#category3_closed_arrow", "show");mwl.toggleClass("#category3_open_arrow", "hide");mwl.toggleClass("#category3_open_arrow", "show");')
+                          table.fill(cellpadding='0', cellspacing='0', summary='Category Table')
+                            tr
+                              td.category_left
+                                div
+                                  | Category 3 +
+                                  | icon
+                              td.category_right
+                                span#category3_arrows
+                                  img#category3_closed_arrow.show(src='img/button_right.png', alt='show')
+                                  img#category3_open_arrow.hide(src='img/button_down.png', alt='hide')
+                        #category3_items.hide.item_container
+                          .picture_list_item(onclick='')
+                            img.picture_list_item_image(src='img/smile.png', height='20', width='20', alt='smile')
+                            span.valignMdl Item 3-1
+                          .picture_list_item(onclick='')
+                            img.picture_list_item_image(src='img/smile.png', height='20', width='20', alt='smile')
+                            span.valignMdl Item 3-2
+                          .picture_list_item(onclick='')
+                            img.picture_list_item_image(src='img/smile.png', height='20', width='20', alt='smile')
+                            span.valignMdl Item 3-3
+                          .picture_list_item(onclick='')
+                            img.picture_list_item_image(src='img/smile.png', height='20', width='20', alt='smile')
+                            span.valignMdl Item 3-4
+                      #category4.category
+                        #category4_header.category_header(onclick='mwl.toggleClass("#category4_items", "show");mwl.toggleClass("#category4_items", "hide");mwl.toggleClass("#category4_closed_arrow", "hide");mwl.toggleClass("#category4_closed_arrow", "show");mwl.toggleClass("#category4_open_arrow", "hide");mwl.toggleClass("#category4_open_arrow", "show");')
+                          table.fill(cellpadding='0', cellspacing='0', summary='Category Table')
+                            tr
+                              td.category_left
+                                div
+                                  | Category 4 +
+                                  | icon
+                              td.category_right
+                                span#category4_arrows
+                                  img#category4_closed_arrow.show(src='img/button_right.png', alt='show')
+                                  img#category4_open_arrow.hide(src='img/button_down.png', alt='hide')
+                        #category4_items.hide.item_container
+                          .picture_list_item(onclick='')
+                            img.picture_list_item_image(src='img/smile.png', height='20', width='20', alt='smile')
+                            span.valignMdl Item 4-1
+                          .picture_list_item(onclick='')
+                            img.picture_list_item_image(src='img/smile.png', height='20', width='20', alt='smile')
+                            span.valignMdl Item 4-2
+                          .picture_list_item(onclick='')
+                            img.picture_list_item_image(src='img/smile.png', height='20', width='20', alt='smile')
+                            span.valignMdl Item 4-3
+                          .picture_list_item(onclick='')
+                            img.picture_list_item_image(src='img/smile.png', height='20', width='20', alt='smile')
+                            span.valignMdl Item 4-4
+                      #category5.category
+                        #category5header.category_header(onclick='
+                          mwl.toggleClass("#category5_items", "show");
+                          mwl.toggleClass("#category5_items", "hide");
+                          mwl.toggleClass("#category5_closed_arrow", "hide");
+                          mwl.toggleClass("#category5_closed_arrow", "show");
+                          mwl.toggleClass("#category5_open_arrow", "hide");
+                          mwl.toggleClass("#category5_open_arrow", "show");
+                        ')
+                          table.fill(cellpadding='0', cellspacing='0', summary='Category Table')
+                            tr
+                              td.category_left
+                                div Category 5 fancy
+                              td.category_right
+                                span#category5_arrows
+                                  img#category5_closed_arrow.show(src='img/button_right.png', alt='show')
+                                  img#category5_open_arrow.hide(src='img/button_down.png', alt='hide')
+                        #category5_items.hide.item_container
+                          // Fancy list items
+                          table.picture_list_item(cellspacing='0', cellpadding='0', onclick='')
+                            tr
+                              td
+                                img(src='img/smile.png', height='20', width='20', alt='smile')
+                              td.fancy_list_item
+                                table.fill(cellspacing='4', cellpadding='0')
+                                  tr
+                                    td Title 5-1
+                                    td.alignR 12:34
+                                  tr
+                                    td Content 5-1
+                                    td.alignR
+                                      img(src='img/red_dot.png')
+                          table.picture_list_item(cellspacing='0', cellpadding='0', onclick='')
+                            tr
+                              td
+                                img(src='img/smile.png', height='20', width='20', alt='smile')
+                              td.fancy_list_item
+                                table.fill(cellspacing='4', cellpadding='0')
+                                  tr
+                                    td Title 5-2
+                                    td.alignR 12:35
+                                  tr
+                                    td Content 5-2
+                                    td.alignR
+                                      img(src='img/red_dot.png')
+                          table.picture_list_item(cellspacing='0', cellpadding='0', onclick='')
+                            tr
+                              td
+                                img(src='img/smile.png', height='20', width='20', alt='smile')
+                              td.fancy_list_item
+                                table.fill(cellspacing='4', cellpadding='0')
+                                  tr
+                                    td Title 5-3
+                                    td.alignR 12:36
+                                  tr
+                                    td Content 5-3
+                                    td.alignR
+                                      img(src='img/green_dot.png')
+                          table.picture_list_item(cellspacing='0', cellpadding='0', onclick='')
+                            tr
+                              td
+                                img(src='img/smile.png', height='20', width='20', alt='smile')
+                              td.fancy_list_item
+                                table.fill(cellspacing='4', cellpadding='0')
+                                  tr
+                                    td Title 5-4
+                                    td.alignR 12:37
+                                  tr
+                                    td Content 5-4
+                                    td.alignR
+                                      img(src='img/yellow_dot.png')
+                      #category6.category
+                        #category6header.category_header(onclick='
+                          mwl.toggleClass("#category6_items", "show");
+                          mwl.toggleClass("#category6_items", "hide");
+                          mwl.toggleClass("#category6_closed_arrow", "hide");
+                          mwl.toggleClass("#category6_closed_arrow", "show");
+                          mwl.toggleClass("#category6_open_arrow", "hide");
+                          mwl.toggleClass("#category6_open_arrow", "show");
+                        ')
+                          table.fill(cellpadding='0', cellspacing='0', summary='Category Table')
+                            tr
+                              td.category_left
+                                div Category 6 fancy
+                              td.category_right
+                                span#category6_arrows
+                                  img#category6_closed_arrow.show(src='img/button_right.png', alt='show')
+                                  img#category6_open_arrow.hide(src='img/button_down.png', alt='hide')
+                        #category6_items.hide.item_container
+                          // Fancy list items
+                          table.picture_list_item(cellspacing='0', cellpadding='0', onclick='')
+                            tr
+                              td
+                                img(src='img/smile.png', height='20', width='20', alt='smile')
+                              td.fancy_list_item
+                                table.fill(cellspacing='4', cellpadding='0')
+                                  tr
+                                    td Title 6-1
+                                    td.alignR 12:34
+                                  tr
+                                    td Content 6-1
+                                    td.alignR
+                                      img(src='img/red_dot.png')
+                          table.picture_list_item(cellspacing='0', cellpadding='0', onclick='')
+                            tr
+                              td
+                                img(src='img/smile.png', height='20', width='20', alt='smile')
+                              td.fancy_list_item
+                                table.fill(cellspacing='4', cellpadding='0')
+                                  tr
+                                    td Title 6-2
+                                    td.alignR 12:35
+                                  tr
+                                    td Content 6-2
+                                    td.alignR
+                                      img(src='img/red_dot.png')
+                          table.picture_list_item(cellspacing='0', cellpadding='0', onclick='')
+                            tr
+                              td
+                                img(src='img/smile.png', height='20', width='20', alt='smile')
+                              td.fancy_list_item
+                                table.fill(cellspacing='4', cellpadding='0')
+                                  tr
+                                    td Title 6-3
+                                    td.alignR 12:36
+                                  tr
+                                    td Content 6-3
+                                    td.alignR
+                                      img(src='img/green_dot.png')
+                          table.picture_list_item(cellspacing='0', cellpadding='0', onclick='')
+                            tr
+                              td
+                                img(src='img/smile.png', height='20', width='20', alt='smile')
+                              td.fancy_list_item
+                                table.fill(cellspacing='4', cellpadding='0')
+                                  tr
+                                    td Title 6-4
+                                    td.alignR 12:37
+                                  tr
+                                    td Content 6-4
+                                    td.alignR
+                                      img(src='img/yellow_dot.png')
+                    // End Category tab content
+                // End Lists mini app
+                // Tabs mini app
+                #tabs.slider_section.hide
+                  #tab_views.show
+                    #tabs_2tabs_view.show
+                      table#text_tabs2_tab_bar_table.tab_table.show(cellpadding='0', cellspacing='0', summary='Tab Table')
+                        // Text tab bar
+                        tr#text_tabs2_tab_bar
+                          td#text_tabs_tab_2_1.tab.tab_2_tabs.tab_selected(onclick='mwl.setGroupTarget("#tabs_2tabs_control_content", "#tabs_tab_2_1_content", "show", "hide"); mwl.setGroupTarget("#text_tabs2_tab_bar", "#text_tabs_tab_2_1", "tab_selected", "tab_not_selected");')
+                            span
+                              | TAB
+                              | 1
+                          td#text_tabs_tab_2_2.tab.tab_2_tabs_right.tab_not_selected(onclick='mwl.setGroupTarget("#tabs_2tabs_control_content", "#tabs_tab_2_2_content", "show", "hide"); mwl.setGroupTarget("#text_tabs2_tab_bar", "#text_tabs_tab_2_2", "tab_selected", "tab_not_selected");')
+                            | TAB
+                            | 2
+                        // End text tab bar
+                      table#icon_tabs2_tab_bar_table.fill.hide(cellpadding='0', cellspacing='0', summary='Tab Table')
+                        tr#icon_tabs2_tab_bar
+                          td#icon_tabs_tab_2_1.tab.tab_2_tabs.tab_selected(onclick='
+                            mwl.setGroupTarget("#tabs_2tabs_control_content", "#tabs_tab_2_1_content", "show", "hide");
+                            mwl.setGroupTarget("#icon_tabs2_tab_bar", "#icon_tabs_tab_2_1", "tab_selected", "tab_not_selected");
+                          ')
+                            img(src='img/smile.png', alt='smile')
+                          td#icon_tabs_tab_2_2.tab.tab_2_tabs_right.tab_not_selected(onclick='
+                            mwl.setGroupTarget("#tabs_2tabs_control_content", "#tabs_tab_2_2_content", "show", "hide");
+                            mwl.setGroupTarget("#icon_tabs2_tab_bar", "#icon_tabs_tab_2_2", "tab_selected", "tab_not_selected");
+                          ')
+                            img(src='img/smile.png', alt='smile')
+                      // End Tab Control
+                      // Tab Control Content
+                      #tabs_2tabs_control_content
+                        #tabs_tab_2_1_content.show
+                          .list_section_header tab 1 content
+                        #tabs_tab_2_2_content.hide
+                          .list_section_header tab 2 content
+                        .information_text_block Pick tabbar variant
+                      input#text_tabs2_button.button.tab_view_selection_button.show(type='button', name='button1', value='2 tabs - text', onclick='
+                        mwl.setGroupTarget("#tabs", "#tabs_selection_view", "show", "hide");
+                        mwl.setGroupTarget("#navigateToggle","#tabs_backButton", "show", "hide");
+                      ')
+                      input#icon_tabs2_button.button.tab_view_selection_button.hide(type='button', name='button1', value='2 tabs - icons', onclick='
+                        mwl.setGroupTarget("#tabs", "#tabs_selection_view", "show", "hide");
+                        mwl.setGroupTarget("#navigateToggle","#tabs_backButton", "show", "hide");
+                      ')
+                    #tabs_3tabs_view.hide
+                      table#text_tabs3_tab_bar_table.fill.show(cellpadding='0', cellspacing='0', summary='Tab Table')
+                        // Text tab bar
+                        tr#text_tabs3_tab_bar
+                          td#text_tabs_tab_3_1.tab.tab_3_tabs.tab_selected(onclick='
+                            mwl.setGroupTarget("#tabs_3tabs_control_content", "#tabs_tab_3_1_content", "show", "hide");
+                            mwl.setGroupTarget("#text_tabs3_tab_bar", "#text_tabs_tab_3_1", "tab_selected", "tab_not_selected");
+                          ') TAB 1
+                          td#text_tabs_tab_3_2.tab.tab_3_tabs.tab_not_selected(onclick='
+                            mwl.setGroupTarget("#tabs_3tabs_control_content", "#tabs_tab_3_2_content", "show", "hide");
+                            mwl.setGroupTarget("#text_tabs3_tab_bar", "#text_tabs_tab_3_2", "tab_selected", "tab_not_selected");
+                          ') TAB 2
+                          td#text_tabs_tab_3_3.tab.tab_3_tabs_right.tab_not_selected(onclick='
+                            mwl.setGroupTarget("#tabs_3tabs_control_content", "#tabs_tab_3_3_content", "show", "hide");
+                            mwl.setGroupTarget("#text_tabs3_tab_bar", "#text_tabs_tab_3_3", "tab_selected", "tab_not_selected");
+                          ') TAB 3
+                        // End text tab bar
+                      table#icon_tabs3_tab_bar_table.fill.hide(cellpadding='0', cellspacing='0', summary='Tab Table')
+                        // Icon tab bar
+                        tr#icon_tabs3_tab_bar
+                          td#icon_tabs_tab_3_1.tab.tab_3_tabs.tab_selected(onclick='
+                            mwl.setGroupTarget("#tabs_3tabs_control_content", "#tabs_tab_3_1_content", "show", "hide");
+                            mwl.setGroupTarget("#icon_tabs3_tab_bar", "#icon_tabs_tab_3_1", "tab_selected", "tab_not_selected");
+                          ')
+                            img(src='img/smile.png', alt='smile')
+                          td#icon_tabs_tab_3_2.tab.tab_3_tabs.tab_not_selected(onclick='
+                            mwl.setGroupTarget("#tabs_3tabs_control_content", "#tabs_tab_3_2_content", "show", "hide");
+                            mwl.setGroupTarget("#icon_tabs3_tab_bar", "#icon_tabs_tab_3_2", "tab_selected", "tab_not_selected");
+                            ')
+                            img(src='img/smile.png', alt='smile')
+                          td#icon_tabs_tab_3_3.tab.tab_3_tabs_right.tab_not_selected(onclick='
+                            mwl.setGroupTarget("#tabs_3tabs_control_content", "#tabs_tab_3_3_content", "show", "hide");
+                            mwl.setGroupTarget("#icon_tabs3_tab_bar", "#icon_tabs_tab_3_3", "tab_selected", "tab_not_selected");
+                          ')
+                            img(src='img/smile.png', alt='smile')
+                        // End icon tab bar
+                      // End Tab Control
+                      // Tab Control Content
+                      #tabs_3tabs_control_content
+                        #tabs_tab_3_1_content.show
+                          .list_section_header tab 1 content
+                        #tabs_tab_3_2_content.hide
+                          .list_section_header tab 2 content
+                        #tabs_tab_3_3_content.hide
+                          .list_section_header tab 3 content
+                        .information_text_block Pick tabbar variant
+                      input#text_tabs3_button.button.tab_view_selection_button.show(type='button', name='button1', value='3 tabs - text', onclick='
+                        mwl.setGroupTarget("#tabs", "#tabs_selection_view", "show", "hide");
+                        mwl.setGroupTarget("#navigateToggle","#tabs_backButton", "show", "hide");
+                      ')
+                      input#icon_tabs3_button.button.tab_view_selection_button.hide(type='button', name='button1', value='3 tabs - icons', onclick='
+                        mwl.setGroupTarget("#tabs", "#tabs_selection_view", "show", "hide");
+                        mwl.setGroupTarget("#navigateToggle","#tabs_backButton", "show", "hide");
+                      ')
+                    #tabs_4tabs_view.hide
+                      table#text_tabs4_tab_bar_table.fill.show(cellpadding='0', cellspacing='0', summary='Tab Table')
+                        // Text tab bar
+                        tr#text_tabs4_tab_bar
+                          td#text_tabs_tab_4_1.tab.tab_4_tabs.tab_selected(onclick='
+                            mwl.setGroupTarget("#tabs_4tabs_control_content", "#tabs_tab_4_1_content", "show", "hide");
+                            mwl.setGroupTarget("#text_tabs4_tab_bar", "#text_tabs_tab_4_1", "tab_selected", "tab_not_selected");
+                          ')
+                            span TAB 1
+                          td#text_tabs_tab_4_2.tab.tab_4_tabs.tab_not_selected(onclick='
+                            mwl.setGroupTarget("#tabs_4tabs_control_content", "#tabs_tab_4_2_content", "show", "hide");
+                            mwl.setGroupTarget("#text_tabs4_tab_bar", "#text_tabs_tab_4_2", "tab_selected", "tab_not_selected");
+                          ') TAB 2
+                          td#text_tabs_tab_4_3.tab.tab_4_tabs.tab_not_selected(onclick='
+                            mwl.setGroupTarget("#tabs_4tabs_control_content", "#tabs_tab_4_3_content", "show", "hide");
+                            mwl.setGroupTarget("#text_tabs4_tab_bar", "#text_tabs_tab_4_3", "tab_selected", "tab_not_selected");
+                          ') TAB 3
+                          td#text_tabs_tab_4_4.tab.tab_4_tabs_right.tab_not_selected(onclick='
+                            mwl.setGroupTarget("#tabs_4tabs_control_content", "#tabs_tab_4_4_content", "show", "hide");
+                            mwl.setGroupTarget("#text_tabs4_tab_bar", "#text_tabs_tab_4_4", "tab_selected", "tab_not_selected");
+                          ') TAB 4
+                        // End text tab bar
+                      table#icon_tabs4_tab_bar_table.fill.hide(cellpadding='0', cellspacing='0', summary='Tab Table')
+                        // Icon tab bar
+                        tr#icon_tabs4_tab_bar
+                          td#icon_tabs_tab_4_1.tab.tab_4_tabs.tab_selected(onclick='
+                            mwl.setGroupTarget("#tabs_4tabs_control_content", "#tabs_tab_4_1_content", "show", "hide");
+                            mwl.setGroupTarget("#icon_tabs4_tab_bar", "#icon_tabs_tab_4_1", "tab_selected", "tab_not_selected");
+                          ')
+                            img(src='img/smile.png', alt='smile')
+                          td#icon_tabs_tab_4_2.tab.tab_4_tabs.tab_not_selected(onclick='
+                            mwl.setGroupTarget("#tabs_4tabs_control_content", "#tabs_tab_4_2_content", "show", "hide");
+                            mwl.setGroupTarget("#icon_tabs4_tab_bar", "#icon_tabs_tab_4_2", "tab_selected", "tab_not_selected");
+                          ')
+                            img(src='img/smile.png', alt='smile')
+                          td#icon_tabs_tab_4_3.tab.tab_4_tabs.tab_not_selected(onclick='
+                            mwl.setGroupTarget("#tabs_4tabs_control_content", "#tabs_tab_4_3_content", "show", "hide");
+                            mwl.setGroupTarget("#icon_tabs4_tab_bar", "#icon_tabs_tab_4_3", "tab_selected", "tab_not_selected");
+                          ')
+                            img(src='img/smile.png', alt='smile')
+                          td#icon_tabs_tab_4_4.tab.tab_4_tabs_right.tab_not_selected(onclick='
+                            mwl.setGroupTarget("#tabs_4tabs_control_content", "#tabs_tab_4_4_content", "show", "hide");
+                            mwl.setGroupTarget("#icon_tabs4_tab_bar", "#icon_tabs_tab_4_4", "tab_selected", "tab_not_selected");
+                          ')
+                            img(src='img/smile.png', alt='smile')
+                        // End icon tab bar
+                      // End Tab Control
+                      // Tab Control Content
+                      #tabs_4tabs_control_content
+                        #tabs_tab_4_1_content.show
+                          .list_section_header tab 1 content
+                        #tabs_tab_4_2_content.hide
+                          .list_section_header tab 2 content
+                        #tabs_tab_4_3_content.hide
+                          .list_section_header tab 3 content
+                        #tabs_tab_4_4_content.hide
+                          .list_section_header tab 4 content
+                        .information_text_block Pick tabbar variant
+                      input#text_tabs4_button.button.tab_view_selection_button.show(type='button', name='button1', value='4 tabs - text', onclick='
+                        mwl.setGroupTarget("#tabs", "#tabs_selection_view", "show", "hide");
+                        mwl.setGroupTarget("#navigateToggle","#tabs_backButton", "show", "hide");
+                      ')
+                      input#icon_tabs4_button.button.tab_view_selection_button.hide(type='button', name='button1', value='4 tabs - icons', onclick='
+                        mwl.setGroupTarget("#tabs", "#tabs_selection_view", "show", "hide");
+                        mwl.setGroupTarget("#navigateToggle","#tabs_backButton", "show", "hide");
+                      ')
+                  #tabs_selection_view.hide
+                    .list_section_header select example
+                    .text_list_item(onclick='
+                      mwl.switchClass("#text_tabs2_tab_bar_table", "show", "hide");
+                      mwl.switchClass("#icon_tabs2_tab_bar_table", "hide", "show");
+                      mwl.switchClass("#text_tabs2_button", "show", "hide");
+                      mwl.switchClass("#icon_tabs2_button", "hide", "show");
+                      mwl.setGroupTarget("#tabs", "#tab_views", "show", "hide"); 
+                      mwl.setGroupTarget("#tab_views", "#tabs_2tabs_view", "show", "hide");
+                      mwl.setGroupTarget("#navigateToggle","#miniappGoHomeToggle", "show", "hide");')
+                      | 2 tabs - icons
+                    .text_list_item(onclick='
+                      mwl.switchClass("#text_tabs3_tab_bar_table", "show", "hide");
+                      mwl.switchClass("#icon_tabs3_tab_bar_table", "hide", "show");
+                      mwl.switchClass("#text_tabs3_button", "show", "hide");
+                      mwl.switchClass("#icon_tabs3_button", "hide", "show");
+                      mwl.setGroupTarget("#tabs", "#tab_views", "show", "hide"); 
+                      mwl.setGroupTarget("#tab_views", "#tabs_3tabs_view", "show", "hide");
+                      mwl.setGroupTarget("#navigateToggle","#miniappGoHomeToggle", "show", "hide");')
+                      | 3 tabs - icons
+                    .text_list_item(onclick='
+                      mwl.switchClass("#text_tabs4_tab_bar_table", "show", "hide");
+                      mwl.switchClass("#icon_tabs4_tab_bar_table", "hide", "show");
+                      mwl.switchClass("#text_tabs4_button", "show", "hide");
+                      mwl.switchClass("#icon_tabs4_button", "hide", "show");
+                      mwl.setGroupTarget("#tabs", "#tab_views", "show", "hide"); 
+                      mwl.setGroupTarget("#tab_views", "#tabs_4tabs_view", "show", "hide");
+                      mwl.setGroupTarget("#navigateToggle","#miniappGoHomeToggle", "show", "hide");')
+                      | 4 tabs - icons
+                    .text_list_item(onclick='
+                      mwl.switchClass("#icon_tabs2_tab_bar_table", "show", "hide");
+                      mwl.switchClass("#text_tabs2_tab_bar_table", "hide", "show");
+                      mwl.switchClass("#icon_tabs2_button", "show", "hide");
+                      mwl.switchClass("#text_tabs2_button", "hide", "show");
+                      mwl.setGroupTarget("#tabs", "#tab_views", "show", "hide"); 
+                      mwl.setGroupTarget("#tab_views", "#tabs_2tabs_view", "show", "hide");
+                      mwl.setGroupTarget("#navigateToggle","#miniappGoHomeToggle", "show", "hide");')
+                      | 2 tabs - text
+                    .text_list_item(onclick='
+                      mwl.switchClass("#icon_tabs3_tab_bar_table", "show", "hide");
+                      mwl.switchClass("#text_tabs3_tab_bar_table", "hide", "show");
+                      mwl.switchClass("#icon_tabs3_button", "show", "hide");
+                      mwl.switchClass("#text_tabs3_button", "hide", "show");
+                      mwl.setGroupTarget("#tabs", "#tab_views", "show", "hide"); 
+                      mwl.setGroupTarget("#tab_views", "#tabs_3tabs_view", "show", "hide");
+                      mwl.setGroupTarget("#navigateToggle","#miniappGoHomeToggle", "show", "hide");')
+                      | 3 tabs - text
+                    .text_list_item(onclick='
+                      mwl.switchClass("#icon_tabs4_tab_bar_table", "show", "hide");
+                      mwl.switchClass("#text_tabs4_tab_bar_table", "hide", "show");
+                      mwl.switchClass("#icon_tabs4_button", "show", "hide");
+                      mwl.switchClass("#text_tabs4_button", "hide", "show");
+                      mwl.setGroupTarget("#tabs", "#tab_views", "show", "hide"); 
+                      mwl.setGroupTarget("#tab_views", "#tabs_4tabs_view", "show", "hide");
+                      mwl.setGroupTarget("#navigateToggle","#miniappGoHomeToggle", "show", "hide");')
+                      | 4 tabs - text
+                // End Tabs mini app
+                // TextFields mini app
+                #textFields.slider_section.hide
+                  .text_field_item
+                    div Label
+                    .text_entry_with_label
+                      table.fill(cellpadding='0', cellspacing='0', summary='Button Table')
+                        tr
+                          td.text_input_cell
+                            input(type='text', name='entry2')
+                          td
+                            span km
+                  .text_field_item
+                    div Icon button
+                    .text_entry_with_icon
+                      table.fill(cellpadding='0', cellspacing='0', summary='Button Table')
+                        tr
+                          td.text_input_cell
+                            input(type='text', name='entry2')
+                          td(onclick='')
+                            img(src='img/header_search.png', height='40', width='43', alt='Home')
+                  .text_field_item
+                    div Text button
+                    .text_entry_with_button
+                      table.fill(cellpadding='0', cellspacing='0', summary='Button Table')
+                        tr
+                          td.text_input_with_button_cell
+                            input(type='text', name='entry2')
+                          td.alignR
+                            input.button.text_entry_button(type='button', name='button1', value='UPDATE')
+                // End TextFields mini app
+                // CarouselInItem mini app
+                #carouselInItem.slider_section.hide
+                  div
+                    .list_section_header Carousel, in-item
+                    table.fill.carousel_in_item_height(cellpadding='0', cellspacing='0')
+                      tr
+                        td.alignL
+                          input.previous_button_high(type='button', onclick='
+                            mwl.iterateClass("#carousel_in_item_images", "carousel_in_item_img", "prev", 5, false, null);
+                          ')
+                        td.alignC(width='180')
+                          .carousel_in_item_container
+                            #carousel_in_item_images.strip_carousel_in_item.carousel_in_item_img0
+                              table.carousel_in_item_height(cellspacing='0', cellpadding='0', border='0', summary='Images Table')
+                                tr
+                                  td#t2
+                                    img.carousel_in_item_image(src='img/img1.jpg', alt='image1')
+                                  td#t1
+                                    img.carousel_in_item_image(src='img/img2.jpg', alt='image2')
+                                  td#t3
+                                    img.carousel_in_item_image(src='img/img3.jpg', alt='image3')
+                                  td#t4
+                                    img.carousel_in_item_image(src='img/img4.jpg', alt='image4')
+                                  td#t5
+                                    img.carousel_in_item_image(src='img/img5.jpg', alt='image5')
+                        td.alignR
+                          input.next_button_high(type='button', onclick='
+                            mwl.iterateClass("#carousel_in_item_images", "carousel_in_item_img", "next", 5, false, null);
+                          ')
+                  .text_block
+                    | Lorem ipsum dolor sit amet,
+                    | consectetur adipisicing elit, sed do eiusmod tempor incididunt
+                    | ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                    | nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                    | commodo consequat.
+                // End CarouselInItem mini app
+                // Carousel mini app
+                #carouselItem.slider_section.hide
+                  #slideshow_buttons_bar
+                    #non_sliding_buttons_bar.carousel_buttons_bar.show
+                      input.previous_button(type='button', onclick='mwl.iterateClass("#carousel_images", "carousel_img", "prev", 5, true, null);')
+                      input.play_button(type='button', onclick='
+                        mwl.setGroupTarget("#slideshow_buttons_bar", "#sliding_buttons_bar", "show", "hide");
+                        mwl.iterateClass("#carousel_images", "carousel_img", "next", 5, false, null);
+                          mwl.timer("timer1", 2000, 0, 
+                            "mwl.iterateClass(\"#carousel_images\", \"carousel_img\", \"next\", 5, true, null )");
+                      ')
+                      input.next_button(type='button', onclick='mwl.iterateClass("#carousel_images", "carousel_img", "next", 5, true, null);')
+                    #sliding_buttons_bar.carousel_buttons_bar.hide
+                      input.previous_button(type='button', onclick='
+                        mwl.stopTimer("timer1");
+                        mwl.setGroupTarget("#slideshow_buttons_bar", "#non_sliding_buttons_bar", "show", "hide"); 
+                        mwl.iterateClass("#carousel_images", "carousel_img", "prev", 5, false, null);
+                      ')
+                      input.pause_button(type='button', onclick='
+                        mwl.stopTimer("timer1");
+                        mwl.setGroupTarget("#slideshow_buttons_bar", "#non_sliding_buttons_bar", "show", "hide")
+                      ')
+                      input.next_button(type='button', onclick='
+                        mwl.stopTimer("timer1"); 
+                        mwl.setGroupTarget("#slideshow_buttons_bar", "#non_sliding_buttons_bar", "show", "hide"); 
+                        mwl.iterateClass("#carousel_images", "carousel_img", "next", 5, false, null);
+                      ')
+                  .carousel_container
+                    #carousel_images.strip_carousel.carousel_img0
+                      table.carousel_in_item_height(cellspacing='0', cellpadding='0', border='0', summary='Images Table')
+                        tr
+                          td
+                            img.carousel_image(src='img/img1.jpg', alt='image1')
+                          td
+                            img.carousel_image(src='img/img2.jpg', alt='image2')
+                          td
+                            img.carousel_image(src='img/img3.jpg', alt='image3')
+                          td
+                            img.carousel_image(src='img/img4.jpg', alt='image4')
+                          td
+                            img.carousel_image(src='img/img5.jpg', alt='image5')
+                // End Carousel mini app
+                // DynamicLooping mini app
+                #dynamicLooping.slider_section.hide
+                  .list_section_header Dynamic looping
+                  // DynamicLooping Control Content
+                  #dynamicLooping_content
+                    #dynLoop_content_1.show
+                      .text_block Press one button.
+                      table.fill(cellpadding='0', cellspacing='0')
+                        tr
+                          td.alignR
+                            input.button.button_3_in_row_width(type='button', name='rock_button', value='Rock', onclick='
+                              rockPaperScissors(0);')
+                          td.alignC
+                            input.button.button_3_in_row_width(type='button', name='paper_button', value='Paper', onclick='
+                              rockPaperScissors(1);')
+                          td.alignL
+                            input.button.button_3_in_row_width(type='button', name='scissors_button', value='Scissors', onclick='
+                              rockPaperScissors(2);')
+                    #dynLoop_content_2.hide
+                      .checkable_list_item
+                        table.fill(cellpadding='0', cellspacing='0')
+                          tr
+                            td.list_item_left_align You chose
+                            td.list_item_right_align
+                              img#player_img(height='33', width='30', alt='My choice')
+                      .checkable_list_item
+                        table.fill(cellpadding='0', cellspacing='0')
+                          tr
+                            td.list_item_left_align Computer chose
+                            td.list_item_right_align
+                              img#opponent_img(height='33', width='30', alt='Computers choice')
+                      .text_block
+                        table.fill(cellpadding='0', cellspacing='0')
+                          tr
+                            td#game_over_txt.list_item_left_align
+                      .fill
+                        input.next_game_button(type='button', name='nextGameBtn', value='Next game', onclick='
+                         mwl.setGroupTarget("#dynamicLooping_content", "#dynLoop_content_1", "show", "hide");
+                      ')
+                // End DynamicLooping mini app
+                // ExpandableList mini app
+                #expandableList.slider_section.hide
+                  #expandable_category1.category
+                    #expandable_category1_header.category_header(onclick='
+                    mwl.toggleClass("#expandable_category1_items", "show");
+                    mwl.toggleClass("#expandable_category1_items", "hide");
+                    mwl.toggleClass("#expandable_category1_closed_arrow", "hide");
+                    mwl.toggleClass("#expandable_category1_closed_arrow", "show");
+                    mwl.toggleClass("#expandable_category1_open_arrow", "hide");
+                    mwl.toggleClass("#expandable_category1_open_arrow", "show");')
+                      table.fill(cellpadding='0', cellspacing='0', summary='Category Table')
+                        tr
+                          td.category_left
+                            div Category 1
+                          td.category_right
+                            span
+                              img#expandable_category1_closed_arrow.show(src='img/button_right.png', alt='show')
+                              img#expandable_category1_open_arrow.hide(src='img/button_down.png', alt='hide')
+                    #expandable_category1_items.hide.item_container
+                      .text_list_item(onclick='') Item 1-1
+                      .text_list_item(onclick='') Item 1-2
+                      .text_list_item(onclick='') Item 1-3
+                      .text_list_item(onclick='') Item 1-4
+                  #expandable_category2.category
+                    #expandable_category2_header.category_header(onclick='
+                    mwl.toggleClass("#expandable_category2_items", "show");
+                    mwl.toggleClass("#expandable_category2_items", "hide");
+                    mwl.toggleClass("#expandable_category2_closed_arrow", "hide");
+                    mwl.toggleClass("#expandable_category2_closed_arrow", "show");
+                    mwl.toggleClass("#expandable_category2_open_arrow", "hide");
+                    mwl.toggleClass("#expandable_category2_open_arrow", "show");')
+                      table.fill(cellpadding='0', cellspacing='0', summary='Category Table')
+                        tr
+                          td.category_left
+                            div Category 2
+                          td.category_right
+                            span
+                              img#expandable_category2_closed_arrow.show(src='img/button_right.png', alt='show')
+                              img#expandable_category2_open_arrow.hide(src='img/button_down.png', alt='hide')
+                    #expandable_category2_items.hide.item_container
+                      .text_list_item(onclick='') Item 2-1
+                      .text_list_item(onclick='') Item 2-2
+                      .text_list_item(onclick='') Item 2-3
+                      .text_list_item(onclick='') Item 2-4
+                  #expandable_category3.category
+                    #expandable_category3header.category_header(onclick='
+                    mwl.toggleClass("#expandable_category3_items", "show");
+                    mwl.toggleClass("#expandable_category3_items", "hide");
+                    mwl.toggleClass("#expandable_category3_closed_arrow", "hide");
+                    mwl.toggleClass("#expandable_category3_closed_arrow", "show");
+                    mwl.toggleClass("#expandable_category3_open_arrow", "hide");
+                    mwl.toggleClass("#expandable_category3_open_arrow", "show");')
+                      table.fill(cellpadding='0', cellspacing='0', summary='Category Table')
+                        tr
+                          td.category_left
+                            div Category 3
+                          td.category_right
+                            span
+                              img#expandable_category3_closed_arrow.show(src='img/button_right.png', alt='show')
+                              img#expandable_category3_open_arrow.hide(src='img/button_down.png', alt='hide')
+                    #expandable_category3_items.hide.item_container
+                      .text_list_item(onclick='') Item 3-1
+                      .text_list_item(onclick='') Item 3-2
+                      .text_list_item(onclick='') Item 3-3
+                      .text_list_item(onclick='') Item 3-4
+                  #expandable_category4.category
+                    #expandable_category4_header.category_header(onclick='
+                    mwl.toggleClass("#expandable_category4_items", "show");
+                    mwl.toggleClass("#expandable_category4_items", "hide");
+                    mwl.toggleClass("#expandable_category4_closed_arrow", "hide");
+                    mwl.toggleClass("#expandable_category4_closed_arrow", "show");
+                    mwl.toggleClass("#expandable_category4_open_arrow", "hide");
+                    mwl.toggleClass("#expandable_category4_open_arrow", "show");')
+                      table.fill(cellpadding='0', cellspacing='0', summary='Category Table')
+                        tr
+                          td.category_left
+                            div Category 4
+                          td.category_right
+                            span
+                              img#expandable_category4_closed_arrow.show(src='img/button_right.png', alt='show')
+                              img#expandable_category4_open_arrow.hide(src='img/button_down.png', alt='hide')
+                    #expandable_category4_items.hide.item_container
+                      .text_list_item(onclick='') Item 4-1
+                      .text_list_item(onclick='') Item 4-2
+                      .text_list_item(onclick='') Item 4-3
+                      .text_list_item(onclick='') Item 4-4
+                  #expandable_category5.category
+                    #expandable_category5_header.category_header(onclick='
+                    mwl.toggleClass("#expandable_category5_items", "show");
+                    mwl.toggleClass("#expandable_category5_items", "hide");
+                    mwl.toggleClass("#expandable_category5_closed_arrow", "hide");
+                    mwl.toggleClass("#expandable_category5_closed_arrow", "show");
+                    mwl.toggleClass("#expandable_category5_open_arrow", "hide");
+                    mwl.toggleClass("#expandable_category5_open_arrow", "show");')
+                      table.fill(cellpadding='0', cellspacing='0', summary='Category Table')
+                        tr
+                          td.category_left
+                            div Category 5
+                          td.category_right
+                            span
+                              img#expandable_category5_closed_arrow.show(src='img/button_right.png', alt='show')
+                              img#expandable_category5_open_arrow.hide(src='img/button_down.png', alt='hide')
+                    #expandable_category5_items.hide.item_container
+                      .text_list_item(onclick='') Item 5-1
+                      .text_list_item(onclick='') Item 5-2
+                      .text_list_item(onclick='') Item 5-3
+                      .text_list_item(onclick='') Item 5-4
+                  #expandable_category6.category
+                    #expandable_category6_header.category_header(onclick='
+                    mwl.toggleClass("#expandable_category6_items", "show");
+                    mwl.toggleClass("#expandable_category6_items", "hide");
+                    mwl.toggleClass("#expandable_category6_closed_arrow", "hide");
+                    mwl.toggleClass("#expandable_category6_closed_arrow", "show");
+                    mwl.toggleClass("#expandable_category6_open_arrow", "hide");
+                    mwl.toggleClass("#expandable_category6_open_arrow", "show");')
+                      table.fill(cellpadding='0', cellspacing='0', summary='Category Table')
+                        tr
+                          td.category_left
+                            div Category 6
+                          td.category_right
+                            span
+                              img#expandable_category6_closed_arrow.show(src='img/button_right.png', alt='show')
+                              img#expandable_category6_open_arrow.hide(src='img/button_down.png', alt='hide')
+                    #expandable_category6_items.hide.item_container
+                      .text_list_item(onclick='') Item 6-1
+                      .text_list_item(onclick='') Item 6-2
+                      .text_list_item(onclick='') Item 6-3
+                      .text_list_item(onclick='') Item 6-4
+                // End ExpandableList mini app
+                // TabbedPages mini app
+                #tabbedPages.slider_section.hide
+                  table.fill(cellpadding='0', cellspacing='0', summary='Tab Table')
+                    tr#tabbedPagesTabBar
+                      td#tabbedPagesTab_1.tab.tab_3_tabs.tabbed_pages_tab_selected(onclick='
+                        mwl.setGroupTarget("#tabbedPagesTabControlContent", "#tabbedPagesTab_1_content", "show", "hide");
+                        mwl.setGroupTarget("#tabbedPagesTabBar", "#tabbedPagesTab_1", "tabbed_pages_tab_selected", "tab_not_selected");
+                      ')
+                        img(src='img/tab_list.png', alt='smile')
+                      td#tabbedPagesTab_2.tab.tab_3_tabs.tab_not_selected(onclick='
+                        mwl.setGroupTarget("#tabbedPagesTabControlContent", "#tabbedPagesTab_2_content", "show", "hide");
+                        mwl.setGroupTarget("#tabbedPagesTabBar", "#tabbedPagesTab_2", "tabbed_pages_tab_selected", "tab_not_selected");
+                      ')
+                        img(src='img/tab_group.png', alt='smile')
+                      td#tabbedPagesTab_3.tab.tab_3_tabs_right.tab_not_selected(onclick='
+                        mwl.setGroupTarget("#tabbedPagesTabControlContent", "#tabbedPagesTab_3_content", "show", "hide");
+                        mwl.setGroupTarget("#tabbedPagesTabBar", "#tabbedPagesTab_3", "tabbed_pages_tab_selected", "tab_not_selected");
+                      ')
+                        img(src='img/tab_contact.png', alt='smile')
+                  // Tab Control Content
+                  #tabbedPagesTabControlContent
+                    // First tab content
+                    #tabbedPagesTab_1_content.show
+                      .tabbed_pages_picture_list_item(onclick='')
+                        img.picture_list_item_image(src='img/tab_list.png', height='20', width='20', alt='smile')
+                        span.valignMdl Item 1
+                      .tabbed_pages_picture_list_item(onclick='')
+                        img.picture_list_item_image(src='img/tab_list.png', height='20', width='20', alt='smile')
+                        span.valignMdl Item 2
+                      .tabbed_pages_picture_list_item(onclick='')
+                        img.picture_list_item_image(src='img/tab_list.png', height='20', width='20', alt='smile')
+                        span.valignMdl Item 3
+                      .tabbed_pages_picture_list_item(onclick='')
+                        img.picture_list_item_image(src='img/tab_list.png', height='20', width='20', alt='smile')
+                        span.valignMdl Item 4
+                    // End First tab content
+                    // Second tab content
+                    #tabbedPagesTab_2_content.hide
+                      .tabbed_pages_picture_list_item(onclick='')
+                        img.picture_list_item_image(src='img/tab_group.png', height='20', width='20', alt='smile')
+                        span.valignMdl Item 1
+                      .tabbed_pages_picture_list_item(onclick='')
+                        img.picture_list_item_image(src='img/tab_group.png', height='20', width='20', alt='smile')
+                        span.valignMdl Item 2
+                      .tabbed_pages_picture_list_item(onclick='')
+                        img.picture_list_item_image(src='img/tab_group.png', height='20', width='20', alt='smile')
+                        span.valignMdl Item 3
+                      .tabbed_pages_picture_list_item(onclick='')
+                        img.picture_list_item_image(src='img/tab_group.png', height='20', width='20', alt='smile')
+                        span.valignMdl Item 4
+                    // End Second tab content
+                    // Third tab content
+                    #tabbedPagesTab_3_content.hide
+                      .tabbed_pages_picture_list_item(onclick='')
+                        img.picture_list_item_image(src='img/tab_contact.png', height='20', width='20', alt='smile')
+                        span.valignMdl Item 1
+                      .tabbed_pages_picture_list_item(onclick='')
+                        img.picture_list_item_image(src='img/tab_contact.png', height='20', width='20', alt='smile')
+                        span.valignMdl Item 2
+                      .tabbed_pages_picture_list_item(onclick='')
+                        img.picture_list_item_image(src='img/tab_contact.png', height='20', width='20', alt='smile')
+                        span.valignMdl Item 3
+                      .tabbed_pages_picture_list_item(onclick='')
+                        img.picture_list_item_image(src='img/tab_contact.png', height='20', width='20', alt='smile')
+                        span.valignMdl Item 4
+                    // End Third tab content
+                // End TabbedPages mini app
+                // Picker mini app
+                #picker.slider_section.hide
+                  #picker_content
+                    #picker_button_content.show
+                      .fill
+                        input#picker_button.button.centered_button(type='button', value='Value is 1', onclick='
+                        mwl.setGroupTarget("#picker_content", "#picker_list_content", "show", "hide");
+                        mwl.setGroupTarget("#navigateToggle", "#picker_backButton", "show", "hide");
+                      ')
+                    #picker_list_content.hide
+                      .list_section_header Picker
+                      .text_list_item(onclick='setPickerValue(1);') Value is 1
+                      .text_list_item(onclick='setPickerValue(2);') Value is 2
+                      .text_list_item(onclick='setPickerValue(3);') Value is 3
+                      .text_list_item(onclick='setPickerValue(4);') Value is 4
+                      .text_list_item(onclick='setPickerValue(5);') Value is 5
+                      .text_list_item(onclick='setPickerValue(6);') Value is 6
+                // End Picker mini app
+                // TreeStructure mini app
+                #treeStructure.slider_section.hide
+                  //
+                     NOTE: The tree view content is being loaded
+                                    from within the utils.js's generateTreeView() method! 
+                // End TreeStructure mini app
+                // FileUpload mini app
+                #fileUpload.slider_section.hide
+                  // FileUpload Control Content
+                  #fileUpload_content
+                    // Base view
+                    #fileUpload_base_view.show
+                      .list_section_header File upload - base view
+                      .fill
+                        input.button.centered_button(type='button', name='start_upload_btn', value='Start upload flow', onclick='
+                          mwl.setGroupTarget("#fileUpload_content", "#fileUpload_select_view", "show", "hide");
+                        ')
+                    // Select & Upload view
+                    #fileUpload_select_view.hide
+                      .list_section_header File upload - file select
+                      .fill
+                        form(action='http://samples.ndapplab.com/UploadDownload/upload/upload.php', method='post', enctype='multipart/form-data')
+                          input#file.input_select(type='file', name='userfile')
+                          input.button.upload_download_button(type='submit', value='UPLOAD')
+                // End FileUpload mini app
+                // FileDownload mini app
+                #fileDownload.slider_section.hide
+                  // FileDown Control Content
+                  #fileDownload_content
+                    // Base view
+                    #fileDownload_base_view.show
+                      .list_section_header File download - base view
+                      .fill
+                        input.button.centered_button(type='button', name='start_download_btn', value='Start download flow', onclick='
+                        mwl.setGroupTarget("#fileDownload_content", "#fileDownload_select_view", "show", "hide");
+                      ')
+                    // Select & Download view
+                    #fileDownload_select_view.hide
+                      .list_section_header File download - file select
+                      .fill.image_grid
+                        span(onclick='
+                        mwl.setGroupTarget("#fileDownload_content", "#fileDownload_details_view", "show", "hide");
+                        setImageDetails("img1.jpg");
+                      ')
+                          img.download_images(src='img/img1.jpg', alt='Mountain lake')
+                        span(onclick='
+                        mwl.setGroupTarget("#fileDownload_content", "#fileDownload_details_view", "show", "hide");
+                        setImageDetails("img2.jpg");
+                      ')
+                          img.download_images(src='img/img2.jpg', alt='Desert')
+                        span(onclick='
+                        mwl.setGroupTarget("#fileDownload_content", "#fileDownload_details_view", "show", "hide");
+                        setImageDetails("img3.jpg");
+                      ')
+                          img.download_images(src='img/img3.jpg', alt='Sunset church')
+                        span(onclick='
+                        mwl.setGroupTarget("#fileDownload_content", "#fileDownload_details_view", "show", "hide");
+                        setImageDetails("img4.jpg");
+                      ')
+                          img.download_images(src='img/img4.jpg', alt='Crocodile lake')
+                    // Image details view
+                    #fileDownload_details_view.hide
+                      .list_section_header File download - Image details
+                      .big_image_wrapper
+                        img#download_image(alt='Image to download')
+                      #download_image_name.text_block Placeholder.jpg
+                      input#download_button.button.upload_download_button(type='submit', value='DOWNLOAD')
+                // End FileUpload mini app
+                // PageTitleLink mini app
+                #pageTitleLink.slider_section.hide
+                  .title_link_header(onclick='
+                    generateTreeView("pageTitleLink_content",0,0,0);
+                   ') Press title link to main page
+                  #pageTitleLink_content
+                // End PageTitleLink mini app
+                // Password mini app
+                #passwords.slider_section.hide
+                  // Passwords Control Content
+                  #passwords_content
+                    // Password query view
+                    #password_query_view.show
+                      .list_section_header Try different password 2nd time
+                      .text_field_item
+                        div Username
+                        .text_entry_with_label
+                          table.fill(cellpadding='0', cellspacing='0', summary='Button Table')
+                            tr
+                              td.text_input_cell
+                                input#usernameEntry(type='text')
+                      .text_field_item
+                        div Password
+                        .text_entry_with_label
+                          table.fill(cellpadding='0', cellspacing='0', summary='Button Table')
+                            tr
+                              td.text_input_cell
+                                input#passwordEntry(type='password')
+                      .fill
+                        input#sign_in_button.button.centered_button(type='button', value='Sign In', onclick='saveCredentials();')
+                        input#sign_in_button.button.centered_button(type='button', value='Clear Password', onclick='resetCredentials();')
+                        input#help_button.button.centered_button(type='button', value='Help', onclick='
+                          mwl.setGroupTarget("#passwords_content", "#password_help_view", "show", "hide");
+                        ')
+                    // Password login in view
+                    #password_login_view.hide
+                      .list_section_header Try different password 2nd time
+                      .text_block You are logged in.
+                      .text_block Clear the password from main view.
+                    #password_help_view.hide
+                      .list_section_header Help
+                      .information_text_block
+                        | Lorem ipsum dolor sit amet,
+                        | consectetur adipisicing elit, sed do eiusmod tempor incididunt
+                        | ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                        | nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                        | commodo consequat.
+                // End Password mini app
+                // ProgressIndicators mini app
+                #progressIndicators.slider_section.hide
+                  // ProgressIndicator Control Content
+                  #progressIndicator_content
+                    // Base list view
+                    #progress_indicator_base_view.show
+                      .list_section_header Progress indicator
+                      .text_list_item(onclick='mwl.loadURL("http://www.nokia.com");') Web page loading
+                      .text_list_item(onclick='
+                        mwl.setGroupTarget("#progressIndicator_content", "#continuous_use_view", "show", "hide");
+                        mwl.setGroupTarget("#navigateToggle", "#continuous_use_backButton", "show", "hide");
+                      ') Continuous use
+                      .text_list_item(onclick='
+                        mwl.loadURL("http://projects.developer.nokia.com/webappsuivisualisation/raw-attachment/wiki/WikiStart/img6.jpg");
+                      ') Determinate progress
+                      .text_list_item(onclick='
+                        mwl.loadURL("http://projects.developer.nokia.com/webappsuivisualisation/raw-attachment/wiki/WikiStart/img6.jpg");
+                      ') Indeterminate progress
+                    // Image grid
+                    #continuous_use_view.hide
+                      .list_section_header Continuous use
+                      .fill.image_grid
+                        span(onclick='')
+                          img.download_images(src='http://projects.developer.nokia.com/webappsuivisualisation/raw-attachment/wiki/WikiStart/img1.jpg', alt='Mountain lake')
+                        span(onclick='')
+                          img.download_images(src='http://projects.developer.nokia.com/webappsuivisualisation/raw-attachment/wiki/WikiStart/img2.jpg', alt='Desert')
+                        span(onclick='')
+                          img.download_images(src='http://projects.developer.nokia.com/webappsuivisualisation/raw-attachment/wiki/WikiStart/img3.jpg', alt='Sunset church')
+                        span(onclick='')
+                          img.download_images(src='http://projects.developer.nokia.com/webappsuivisualisation/raw-attachment/wiki/WikiStart/img4.jpg', alt='Crocodile lake')
+                // End ProgressIndicators mini app
+                // Search mini app
+                #search.slider_section.hide
+                  //
+                     NOTE: The Search content is being loaded
+                                    from within the utils.js's createSearchList() method! 
+                // End Search mini app
+                // SharingContent mini app
+                #sharingContent.slider_section.hide
+                  .list_section_header Sharing
+                  .text_block.share_text_block
+                    | Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  table.share_table(cellspacing='5', cellpadding='0')
+                    tr
+                      td#share_title Share
+                      td.alignR
+                        a(href='sms:?body=LoremIpsumDolorSitAmet')
+                          img(src='img/share_sms.png')
+                      td.alignR
+                        a(href='http://www.facebook.com/sharer.php?u=LoremIpsumDolorSitAmet')
+                          img(src='img/share_facebook.png')
+                // End SharingContent mini app
+                // Information "mini app"
+                #information.slider_section.hide
+                  .list_section_header Information
+                  .information_text_block
+                    | Lorem ipsum dolor sit amet,
+                    | consectetur adipisicing elit, sed do eiusmod tempor incididunt
+                    | ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                    | nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                    | commodo consequat.
+                // End Information mini app
+      // End Stage
+    // End Main
